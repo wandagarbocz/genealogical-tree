@@ -1063,260 +1063,260 @@ int main() {
 
 	string zmiennaty;
 	zmiennaty = mojeimie + " ur." + mojdzien + "." + mojmiesiac + "." + mojrok;
-	char char_arrayty[20];
+	char char_arrayty[40];
 	strcpy_s(char_arrayty, zmiennaty.c_str());
 
 	string zmiennababciamama;
-	char char_arraybabciamama[20];
+	char char_arraybabciamama[40];
 	string zmiennababciatata;
-	char char_arraybabciatata[20];
+	char char_arraybabciatata[40];
 	string babciamamasmierc;
 	string babciatatasmierc;
-	char babciats[21];
-	char babciams[21];
+	char babciats[41];
+	char babciams[41];
 	
 	string dzmamasmierc;
 	string dztatasmierc;
-	char dziadekts[21];
-	char dziadekms[21];
+	char dziadekts[41];
+	char dziadekms[41];
 	string dzmama;
 	string dztata;
-	char dziadekt[21];
-	char dziadekm[21];
+	char dziadekt[41];
+	char dziadekm[41];
 
 	string tatadane;
 	string mamadane;
-	char tatadane_ch[21];
-	char mamadane_ch[21];
+	char tatadane_ch[41];
+	char mamadane_ch[41];
 	string mamasmierc;
 	string tatasmierc;
-	char mamasmierc_ch[21];
-	char tatasmierc_ch[21];
+	char mamasmierc_ch[41];
+	char tatasmierc_ch[41];
 
 	int liczba_rodzenstwa_mama = 0;
 	int liczba_rodzenstwa_tata = 0;
 	string ciocia1dane;
 	string ciocia2dane;
-	char ciocia1danech[21];
-	char ciocia2danech[21];
+	char ciocia1danech[41];
+	char ciocia2danech[41];
 	string ciocia1smierc;
 	string ciocia2smierc;
-	char ciocia1sch[21];
-	char ciocia2sch[21];
+	char ciocia1sch[41];
+	char ciocia2sch[41];
 
 	string kuzyn1dane;
 	string kuzyn2dane;
-	char kuzyn1ch[21];
-	char kuzyn2ch[21];
+	char kuzyn1ch[41];
+	char kuzyn2ch[41];
 	string kuzyn1danemal;
 	string kuzyn2danemal;
-	char kuzyn1malch[21];
-	char kuzyn2malch[21];
+	char kuzyn1malch[41];
+	char kuzyn2malch[41];
 	string kuzyn1danes;
 	string kuzyn2danes;
-	char kuzyn1sch[21];
-	char kuzyn2sch[21];
+	char kuzyn1sch[41];
+	char kuzyn2sch[41];
 	string kuzyn1danemals;
 	string kuzyn2danemals;
-	char kuzyn1malsch[21];
-	char kuzyn2malsch[21];
+	char kuzyn1malsch[41];
+	char kuzyn2malsch[41];
 	string kuzyn3dane;
 	string kuzyn4dane;
-	char kuzyn3ch[21];
-	char kuzyn4ch[21];
+	char kuzyn3ch[41];
+	char kuzyn4ch[41];
 	string kuzyn3danemal;
 	string kuzyn4danemal;
-	char kuzyn3malch[21];
-	char kuzyn4malch[21];
+	char kuzyn3malch[41];
+	char kuzyn4malch[41];
 	string kuzyn3danes;
 	string kuzyn4danes;
-	char kuzyn3sch[21];
-	char kuzyn4sch[21];
+	char kuzyn3sch[41];
+	char kuzyn4sch[41];
 	string kuzyn3danemals;
 	string kuzyn4danemals;
-	char kuzyn3malsch[21];
-	char kuzyn4malsch[21];
+	char kuzyn3malsch[41];
+	char kuzyn4malsch[41];
 
 	string kuzyn5dane;
 	string kuzyn6dane;
-	char kuzyn5ch[21];
-	char kuzyn6ch[21];
+	char kuzyn5ch[41];
+	char kuzyn6ch[41];
 	string kuzyn5danemal;
 	string kuzyn6danemal;
-	char kuzyn5malch[21];
-	char kuzyn6malch[21];
+	char kuzyn5malch[41];
+	char kuzyn6malch[41];
 	string kuzyn5danes;
 	string kuzyn6danes;
-	char kuzyn5sch[21];
-	char kuzyn6sch[21];
+	char kuzyn5sch[41];
+	char kuzyn6sch[41];
 	string kuzyn5danemals;
 	string kuzyn6danemals;
-	char kuzyn5malsch[21];
-	char kuzyn6malsch[21];
+	char kuzyn5malsch[41];
+	char kuzyn6malsch[41];
 	string kuzyn7dane;
 	string kuzyn8dane;
-	char kuzyn7ch[21];
-	char kuzyn8ch[21];
+	char kuzyn7ch[41];
+	char kuzyn8ch[41];
 	string kuzyn7danemal;
 	string kuzyn8danemal;
-	char kuzyn7malch[21];
-	char kuzyn8malch[21];
+	char kuzyn7malch[41];
+	char kuzyn8malch[41];
 	string kuzyn7danes;
 	string kuzyn8danes;
-	char kuzyn7sch[21];
-	char kuzyn8sch[21];
+	char kuzyn7sch[41];
+	char kuzyn8sch[41];
 	string kuzyn7danemals;
 	string kuzyn8danemals;
-	char kuzyn7malsch[21];
-	char kuzyn8malsch[21];
+	char kuzyn7malsch[41];
+	char kuzyn8malsch[41];
 
 	string kuzyn9dane;
 	string kuzyn10dane;
-	char kuzyn9ch[21];
-	char kuzyn10ch[21];
+	char kuzyn9ch[41];
+	char kuzyn10ch[41];
 	string kuzyn9danemal;
 	string kuzyn10danemal;
-	char kuzyn9malch[21];
-	char kuzyn10malch[21];
+	char kuzyn9malch[41];
+	char kuzyn10malch[41];
 	string kuzyn9danes;
 	string kuzyn10danes;
-	char kuzyn9sch[21];
-	char kuzyn10sch[21];
+	char kuzyn9sch[41];
+	char kuzyn10sch[41];
 	string kuzyn9danemals;
 	string kuzyn10danemals;
-	char kuzyn9malsch[21];
-	char kuzyn10malsch[21];
+	char kuzyn9malsch[41];
+	char kuzyn10malsch[41];
 	string kuzyn11dane;
 	string kuzyn12dane;
-	char kuzyn11ch[21];
-	char kuzyn12ch[21];
+	char kuzyn11ch[41];
+	char kuzyn12ch[41];
 	string kuzyn11danemal;
 	string kuzyn12danemal;
-	char kuzyn11malch[21];
-	char kuzyn12malch[21];
+	char kuzyn11malch[41];
+	char kuzyn12malch[41];
 	string kuzyn11danes;
 	string kuzyn12danes;
-	char kuzyn11sch[21];
-	char kuzyn12sch[21];
+	char kuzyn11sch[41];
+	char kuzyn12sch[41];
 	string kuzyn11danemals;
 	string kuzyn12danemals;
-	char kuzyn11malsch[21];
-	char kuzyn12malsch[21];
+	char kuzyn11malsch[41];
+	char kuzyn12malsch[41];
 
 	string kuzyn1dane1;
 	string kuzyn2dane1;
-	char kuzyn1ch1[21];
-	char kuzyn2ch1[21];
+	char kuzyn1ch1[41];
+	char kuzyn2ch1[41];
 	string kuzyn1danemal1;
 	string kuzyn2danemal1;
-	char kuzyn1malch1[21];
-	char kuzyn2malch1[21];
+	char kuzyn1malch1[41];
+	char kuzyn2malch1[41];
 	string kuzyn1danes1;
 	string kuzyn2danes1;
-	char kuzyn1sch1[21];
-	char kuzyn2sch1[21];
+	char kuzyn1sch1[41];
+	char kuzyn2sch1[41];
 	string kuzyn1danemals1;
 	string kuzyn2danemals1;
-	char kuzyn1malsch1[21];
-	char kuzyn2malsch1[21];
+	char kuzyn1malsch1[41];
+	char kuzyn2malsch1[41];
 	string kuzyn3dane1;
 	string kuzyn4dane1;
-	char kuzyn3ch1[21];
-	char kuzyn4ch1[21];
+	char kuzyn3ch1[41];
+	char kuzyn4ch1[41];
 	string kuzyn3danemal1;
 	string kuzyn4danemal1;
-	char kuzyn3malch1[21];
-	char kuzyn4malch1[21];
+	char kuzyn3malch1[41];
+	char kuzyn4malch1[41];
 	string kuzyn3danes1;
 	string kuzyn4danes1;
-	char kuzyn3sch1[21];
-	char kuzyn4sch1[21];
+	char kuzyn3sch1[41];
+	char kuzyn4sch1[41];
 	string kuzyn3danemals1;
 	string kuzyn4danemals1;
-	char kuzyn3malsch1[21];
-	char kuzyn4malsch1[21];
+	char kuzyn3malsch1[41];
+	char kuzyn4malsch1[41];
 
 	string kuzyn5dane1;
 	string kuzyn6dane1;
-	char kuzyn5ch1[21];
-	char kuzyn6ch1[21];
+	char kuzyn5ch1[41];
+	char kuzyn6ch1[41];
 	string kuzyn5danemal1;
 	string kuzyn6danemal1;
-	char kuzyn5malch1[21];
-	char kuzyn6malch1[21];
+	char kuzyn5malch1[41];
+	char kuzyn6malch1[41];
 	string kuzyn5danes1;
 	string kuzyn6danes1;
-	char kuzyn5sch1[21];
-	char kuzyn6sch1[21];
+	char kuzyn5sch1[41];
+	char kuzyn6sch1[41];
 	string kuzyn5danemals1;
 	string kuzyn6danemals1;
-	char kuzyn5malsch1[21];
-	char kuzyn6malsch1[21];
+	char kuzyn5malsch1[41];
+	char kuzyn6malsch1[41];
 	string kuzyn7dane1;
 	string kuzyn8dane1;
-	char kuzyn7ch1[21];
-	char kuzyn8ch1[21];
+	char kuzyn7ch1[41];
+	char kuzyn8ch1[41];
 	string kuzyn7danemal1;
 	string kuzyn8danemal1;
-	char kuzyn7malch1[21];
-	char kuzyn8malch1[21];
+	char kuzyn7malch1[41];
+	char kuzyn8malch1[41];
 	string kuzyn7danes1;
 	string kuzyn8danes1;
-	char kuzyn7sch1[21];
-	char kuzyn8sch1[21];
+	char kuzyn7sch1[41];
+	char kuzyn8sch1[41];
 	string kuzyn7danemals1;
 	string kuzyn8danemals1;
-	char kuzyn7malsch1[21];
-	char kuzyn8malsch1[21];
+	char kuzyn7malsch1[41];
+	char kuzyn8malsch1[41];
 
 	string kuzyn9dane1;
 	string kuzyn10dane1;
-	char kuzyn9ch1[21];
-	char kuzyn10ch1[21];
+	char kuzyn9ch1[41];
+	char kuzyn10ch1[41];
 	string kuzyn9danemal1;
 	string kuzyn10danemal1;
-	char kuzyn9malch1[21];
-	char kuzyn10malch1[21];
+	char kuzyn9malch1[41];
+	char kuzyn10malch1[41];
 	string kuzyn9danes1;
 	string kuzyn10danes1;
-	char kuzyn9sch1[21];
-	char kuzyn10sch1[21];
+	char kuzyn9sch1[41];
+	char kuzyn10sch1[41];
 	string kuzyn9danemals1;
 	string kuzyn10danemals1;
-	char kuzyn9malsch1[21];
-	char kuzyn10malsch1[21];
+	char kuzyn9malsch1[41];
+	char kuzyn10malsch1[41];
 	string kuzyn11dane1;
 	string kuzyn12dane1;
-	char kuzyn11ch1[21];
-	char kuzyn12ch1[21];
+	char kuzyn11ch1[41];
+	char kuzyn12ch1[41];
 	string kuzyn11danemal1;
 	string kuzyn12danemal1;
-	char kuzyn11malch1[21];
-	char kuzyn12malch1[21];
+	char kuzyn11malch1[41];
+	char kuzyn12malch1[41];
 	string kuzyn11danes1;
 	string kuzyn12danes1;
-	char kuzyn11sch1[21];
-	char kuzyn12sch1[21];
+	char kuzyn11sch1[41];
+	char kuzyn12sch1[41];
 	string kuzyn11danemals1;
 	string kuzyn12danemals1;
-	char kuzyn11malsch1[21];
-	char kuzyn12malsch1[21];
+	char kuzyn11malsch1[41];
+	char kuzyn12malsch1[41];
 
 
 
 	string ciocia1mal;
 	string ciocia1malsmierc;
-	char ciocia1malch[21];
-	char ciocia1malsmiercch[21];
+	char ciocia1malch[41];
+	char ciocia1malsmiercch[41];
 	string ciocia2mal;
 	string ciocia2malsmierc;
-	char ciocia2malch[21];
-	char ciocia2malsmiercch[21];
+	char ciocia2malch[41];
+	char ciocia2malsmiercch[41];
 
 	string mal;
-	char malch[21];
+	char malch[41];
 	string mals;
-	char malsch[21];
+	char malsch[41];
 
 	string dziecko1;
 	string dziecko2;
@@ -1331,18 +1331,18 @@ int main() {
 	string dziecko1mals;
 	string dziecko2mals;
 	string dziecko3mals;
-	char dziecko1ch[21];
-	char dziecko2ch[21];
-	char dziecko3ch[21];
-	char dziecko1malch[21];
-	char dziecko2malch[21];
-	char dziecko3malch[21];
-	char dziecko1sch[21];
-	char dziecko2sch[21];
-	char dziecko3sch[21];
-	char dziecko1malsch[21];
-	char dziecko2malsch[21];
-	char dziecko3malsch[21];
+	char dziecko1ch[41];
+	char dziecko2ch[41];
+	char dziecko3ch[41];
+	char dziecko1malch[41];
+	char dziecko2malch[41];
+	char dziecko3malch[41];
+	char dziecko1sch[41];
+	char dziecko2sch[41];
+	char dziecko3sch[41];
+	char dziecko1malsch[41];
+	char dziecko2malsch[41];
+	char dziecko3malsch[41];
 	int moje_rodzenstwo = 0;
 	string brat1;
 	string brat1s;
@@ -1360,22 +1360,22 @@ int main() {
 	string brat1dziecko3mal;
 	string brat1dziecko3s;
 	string brat1dziecko3mals;
-	char brat1ch[21];
-	char brat1sch[21];
-	char brat1malch[21];
-	char brat1malsch[21];
-	char brat1dziecko1ch[21];
-	char brat1dziecko1sch[21];
-	char brat1dziecko1malch[21];
-	char brat1dziecko1malsch[21];
-	char brat1dziecko2ch[21];
-	char brat1dziecko2sch[21];
-	char brat1dziecko2malch[21];
-	char brat1dziecko2malsch[21];
-	char brat1dziecko3ch[21];
-	char brat1dziecko3sch[21];
-	char brat1dziecko3malch[21];
-	char brat1dziecko3malsch[21];
+	char brat1ch[41];
+	char brat1sch[41];
+	char brat1malch[41];
+	char brat1malsch[41];
+	char brat1dziecko1ch[41];
+	char brat1dziecko1sch[41];
+	char brat1dziecko1malch[41];
+	char brat1dziecko1malsch[41];
+	char brat1dziecko2ch[41];
+	char brat1dziecko2sch[41];
+	char brat1dziecko2malch[41];
+	char brat1dziecko2malsch[41];
+	char brat1dziecko3ch[41];
+	char brat1dziecko3sch[41];
+	char brat1dziecko3malch[41];
+	char brat1dziecko3malsch[41];
 
 	string brat2;
 	string brat2s;
@@ -1393,22 +1393,22 @@ int main() {
 	string brat2dziecko3mal;
 	string brat2dziecko3s;
 	string brat2dziecko3mals;
-	char brat2ch[21];
-	char brat2sch[21];
-	char brat2malch[21];
-	char brat2malsch[21];
-	char brat2dziecko1ch[21];
-	char brat2dziecko1sch[21];
-	char brat2dziecko1malch[21];
-	char brat2dziecko1malsch[21];
-	char brat2dziecko2ch[21];
-	char brat2dziecko2sch[21];
-	char brat2dziecko2malch[21];
-	char brat2dziecko2malsch[21];
-	char brat2dziecko3ch[21];
-	char brat2dziecko3sch[21];
-	char brat2dziecko3malch[21];
-	char brat2dziecko3malsch[21];
+	char brat2ch[41];
+	char brat2sch[41];
+	char brat2malch[41];
+	char brat2malsch[41];
+	char brat2dziecko1ch[41];
+	char brat2dziecko1sch[41];
+	char brat2dziecko1malch[41];
+	char brat2dziecko1malsch[41];
+	char brat2dziecko2ch[41];
+	char brat2dziecko2sch[41];
+	char brat2dziecko2malch[41];
+	char brat2dziecko2malsch[41];
+	char brat2dziecko3ch[41];
+	char brat2dziecko3sch[41];
+	char brat2dziecko3malch[41];
+	char brat2dziecko3malsch[41];
 
 	string brat3;
 	string brat3s;
@@ -1426,22 +1426,22 @@ int main() {
 	string brat3dziecko3mal;
 	string brat3dziecko3s;
 	string brat3dziecko3mals;
-	char brat3ch[21];
-	char brat3sch[21];
-	char brat3malch[21];
-	char brat3malsch[21];
-	char brat3dziecko1ch[21];
-	char brat3dziecko1sch[21];
-	char brat3dziecko1malch[21];
-	char brat3dziecko1malsch[21];
-	char brat3dziecko2ch[21];
-	char brat3dziecko2sch[21];
-	char brat3dziecko2malch[21];
-	char brat3dziecko2malsch[21];
-	char brat3dziecko3ch[21];
-	char brat3dziecko3sch[21];
-	char brat3dziecko3malch[21];
-	char brat3dziecko3malsch[21];
+	char brat3ch[41];
+	char brat3sch[41];
+	char brat3malch[41];
+	char brat3malsch[41];
+	char brat3dziecko1ch[41];
+	char brat3dziecko1sch[41];
+	char brat3dziecko1malch[41];
+	char brat3dziecko1malsch[41];
+	char brat3dziecko2ch[41];
+	char brat3dziecko2sch[41];
+	char brat3dziecko2malch[41];
+	char brat3dziecko2malsch[41];
+	char brat3dziecko3ch[41];
+	char brat3dziecko3sch[41];
+	char brat3dziecko3malch[41];
+	char brat3dziecko3malsch[41];
 
 	string brat4;
 	string brat4s;
@@ -1459,25 +1459,28 @@ int main() {
 	string brat4dziecko3mal;
 	string brat4dziecko3s;
 	string brat4dziecko3mals;
-	char brat4ch[21];
-	char brat4sch[21];
-	char brat4malch[21];
-	char brat4malsch[21];
-	char brat4dziecko1ch[21];
-	char brat4dziecko1sch[21];
-	char brat4dziecko1malch[21];
-	char brat4dziecko1malsch[21];
-	char brat4dziecko2ch[21];
-	char brat4dziecko2sch[21];
-	char brat4dziecko2malch[21];
-	char brat4dziecko2malsch[21];
-	char brat4dziecko3ch[21];
-	char brat4dziecko3sch[21];
-	char brat4dziecko3malch[21];
-	char brat4dziecko3malsch[21];
+	char brat4ch[41];
+	char brat4sch[41];
+	char brat4malch[41];
+	char brat4malsch[41];
+	char brat4dziecko1ch[41];
+	char brat4dziecko1sch[41];
+	char brat4dziecko1malch[41];
+	char brat4dziecko1malsch[41];
+	char brat4dziecko2ch[41];
+	char brat4dziecko2sch[41];
+	char brat4dziecko2malch[41];
+	char brat4dziecko2malsch[41];
+	char brat4dziecko3ch[41];
+	char brat4dziecko3sch[41];
+	char brat4dziecko3malch[41];
+	char brat4dziecko3malsch[41];
 
 
-
+	string plus;
+	char plusch[2];
+	plus = "+";
+	strcpy_s(plusch, plus.c_str());
 
 
 	Fl_Window* window = new Fl_Window(4200, 930, "Drzewo");
@@ -1485,84 +1488,105 @@ int main() {
 	
 	Fl_Output output2(1820, 400, 100, 40); //ja
 	output2.color(FL_RED);
-	output2.textsize(Fl_Font(10));
+	output2.textsize(Fl_Font(8));
 	::output1 = &output2;
 	output1->value(char_arrayty);
+	
 
 	Fl_Output output601(1700, 350, 100, 40); //brat1
-	output601.textsize(Fl_Font(10));
+	output601.textsize(Fl_Font(8));
 	output601.color(FL_GRAY);
 	Fl_Output output608(1700, 390, 100, 40); //brat1
-	output608.textsize(Fl_Font(10));
+	output608.textsize(Fl_Font(8));
 	output608.color(FL_GRAY);
 
 
 	Fl_Output output603(1580, 350, 100, 40); //brat3
-	output603.textsize(Fl_Font(10));
+	output603.textsize(Fl_Font(8));
 	output603.color(FL_GRAY);
 	Fl_Output output607(1580, 390, 100, 40); 
-	output607.textsize(Fl_Font(10));
+	output607.textsize(Fl_Font(8));
 	output607.color(FL_GRAY);
 
 	Fl_Output output602(1950, 350, 100, 40); //brat2
-	output602.textsize(Fl_Font(10));
+	output602.textsize(Fl_Font(8));
 	output602.color(FL_GRAY);
 	Fl_Output output606(1950, 390, 100, 40); 
-	output606.textsize(Fl_Font(10));
+	output606.textsize(Fl_Font(8));
 	output606.color(FL_GRAY);
 
 	Fl_Output output604(2070, 350, 100, 40); //brat4
-	output604.textsize(Fl_Font(10));
+	output604.textsize(Fl_Font(8));
 	output604.color(FL_GRAY);
 	Fl_Output output605(2070, 390, 100, 40); 
-	output605.textsize(Fl_Font(10));
+	output605.textsize(Fl_Font(8));
 	output605.color(FL_GRAY);
 
 	Fl_Output output54(1830, 450, 100, 40); //moj malzonek
-	output54.textsize(Fl_Font(10));
+	output54.textsize(Fl_Font(8));
 	output54.color(FL_GRAY);
 	Fl_Output output55(1830, 490, 100, 40); 
-	output55.textsize(Fl_Font(10));
+	output55.textsize(Fl_Font(8));
 	output55.color(FL_GRAY);
+	Fl_Output output609(1805, 470, 20, 40);
+	output609.textsize(Fl_Font(12));
+	output609.color(FL_GRAY);
+	::output523 = &output609;
+	output523->value(plusch);
 
 	Fl_Output output98(1820, 550, 100, 40); //moje dziecko 1
 	output98.color(FL_GRAY);
-	output98.textsize(Fl_Font(10));
+	output98.textsize(Fl_Font(8));
 	Fl_Output output99(1820, 590, 100, 40); 
 	output99.color(FL_GRAY);
-	output99.textsize(Fl_Font(10));
+	output99.textsize(Fl_Font(8));
 	Fl_Output output304(1830, 650, 100, 40);
 	output304.color(FL_GRAY);
-	output304.textsize(Fl_Font(10));
+	output304.textsize(Fl_Font(8));
 	Fl_Output output305(1830, 690, 100, 40);
 	output305.color(FL_GRAY);
-	output305.textsize(Fl_Font(10));
+	output305.textsize(Fl_Font(8));
+	Fl_Output output610(1805, 670, 20, 40);
+	output610.textsize(Fl_Font(12));
+	output610.color(FL_GRAY);
+	::output524 = &output610;
+	output524->value(plusch);
 
 	Fl_Output output300(1930, 550, 100, 40); //moje dziecko 2
 	output300.color(FL_GRAY);
-	output300.textsize(Fl_Font(10));
+	output300.textsize(Fl_Font(8));
 	Fl_Output output301(1930, 590, 100, 40);
 	output301.color(FL_GRAY);
-	output301.textsize(Fl_Font(10));
+	output301.textsize(Fl_Font(8));
 	Fl_Output output308(1940, 650, 100, 40);
 	output308.color(FL_GRAY);
-	output308.textsize(Fl_Font(10));
+	output308.textsize(Fl_Font(8));
 	Fl_Output output309(1940, 690, 100, 40);
 	output309.color(FL_GRAY);
-	output309.textsize(Fl_Font(10));
+	output309.textsize(Fl_Font(8));
+	Fl_Output output611(1915, 670, 20, 40);
+	output611.textsize(Fl_Font(12));
+	output611.color(FL_GRAY);
+	::output525 = &output611;
+	output525->value(plusch);
 
 	Fl_Output output302(2040, 550, 100, 40); //moje dziecko 3
 	output302.color(FL_GRAY);
-	output302.textsize(Fl_Font(10));
+	output302.textsize(Fl_Font(8));
 	Fl_Output output303(2040, 590, 100, 40);
 	output303.color(FL_GRAY);
-	output303.textsize(Fl_Font(10));
+	output303.textsize(Fl_Font(8));
 	Fl_Output output306(2050, 650, 100, 40);
 	output306.color(FL_GRAY);
-	output306.textsize(Fl_Font(10));
+	output306.textsize(Fl_Font(8));
 	Fl_Output output307(2050, 690, 100, 40);
 	output307.color(FL_GRAY);
-	output307.textsize(Fl_Font(10));
+	output307.textsize(Fl_Font(8));
+	Fl_Output output612(2025, 670, 20, 40);
+	output612.textsize(Fl_Font(12));
+	output612.color(FL_GRAY);
+	::output526 = &output612;
+	output526->value(plusch);
 
 	Fl_Output output3(1, 20, 200, 40); //babcia mama
 	output3.color(FL_YELLOW);
@@ -1577,6 +1601,11 @@ int main() {
 	Fl_Output output5(3240, 60, 200, 40);
 	output5.color(FL_YELLOW);
 	output5.textsize(Fl_Font(14));
+	Fl_Output output613(3430, 30, 20, 40);
+	output613.textsize(Fl_Font(12));
+	output613.color(FL_GRAY);
+	::output527 = &output613;
+	output527->value(plusch);
 
 	Fl_Output output7(3640, 20, 200, 40); //dziadek tata
 	output7.color(FL_YELLOW);
@@ -1585,17 +1614,22 @@ int main() {
 	output8.color(FL_YELLOW);
 	output8.textsize(Fl_Font(14));
 
+
 	Fl_Output output9(400, 20, 200, 40); //dziadek mama
 	output9.color(FL_YELLOW);
 	output9.textsize(Fl_Font(14));
 	Fl_Output output10(400, 60, 200, 40);
 	output10.color(FL_YELLOW);
 	output10.textsize(Fl_Font(14));
+	Fl_Output output614(180, 30, 20, 40);
+	output614.textsize(Fl_Font(12));
+	output614.color(FL_GRAY);
+	::output528 = &output614;
+	output528->value(plusch);
 
 	Fl_Output output20(1650, 100, 200, 40); //mama
 	output20.color(FL_GREEN);
 	output20.textsize(Fl_Font(14));
-
 	Fl_Output output21(1650, 140, 200, 40);
 	output21.color(FL_GREEN);
 	output21.textsize(Fl_Font(14));
@@ -1603,10 +1637,14 @@ int main() {
 	Fl_Output output22(2000, 100, 200, 40); //tata
 	output22.color(FL_GREEN);
 	output22.textsize(Fl_Font(14));
-
 	Fl_Output output23(2000, 140, 200, 40);
 	output23.color(FL_GREEN);
 	output23.textsize(Fl_Font(14));
+	Fl_Output output615(1825, 110, 20, 40);
+	output615.textsize(Fl_Font(12));
+	output615.color(FL_GRAY);
+	::output529 = &output615;
+	output529->value(plusch);
 
 	Fl_Output output24(1, 140, 200, 40); //ciocia4 mama
 	output24.color(FL_GRAY);
@@ -1619,43 +1657,43 @@ int main() {
 	output40.textsize(Fl_Font(14));
 	Fl_Output output41(50, 200, 200, 40);
 	output41.color(FL_GRAY);
-	output41.textsize(Fl_Font(10));
+	output41.textsize(Fl_Font(14));
 	Fl_Output output42(1, 340, 100, 40); //dziecko1
 	output42.color(FL_GRAY);
-	output42.textsize(Fl_Font(10));
+	output42.textsize(Fl_Font(8));
 	Fl_Output output43(1, 300, 100, 40);
 	output43.color(FL_GRAY);
-	output43.textsize(Fl_Font(10));
+	output43.textsize(Fl_Font(8));
 	Fl_Output output44(10, 440, 100, 40); //malzonek dziecka1
 	output44.color(FL_GRAY);
-	output44.textsize(Fl_Font(10));
+	output44.textsize(Fl_Font(8));
 	Fl_Output output45(10, 400, 100, 40);
 	output45.color(FL_GRAY);
-	output45.textsize(Fl_Font(10));
+	output45.textsize(Fl_Font(8));
 	Fl_Output output46(120, 340, 100, 40); //dziecko2
 	output46.color(FL_GRAY);
-	output46.textsize(Fl_Font(10));
+	output46.textsize(Fl_Font(8));
 	Fl_Output output47(120, 300, 100, 40);
 	output47.color(FL_GRAY);
-	output47.textsize(Fl_Font(10));
+	output47.textsize(Fl_Font(8));
 	Fl_Output output48(130, 440, 100, 40); //malzonek dziecka2
 	output48.color(FL_GRAY);
-	output48.textsize(Fl_Font(10));
+	output48.textsize(Fl_Font(8));
 	Fl_Output output49(130, 400, 100, 40);
 	output49.color(FL_GRAY);
-	output49.textsize(Fl_Font(10));
+	output49.textsize(Fl_Font(8));
 	Fl_Output output50(240, 340, 100, 40); //dziecko3
 	output50.color(FL_GRAY);
-	output50.textsize(Fl_Font(10));
+	output50.textsize(Fl_Font(8));
 	Fl_Output output51(240, 300, 100, 40);
 	output51.color(FL_GRAY);
-	output51.textsize(Fl_Font(10));
+	output51.textsize(Fl_Font(8));
 	Fl_Output output52(250, 440, 100, 40); //malzonek dziecka3
 	output52.color(FL_GRAY);
-	output52.textsize(Fl_Font(10));
+	output52.textsize(Fl_Font(8));
 	Fl_Output output53(250, 400, 100, 40);
 	output53.color(FL_GRAY);
-	output53.textsize(Fl_Font(10));
+	output53.textsize(Fl_Font(8));
 
 
 	Fl_Output output26(420, 140, 200, 40); //ciocia3 mama
@@ -1669,43 +1707,43 @@ int main() {
 	output56.textsize(Fl_Font(14));
 	Fl_Output output57(470, 200, 200, 40);
 	output57.color(FL_GRAY);
-	output57.textsize(Fl_Font(10));
+	output57.textsize(Fl_Font(14));
 	Fl_Output output58(430, 340, 100, 40); //dziecko1
 	output58.color(FL_GRAY);
-	output58.textsize(Fl_Font(10));
+	output58.textsize(Fl_Font(8));
 	Fl_Output output59(430, 300, 100, 40);
 	output59.color(FL_GRAY);
-	output59.textsize(Fl_Font(10));
+	output59.textsize(Fl_Font(8));
 	Fl_Output output60(440, 440, 100, 40); //malzonek dziecka1
 	output60.color(FL_GRAY);
-	output60.textsize(Fl_Font(10));
+	output60.textsize(Fl_Font(8));
 	Fl_Output output61(440, 400, 100, 40);
 	output61.color(FL_GRAY);
-	output61.textsize(Fl_Font(10));
+	output61.textsize(Fl_Font(8));
 	Fl_Output output62(540, 340, 100, 40); //dziecko2
 	output62.color(FL_GRAY);
-	output62.textsize(Fl_Font(10));
+	output62.textsize(Fl_Font(8));
 	Fl_Output output63(540, 300, 100, 40);
 	output63.color(FL_GRAY);
-	output63.textsize(Fl_Font(10));
+	output63.textsize(Fl_Font(8));
 	Fl_Output output64(550, 440, 100, 40); //malzonek dziecka2
 	output64.color(FL_GRAY);
-	output64.textsize(Fl_Font(10));
+	output64.textsize(Fl_Font(8));
 	Fl_Output output65(550, 400, 100, 40);
 	output65.color(FL_GRAY);
-	output65.textsize(Fl_Font(10));
+	output65.textsize(Fl_Font(8));
 	Fl_Output output66(660, 340, 100, 40); //dziecko3
 	output66.color(FL_GRAY);
-	output66.textsize(Fl_Font(10));
+	output66.textsize(Fl_Font(8));
 	Fl_Output output67(660, 300, 100, 40);
 	output67.color(FL_GRAY);
-	output67.textsize(Fl_Font(10));
+	output67.textsize(Fl_Font(8));
 	Fl_Output output68(670, 440, 100, 40); //malzonek dziecka3
 	output68.color(FL_GRAY);
-	output68.textsize(Fl_Font(10));
+	output68.textsize(Fl_Font(8));
 	Fl_Output output69(670, 400, 100, 40);
 	output69.color(FL_GRAY);
-	output69.textsize(Fl_Font(10));
+	output69.textsize(Fl_Font(8));
 
 	Fl_Output output28(830, 140, 200, 40); //ciocia 2 mama
 	output28.color(FL_GRAY);
@@ -1721,40 +1759,40 @@ int main() {
 	output71.textsize(Fl_Font(14));
 	Fl_Output output72(840, 300, 100, 40); //dziecko1
 	output72.color(FL_GRAY);
-	output72.textsize(Fl_Font(10));
+	output72.textsize(Fl_Font(8));
 	Fl_Output output73(840, 340, 100, 40); 
 	output73.color(FL_GRAY);
-	output73.textsize(Fl_Font(10));
+	output73.textsize(Fl_Font(8));
 	Fl_Output output74(850, 400, 100, 40); //malzonek dziecka1
 	output74.color(FL_GRAY);
-	output74.textsize(Fl_Font(10));
+	output74.textsize(Fl_Font(8));
 	Fl_Output output75(850, 440, 100, 40);
 	output75.color(FL_GRAY);
-	output75.textsize(Fl_Font(10));
+	output75.textsize(Fl_Font(8));
 	Fl_Output output76(950, 300, 100, 40); //dziecko2
 	output76.color(FL_GRAY);
-	output76.textsize(Fl_Font(10)); 
+	output76.textsize(Fl_Font(8)); 
 	Fl_Output output77(950, 340, 100, 40);
 	output77.color(FL_GRAY);
-	output77.textsize(Fl_Font(10));
+	output77.textsize(Fl_Font(8));
 	Fl_Output output78(960, 400, 100, 40); //malzonek dziecka2
 	output78.color(FL_GRAY);
-	output78.textsize(Fl_Font(10));
+	output78.textsize(Fl_Font(8));
 	Fl_Output output79(960, 440, 100, 40);
 	output79.color(FL_GRAY);
-	output79.textsize(Fl_Font(10));
+	output79.textsize(Fl_Font(8));
 	Fl_Output output80(1060, 300, 100, 40); //dziecko3
 	output80.color(FL_GRAY);
-	output80.textsize(Fl_Font(10));
+	output80.textsize(Fl_Font(8));
 	Fl_Output output81(1060, 340, 100, 40);
 	output81.color(FL_GRAY);
-	output81.textsize(Fl_Font(10));
+	output81.textsize(Fl_Font(8));
 	Fl_Output output82(1070, 400, 100, 40); //malzonek dziecko3
 	output82.color(FL_GRAY);
-	output82.textsize(Fl_Font(10));
+	output82.textsize(Fl_Font(8));
 	Fl_Output output83(1060, 440, 100, 40);
 	output83.color(FL_GRAY);
-	output83.textsize(Fl_Font(10));
+	output83.textsize(Fl_Font(8));
 
 
 	Fl_Output output30(1240, 140, 200, 40); //ciocia1 mama
@@ -1771,40 +1809,40 @@ int main() {
 	output85.textsize(Fl_Font(14));
 	Fl_Output output86(1250, 300, 100, 40); //dziecko1
 	output86.color(FL_GRAY);
-	output86.textsize(Fl_Font(10));
+	output86.textsize(Fl_Font(8));
 	Fl_Output output87(1250, 340, 100, 40); 
 	output87.color(FL_GRAY);
-	output87.textsize(Fl_Font(10));
+	output87.textsize(Fl_Font(8));
 	Fl_Output output88(1260, 400, 100, 40); //malzonek dziecko1
 	output88.color(FL_GRAY);
-	output88.textsize(Fl_Font(10));
+	output88.textsize(Fl_Font(8));
 	Fl_Output output89(1260, 440, 100, 40); 
 	output89.color(FL_GRAY);
-	output89.textsize(Fl_Font(10));
+	output89.textsize(Fl_Font(8));
 	Fl_Output output90(1360, 300, 100, 40); //dziecko2
 	output90.color(FL_GRAY);
-	output90.textsize(Fl_Font(10));
+	output90.textsize(Fl_Font(8));
 	Fl_Output output91(1360, 340, 100, 40); 
 	output91.color(FL_GRAY);
-	output91.textsize(Fl_Font(10));
+	output91.textsize(Fl_Font(8));
 	Fl_Output output92(1370, 400, 100, 40); //malzonek dziecko2
 	output92.color(FL_GRAY);
-	output92.textsize(Fl_Font(10));
+	output92.textsize(Fl_Font(8));
 	Fl_Output output93(1370, 440, 100, 40); 
 	output93.color(FL_GRAY);
-	output93.textsize(Fl_Font(10));
+	output93.textsize(Fl_Font(8));
 	Fl_Output output94(1470, 300, 100, 40); //dziecko3
 	output94.color(FL_GRAY);
-	output94.textsize(Fl_Font(10));
+	output94.textsize(Fl_Font(8));
 	Fl_Output output95(1470, 340, 100, 40); 
 	output95.color(FL_GRAY);
-	output95.textsize(Fl_Font(10));
+	output95.textsize(Fl_Font(8));
 	Fl_Output output96(1480, 400, 100, 40); //malzonek dziecko3
 	output96.color(FL_GRAY);
-	output96.textsize(Fl_Font(10));
+	output96.textsize(Fl_Font(8));
 	Fl_Output output97(1480, 440, 100, 40); 
 	output97.color(FL_GRAY);
-	output97.textsize(Fl_Font(10));
+	output97.textsize(Fl_Font(8));
 
 
 
@@ -1822,40 +1860,40 @@ int main() {
 	output329.textsize(Fl_Font(14));
 	Fl_Output output330(2420, 300, 100, 40);
 	output330.color(FL_GRAY);
-	output330.textsize(Fl_Font(10));
+	output330.textsize(Fl_Font(8));
 	Fl_Output output331(2420, 340, 100, 40);
 	output331.color(FL_GRAY);
-	output331.textsize(Fl_Font(10));
+	output331.textsize(Fl_Font(8));
 	Fl_Output output332(2430, 400, 100, 40); //malzonek dziecka1
 	output332.color(FL_GRAY);
-	output332.textsize(Fl_Font(10));
+	output332.textsize(Fl_Font(8));
 	Fl_Output output333(2430, 440, 100, 40);
 	output333.color(FL_GRAY);
-	output333.textsize(Fl_Font(10));
+	output333.textsize(Fl_Font(8));
 	Fl_Output output342(2530, 300, 100, 40); //dziecko2
 	output342.color(FL_GRAY);
-	output342.textsize(Fl_Font(10));
+	output342.textsize(Fl_Font(8));
 	Fl_Output output343(2530, 340, 100, 40);
 	output343.color(FL_GRAY);
-	output343.textsize(Fl_Font(10));
+	output343.textsize(Fl_Font(8));
 	Fl_Output output345(2540, 400, 100, 40); //malzonek dziecka2
 	output345.color(FL_GRAY);
-	output345.textsize(Fl_Font(10));
+	output345.textsize(Fl_Font(8));
 	Fl_Output output344(2540, 440, 100, 40);
 	output344.color(FL_GRAY);
-	output344.textsize(Fl_Font(10));
+	output344.textsize(Fl_Font(8));
 	Fl_Output output346(2640, 300, 100, 40); //dziecko3
 	output346.color(FL_GRAY);
-	output346.textsize(Fl_Font(10));
+	output346.textsize(Fl_Font(8));
 	Fl_Output output347(2640, 340, 100, 40);
 	output347.color(FL_GRAY);
-	output347.textsize(Fl_Font(10));
+	output347.textsize(Fl_Font(8));
 	Fl_Output output348(2650, 400, 100, 40); //malzonek dziecka3
 	output348.color(FL_GRAY);
-	output348.textsize(Fl_Font(10));
+	output348.textsize(Fl_Font(8));
 	Fl_Output output349(2650, 440, 100, 40);
 	output349.color(FL_GRAY);
-	output349.textsize(Fl_Font(10));
+	output349.textsize(Fl_Font(8));
 
 	
 	Fl_Output output34(2820, 140, 200, 40); //ciocia2 tata
@@ -1872,40 +1910,40 @@ int main() {
 	output323.textsize(Fl_Font(14));
 	Fl_Output output324(2830, 300, 100, 40);
 	output324.color(FL_GRAY);
-	output324.textsize(Fl_Font(10));
+	output324.textsize(Fl_Font(8));
 	Fl_Output output325(2830, 340, 100, 40);
 	output325.color(FL_GRAY);
-	output325.textsize(Fl_Font(10));
+	output325.textsize(Fl_Font(8));
 	Fl_Output output326(2840, 400, 100, 40); //malzonek dziecka1
 	output326.color(FL_GRAY);
-	output326.textsize(Fl_Font(10));
+	output326.textsize(Fl_Font(8));
 	Fl_Output output327(2840, 440, 100, 40);
 	output327.color(FL_GRAY);
-	output327.textsize(Fl_Font(10));
+	output327.textsize(Fl_Font(8));
 	Fl_Output output334(2940, 300, 100, 40); //dziecko2
 	output334.color(FL_GRAY);
-	output334.textsize(Fl_Font(10));
+	output334.textsize(Fl_Font(8));
 	Fl_Output output335(2940, 340, 100, 40); 
 	output335.color(FL_GRAY);
-	output335.textsize(Fl_Font(10));
+	output335.textsize(Fl_Font(8));
 	Fl_Output output336(2950, 400, 100, 40); //malzonek dziecka2
 	output336.color(FL_GRAY);
-	output336.textsize(Fl_Font(10));
+	output336.textsize(Fl_Font(8));
 	Fl_Output output337(2950, 440, 100, 40);
 	output337.color(FL_GRAY);
-	output337.textsize(Fl_Font(10));
+	output337.textsize(Fl_Font(8));
 	Fl_Output output338(3050, 300, 100, 40); //dziecko3
 	output338.color(FL_GRAY);
-	output338.textsize(Fl_Font(10));
+	output338.textsize(Fl_Font(8));
 	Fl_Output output339(3050, 340, 100, 40);
 	output339.color(FL_GRAY);
-	output339.textsize(Fl_Font(10));
+	output339.textsize(Fl_Font(8));
 	Fl_Output output340(3060, 400, 100, 40); //malzonek dziecka3
 	output340.color(FL_GRAY);
-	output340.textsize(Fl_Font(10));
+	output340.textsize(Fl_Font(8));
 	Fl_Output output341(3060, 440, 100, 40);
 	output341.color(FL_GRAY);
-	output341.textsize(Fl_Font(10));
+	output341.textsize(Fl_Font(8));
 	
 	Fl_Output output36(3230, 140, 200, 40); //ciocia 3 tata
 	output36.color(FL_GRAY);
@@ -1921,40 +1959,40 @@ int main() {
 	output317.textsize(Fl_Font(14));
 	Fl_Output output318(3240, 300, 100, 40);
 	output318.color(FL_GRAY);
-	output318.textsize(Fl_Font(10));
+	output318.textsize(Fl_Font(8));
 	Fl_Output output319(3240, 340, 100, 40);
 	output319.color(FL_GRAY);
-	output319.textsize(Fl_Font(10));
+	output319.textsize(Fl_Font(8));
 	Fl_Output output320(3250, 400, 100, 40); //malzonek dziecka1
 	output320.color(FL_GRAY);
-	output320.textsize(Fl_Font(10));
+	output320.textsize(Fl_Font(8));
 	Fl_Output output321(3250, 440, 100, 40);
 	output321.color(FL_GRAY);
-	output321.textsize(Fl_Font(10));
+	output321.textsize(Fl_Font(8));
 	Fl_Output output442(3350, 300, 100, 40); //dziecko2
 	output442.color(FL_GRAY);
-	output442.textsize(Fl_Font(10));
+	output442.textsize(Fl_Font(8));
 	Fl_Output output443(3350, 340, 100, 40);
 	output443.color(FL_GRAY);
-	output443.textsize(Fl_Font(10));
+	output443.textsize(Fl_Font(8));
 	Fl_Output output444(3360, 400, 100, 40); //malzonek dziecka2
 	output444.color(FL_GRAY);
-	output444.textsize(Fl_Font(10));
+	output444.textsize(Fl_Font(8));
 	Fl_Output output445(3360, 440, 100, 40);
 	output445.color(FL_GRAY);
-	output445.textsize(Fl_Font(10));
+	output445.textsize(Fl_Font(8));
 	Fl_Output output446(3460, 300, 100, 40); //dziecko3
 	output446.color(FL_GRAY);
-	output446.textsize(Fl_Font(10));
+	output446.textsize(Fl_Font(8));
 	Fl_Output output447(3460, 340, 100, 40);
 	output447.color(FL_GRAY);
-	output447.textsize(Fl_Font(10));
+	output447.textsize(Fl_Font(8));
 	Fl_Output output448(3470, 400, 100, 40); //malzonek dziecka3
 	output448.color(FL_GRAY);
-	output448.textsize(Fl_Font(10));
+	output448.textsize(Fl_Font(8));
 	Fl_Output output449(3470, 440, 100, 40);
 	output449.color(FL_GRAY);
-	output449.textsize(Fl_Font(10));
+	output449.textsize(Fl_Font(8));
 
 	Fl_Output output38(3640, 140, 200, 40); //ciocia4 tata
 	output38.color(FL_GRAY);
@@ -1970,40 +2008,40 @@ int main() {
 	output311.textsize(Fl_Font(14));
 	Fl_Output output312(3650, 300, 100, 40);
 	output312.color(FL_GRAY);
-	output312.textsize(Fl_Font(10));
+	output312.textsize(Fl_Font(8));
 	Fl_Output output313(3650, 340, 100, 40);
 	output313.color(FL_GRAY);
-	output313.textsize(Fl_Font(10));
+	output313.textsize(Fl_Font(8));
 	Fl_Output output314(3660, 400, 100, 40); //malzonek dziecka1
 	output314.color(FL_GRAY);
-	output314.textsize(Fl_Font(10));
+	output314.textsize(Fl_Font(8));
 	Fl_Output output315(3660, 440, 100, 40);
 	output315.color(FL_GRAY);
-	output315.textsize(Fl_Font(10));
+	output315.textsize(Fl_Font(8));
 	Fl_Output output350(3760, 300, 100, 40); //dziecko2
 	output350.color(FL_GRAY);
-	output350.textsize(Fl_Font(10));
+	output350.textsize(Fl_Font(8));
 	Fl_Output output351(3760, 340, 100, 40);
 	output351.color(FL_GRAY);
-	output351.textsize(Fl_Font(10));
+	output351.textsize(Fl_Font(8));
 	Fl_Output output352(3770, 400, 100, 40); //malzonek dziecka2
 	output352.color(FL_GRAY);
-	output352.textsize(Fl_Font(10));
+	output352.textsize(Fl_Font(8));
 	Fl_Output output353(3770, 440, 100, 40);
 	output353.color(FL_GRAY);
-	output353.textsize(Fl_Font(10));
+	output353.textsize(Fl_Font(8));
 	Fl_Output output354(3870, 300, 100, 40); //dziecko3
 	output354.color(FL_GRAY);
-	output354.textsize(Fl_Font(10));
+	output354.textsize(Fl_Font(8));
 	Fl_Output output355(3870, 340, 100, 40);
 	output355.color(FL_GRAY);
-	output355.textsize(Fl_Font(10));
+	output355.textsize(Fl_Font(8));
 	Fl_Output output356(3880, 400, 100, 40); //malzonek dziecka3
 	output356.color(FL_GRAY);
-	output356.textsize(Fl_Font(10));
+	output356.textsize(Fl_Font(8));
 	Fl_Output output357(3880, 440, 100, 40);
 	output357.color(FL_GRAY);
-	output357.textsize(Fl_Font(10));
+	output357.textsize(Fl_Font(8));
 
 	
 
@@ -3025,9 +3063,13 @@ int main() {
 			if (moje_rodzenstwo == 1) {
 				brat1 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
 				strcpy_s(brat1ch, brat1.c_str());
+				::output521 = &output601;
+				output521->value(brat1ch);
 				if (osoba[k].czy_umarla == 1) {
 					brat1s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
 					strcpy_s(brat1sch, brat1s.c_str());
+					::output522 = &output608;
+					output522->value(brat1sch);
 				}
 				if (malzenstwo[k].czy_malzonek == 1) {
 					brat1mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal +"." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
