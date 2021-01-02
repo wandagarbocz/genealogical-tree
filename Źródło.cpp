@@ -1495,39 +1495,53 @@ int main() {
 
 	Fl_Output output601(1700, 350, 100, 40); //brat1
 	output601.textsize(Fl_Font(8));
-	output601.color(FL_GRAY);
-	Fl_Output output608(1700, 390, 100, 40); //brat1
+	output601.color(FL_CYAN);
+	Fl_Output output608(1700, 390, 100, 40); 
 	output608.textsize(Fl_Font(8));
-	output608.color(FL_GRAY);
+	output608.color(FL_CYAN);
+	Fl_Output output648(1720, 450, 100, 40); //malzonek
+	output648.textsize(Fl_Font(8));
+	output648.color(FL_CYAN);
+	Fl_Output output649(1720, 490, 100, 40);
+	output649.textsize(Fl_Font(8));
+	output649.color(FL_CYAN);
+	Fl_Output output650(1698, 460, 20, 40);
+	output650.textsize(Fl_Font(12));
+	output650.color(FL_GRAY);
+	::output552 = &output650;
+	output552->value(plusch);
+	Fl_Output output651(1710, 700, 100, 40);
+	output651.textsize(Fl_Font(12));
+	output651.color(FL_CYAN);
 
 
 	Fl_Output output603(1580, 350, 100, 40); //brat3
 	output603.textsize(Fl_Font(8));
-	output603.color(FL_GRAY);
+	output603.color(FL_YELLOW);
 	Fl_Output output607(1580, 390, 100, 40); 
 	output607.textsize(Fl_Font(8));
-	output607.color(FL_GRAY);
+	output607.color(FL_YELLOW);
 
-	Fl_Output output602(1950, 350, 100, 40); //brat2
+	Fl_Output output602(2050, 350, 100, 40); //brat2
 	output602.textsize(Fl_Font(8));
-	output602.color(FL_GRAY);
-	Fl_Output output606(1950, 390, 100, 40); 
+	output602.color(FL_MAGENTA);
+	Fl_Output output606(2050, 390, 100, 40); 
 	output606.textsize(Fl_Font(8));
-	output606.color(FL_GRAY);
+	output606.color(FL_MAGENTA);
 
-	Fl_Output output604(2070, 350, 100, 40); //brat4
+	Fl_Output output604(2170, 350, 100, 40); //brat4
 	output604.textsize(Fl_Font(8));
-	output604.color(FL_GRAY);
-	Fl_Output output605(2070, 390, 100, 40); 
+	output604.color(FL_WHITE);
+	Fl_Output output605(2170, 390, 100, 40); 
 	output605.textsize(Fl_Font(8));
-	output605.color(FL_GRAY);
+	output605.color(FL_WHITE);
 
 	Fl_Output output54(1830, 450, 100, 40); //moj malzonek
 	output54.textsize(Fl_Font(8));
-	output54.color(FL_GRAY);
+	output54.color(FL_RED);
 	Fl_Output output55(1830, 490, 100, 40); 
 	output55.textsize(Fl_Font(8));
-	output55.color(FL_GRAY);
+	output55.color(FL_RED);
 	Fl_Output output609(1805, 470, 20, 40);
 	output609.textsize(Fl_Font(12));
 	output609.color(FL_GRAY);
@@ -1535,16 +1549,16 @@ int main() {
 	output523->value(plusch);
 
 	Fl_Output output98(1820, 550, 100, 40); //moje dziecko 1
-	output98.color(FL_GRAY);
+	output98.color(FL_RED);
 	output98.textsize(Fl_Font(8));
 	Fl_Output output99(1820, 590, 100, 40); 
-	output99.color(FL_GRAY);
+	output99.color(FL_RED);
 	output99.textsize(Fl_Font(8));
 	Fl_Output output304(1830, 650, 100, 40);
-	output304.color(FL_GRAY);
+	output304.color(FL_RED);
 	output304.textsize(Fl_Font(8));
 	Fl_Output output305(1830, 690, 100, 40);
-	output305.color(FL_GRAY);
+	output305.color(FL_RED);
 	output305.textsize(Fl_Font(8));
 	Fl_Output output610(1805, 670, 20, 40);
 	output610.textsize(Fl_Font(12));
@@ -1553,16 +1567,16 @@ int main() {
 	output524->value(plusch);
 
 	Fl_Output output300(1930, 550, 100, 40); //moje dziecko 2
-	output300.color(FL_GRAY);
+	output300.color(FL_RED);
 	output300.textsize(Fl_Font(8));
 	Fl_Output output301(1930, 590, 100, 40);
-	output301.color(FL_GRAY);
+	output301.color(FL_RED);
 	output301.textsize(Fl_Font(8));
 	Fl_Output output308(1940, 650, 100, 40);
-	output308.color(FL_GRAY);
+	output308.color(FL_RED);
 	output308.textsize(Fl_Font(8));
 	Fl_Output output309(1940, 690, 100, 40);
-	output309.color(FL_GRAY);
+	output309.color(FL_RED);
 	output309.textsize(Fl_Font(8));
 	Fl_Output output611(1915, 670, 20, 40);
 	output611.textsize(Fl_Font(12));
@@ -1571,16 +1585,16 @@ int main() {
 	output525->value(plusch);
 
 	Fl_Output output302(2040, 550, 100, 40); //moje dziecko 3
-	output302.color(FL_GRAY);
+	output302.color(FL_RED);
 	output302.textsize(Fl_Font(8));
 	Fl_Output output303(2040, 590, 100, 40);
-	output303.color(FL_GRAY);
+	output303.color(FL_RED);
 	output303.textsize(Fl_Font(8));
 	Fl_Output output306(2050, 650, 100, 40);
-	output306.color(FL_GRAY);
+	output306.color(FL_RED);
 	output306.textsize(Fl_Font(8));
 	Fl_Output output307(2050, 690, 100, 40);
-	output307.color(FL_GRAY);
+	output307.color(FL_RED);
 	output307.textsize(Fl_Font(8));
 	Fl_Output output612(2025, 670, 20, 40);
 	output612.textsize(Fl_Font(12));
@@ -1601,7 +1615,7 @@ int main() {
 	Fl_Output output5(3240, 60, 200, 40);
 	output5.color(FL_YELLOW);
 	output5.textsize(Fl_Font(14));
-	Fl_Output output613(3430, 30, 20, 40);
+	Fl_Output output613(3530, 30, 20, 40);
 	output613.textsize(Fl_Font(12));
 	output613.color(FL_GRAY);
 	::output527 = &output613;
@@ -1621,7 +1635,7 @@ int main() {
 	Fl_Output output10(400, 60, 200, 40);
 	output10.color(FL_YELLOW);
 	output10.textsize(Fl_Font(14));
-	Fl_Output output614(180, 30, 20, 40);
+	Fl_Output output614(280, 30, 20, 40);
 	output614.textsize(Fl_Font(12));
 	output614.color(FL_GRAY);
 	::output528 = &output614;
@@ -1640,409 +1654,564 @@ int main() {
 	Fl_Output output23(2000, 140, 200, 40);
 	output23.color(FL_GREEN);
 	output23.textsize(Fl_Font(14));
-	Fl_Output output615(1825, 110, 20, 40);
+	Fl_Output output615(1900, 110, 20, 40);
 	output615.textsize(Fl_Font(12));
 	output615.color(FL_GRAY);
 	::output529 = &output615;
 	output529->value(plusch);
 
 	Fl_Output output24(1, 140, 200, 40); //ciocia4 mama
-	output24.color(FL_GRAY);
+	output24.color(FL_CYAN);
 	output24.textsize(Fl_Font(14));
 	Fl_Output output25(1, 100, 200, 40);
-	output25.color(FL_GRAY);
+	output25.color(FL_CYAN);
 	output25.textsize(Fl_Font(14));
 	Fl_Output output40(50, 240, 200, 40); //malzonek
-	output40.color(FL_GRAY);
+	output40.color(FL_CYAN);
 	output40.textsize(Fl_Font(14));
 	Fl_Output output41(50, 200, 200, 40);
-	output41.color(FL_GRAY);
+	output41.color(FL_CYAN);
 	output41.textsize(Fl_Font(14));
+	Fl_Output output616(20, 220, 20, 40);
+	output616.textsize(Fl_Font(12));
+	output616.color(FL_GRAY);
+	::output530 = &output616;
+	output530->value(plusch);
 	Fl_Output output42(1, 340, 100, 40); //dziecko1
-	output42.color(FL_GRAY);
+	output42.color(FL_CYAN);
 	output42.textsize(Fl_Font(8));
 	Fl_Output output43(1, 300, 100, 40);
-	output43.color(FL_GRAY);
+	output43.color(FL_CYAN);
 	output43.textsize(Fl_Font(8));
 	Fl_Output output44(10, 440, 100, 40); //malzonek dziecka1
-	output44.color(FL_GRAY);
+	output44.color(FL_CYAN);
 	output44.textsize(Fl_Font(8));
 	Fl_Output output45(10, 400, 100, 40);
-	output45.color(FL_GRAY);
+	output45.color(FL_CYAN);
 	output45.textsize(Fl_Font(8));
+	Fl_Output output617(1, 420, 10, 40);
+	output617.textsize(Fl_Font(12));
+	output617.color(FL_GRAY);
+	::output531 = &output617;
+	output531->value(plusch);
 	Fl_Output output46(120, 340, 100, 40); //dziecko2
-	output46.color(FL_GRAY);
+	output46.color(FL_CYAN);
 	output46.textsize(Fl_Font(8));
 	Fl_Output output47(120, 300, 100, 40);
-	output47.color(FL_GRAY);
+	output47.color(FL_CYAN);
 	output47.textsize(Fl_Font(8));
 	Fl_Output output48(130, 440, 100, 40); //malzonek dziecka2
-	output48.color(FL_GRAY);
+	output48.color(FL_CYAN);
 	output48.textsize(Fl_Font(8));
 	Fl_Output output49(130, 400, 100, 40);
-	output49.color(FL_GRAY);
+	output49.color(FL_CYAN);
 	output49.textsize(Fl_Font(8));
+	Fl_Output output618(115, 420, 20, 40);
+	output618.textsize(Fl_Font(12));
+	output618.color(FL_GRAY);
+	::output532 = &output618;
+	output532->value(plusch);
 	Fl_Output output50(240, 340, 100, 40); //dziecko3
-	output50.color(FL_GRAY);
+	output50.color(FL_CYAN);
 	output50.textsize(Fl_Font(8));
 	Fl_Output output51(240, 300, 100, 40);
-	output51.color(FL_GRAY);
+	output51.color(FL_CYAN);
 	output51.textsize(Fl_Font(8));
 	Fl_Output output52(250, 440, 100, 40); //malzonek dziecka3
-	output52.color(FL_GRAY);
+	output52.color(FL_CYAN);
 	output52.textsize(Fl_Font(8));
 	Fl_Output output53(250, 400, 100, 40);
-	output53.color(FL_GRAY);
+	output53.color(FL_CYAN);
 	output53.textsize(Fl_Font(8));
-
+	Fl_Output output619(235, 420, 20, 40);
+	output619.textsize(Fl_Font(12));
+	output619.color(FL_GRAY);
+	::output533 = &output619;
+	output533->value(plusch);
 
 	Fl_Output output26(420, 140, 200, 40); //ciocia3 mama
-	output26.color(FL_GRAY);
+	output26.color(FL_MAGENTA);
 	output26.textsize(Fl_Font(14));
 	Fl_Output output27(420, 100, 200, 40);
-	output27.color(FL_GRAY);
+	output27.color(FL_MAGENTA);
 	output27.textsize(Fl_Font(14));
 	Fl_Output output56(470, 240, 200, 40); //malzonek
-	output56.color(FL_GRAY);
+	output56.color(FL_MAGENTA);
 	output56.textsize(Fl_Font(14));
 	Fl_Output output57(470, 200, 200, 40);
-	output57.color(FL_GRAY);
+	output57.color(FL_MAGENTA);
 	output57.textsize(Fl_Font(14));
+	Fl_Output output620(440, 220, 20, 40);
+	output620.textsize(Fl_Font(12));
+	output620.color(FL_GRAY);
+	::output534 = &output620;
+	output534->value(plusch);
 	Fl_Output output58(430, 340, 100, 40); //dziecko1
-	output58.color(FL_GRAY);
+	output58.color(FL_MAGENTA);
 	output58.textsize(Fl_Font(8));
 	Fl_Output output59(430, 300, 100, 40);
-	output59.color(FL_GRAY);
+	output59.color(FL_MAGENTA);
 	output59.textsize(Fl_Font(8));
 	Fl_Output output60(440, 440, 100, 40); //malzonek dziecka1
-	output60.color(FL_GRAY);
+	output60.color(FL_MAGENTA);
 	output60.textsize(Fl_Font(8));
 	Fl_Output output61(440, 400, 100, 40);
-	output61.color(FL_GRAY);
+	output61.color(FL_MAGENTA);
 	output61.textsize(Fl_Font(8));
+	Fl_Output output621(428, 420, 20, 40);
+	output621.textsize(Fl_Font(12));
+	output621.color(FL_GRAY);
+	::output535 = &output621;
+	output535->value(plusch);
 	Fl_Output output62(540, 340, 100, 40); //dziecko2
-	output62.color(FL_GRAY);
+	output62.color(FL_MAGENTA);
 	output62.textsize(Fl_Font(8));
 	Fl_Output output63(540, 300, 100, 40);
-	output63.color(FL_GRAY);
+	output63.color(FL_MAGENTA);
 	output63.textsize(Fl_Font(8));
 	Fl_Output output64(550, 440, 100, 40); //malzonek dziecka2
-	output64.color(FL_GRAY);
+	output64.color(FL_MAGENTA);
 	output64.textsize(Fl_Font(8));
 	Fl_Output output65(550, 400, 100, 40);
-	output65.color(FL_GRAY);
+	output65.color(FL_MAGENTA);
 	output65.textsize(Fl_Font(8));
+	Fl_Output output622(538, 420, 20, 40);
+	output622.textsize(Fl_Font(12));
+	output622.color(FL_GRAY);
+	::output536 = &output622;
+	output536->value(plusch);
 	Fl_Output output66(660, 340, 100, 40); //dziecko3
-	output66.color(FL_GRAY);
+	output66.color(FL_MAGENTA);
 	output66.textsize(Fl_Font(8));
 	Fl_Output output67(660, 300, 100, 40);
-	output67.color(FL_GRAY);
+	output67.color(FL_MAGENTA);
 	output67.textsize(Fl_Font(8));
 	Fl_Output output68(670, 440, 100, 40); //malzonek dziecka3
-	output68.color(FL_GRAY);
+	output68.color(FL_MAGENTA);
 	output68.textsize(Fl_Font(8));
 	Fl_Output output69(670, 400, 100, 40);
-	output69.color(FL_GRAY);
+	output69.color(FL_MAGENTA);
 	output69.textsize(Fl_Font(8));
-
+	Fl_Output output623(658, 420, 20, 40);
+	output623.textsize(Fl_Font(12));
+	output623.color(FL_GRAY);
+	::output537 = &output623;
+	output537->value(plusch);
 	Fl_Output output28(830, 140, 200, 40); //ciocia 2 mama
-	output28.color(FL_GRAY);
+	output28.color(FL_WHITE);
 	output28.textsize(Fl_Font(14));
 	Fl_Output output29(830, 100, 200, 40);
-	output29.color(FL_GRAY);
+	output29.color(FL_WHITE);
 	output29.textsize(Fl_Font(14));
 	Fl_Output output70(880, 200, 200, 40); //malzonek
-	output70.color(FL_GRAY);
+	output70.color(FL_WHITE);
 	output70.textsize(Fl_Font(14));
 	Fl_Output output71(880, 240, 200, 40); 
-	output71.color(FL_GRAY);
+	output71.color(FL_WHITE);
 	output71.textsize(Fl_Font(14));
+	Fl_Output output624(868, 220, 20, 40);
+	output624.textsize(Fl_Font(12));
+	output624.color(FL_GRAY);
+	::output538 = &output624;
+	output538->value(plusch);
 	Fl_Output output72(840, 300, 100, 40); //dziecko1
-	output72.color(FL_GRAY);
+	output72.color(FL_WHITE);
 	output72.textsize(Fl_Font(8));
 	Fl_Output output73(840, 340, 100, 40); 
-	output73.color(FL_GRAY);
+	output73.color(FL_WHITE);
 	output73.textsize(Fl_Font(8));
 	Fl_Output output74(850, 400, 100, 40); //malzonek dziecka1
-	output74.color(FL_GRAY);
+	output74.color(FL_WHITE);
 	output74.textsize(Fl_Font(8));
 	Fl_Output output75(850, 440, 100, 40);
-	output75.color(FL_GRAY);
+	output75.color(FL_WHITE);
 	output75.textsize(Fl_Font(8));
+	Fl_Output output625(838, 420, 20, 40);
+	output625.textsize(Fl_Font(12));
+	output625.color(FL_GRAY);
+	::output539 = &output625;
+	output539->value(plusch);
 	Fl_Output output76(950, 300, 100, 40); //dziecko2
-	output76.color(FL_GRAY);
+	output76.color(FL_WHITE);
 	output76.textsize(Fl_Font(8)); 
 	Fl_Output output77(950, 340, 100, 40);
-	output77.color(FL_GRAY);
+	output77.color(FL_WHITE);
 	output77.textsize(Fl_Font(8));
 	Fl_Output output78(960, 400, 100, 40); //malzonek dziecka2
-	output78.color(FL_GRAY);
+	output78.color(FL_WHITE);
 	output78.textsize(Fl_Font(8));
 	Fl_Output output79(960, 440, 100, 40);
-	output79.color(FL_GRAY);
+	output79.color(FL_WHITE);
 	output79.textsize(Fl_Font(8));
+	Fl_Output output626(948, 420, 20, 40);
+	output626.textsize(Fl_Font(12));
+	output626.color(FL_GRAY);
+	::output540 = &output626;
+	output540->value(plusch);
 	Fl_Output output80(1060, 300, 100, 40); //dziecko3
-	output80.color(FL_GRAY);
+	output80.color(FL_WHITE);
 	output80.textsize(Fl_Font(8));
 	Fl_Output output81(1060, 340, 100, 40);
-	output81.color(FL_GRAY);
+	output81.color(FL_WHITE);
 	output81.textsize(Fl_Font(8));
 	Fl_Output output82(1070, 400, 100, 40); //malzonek dziecko3
-	output82.color(FL_GRAY);
+	output82.color(FL_WHITE);
 	output82.textsize(Fl_Font(8));
-	Fl_Output output83(1060, 440, 100, 40);
-	output83.color(FL_GRAY);
+	Fl_Output output83(1070, 440, 100, 40);
+	output83.color(FL_WHITE);
 	output83.textsize(Fl_Font(8));
-
+	Fl_Output output627(1058, 420, 20, 40);
+	output627.textsize(Fl_Font(12));
+	output627.color(FL_GRAY);
+	::output541 = &output627;
+	output541->value(plusch);
 
 	Fl_Output output30(1240, 140, 200, 40); //ciocia1 mama
-	output30.color(FL_GRAY);
+	output30.color(FL_GREEN);
 	output30.textsize(Fl_Font(14));
 	Fl_Output output31(1240, 100, 200, 40);
-	output31.color(FL_GRAY);
+	output31.color(FL_GREEN);
 	output31.textsize(Fl_Font(14));
 	Fl_Output output84(1290, 200, 200, 40); //malzonek
-	output84.color(FL_GRAY);
+	output84.color(FL_GREEN);
 	output84.textsize(Fl_Font(14));
 	Fl_Output output85(1290, 240, 200, 40); 
-	output85.color(FL_GRAY);
+	output85.color(FL_GREEN);
 	output85.textsize(Fl_Font(14));
+	Fl_Output output628(1255, 220, 20, 40);
+	output628.textsize(Fl_Font(12));
+	output628.color(FL_GRAY);
+	::output542 = &output628;
+	output542->value(plusch);
 	Fl_Output output86(1250, 300, 100, 40); //dziecko1
-	output86.color(FL_GRAY);
+	output86.color(FL_GREEN);
 	output86.textsize(Fl_Font(8));
 	Fl_Output output87(1250, 340, 100, 40); 
-	output87.color(FL_GRAY);
+	output87.color(FL_GREEN);
 	output87.textsize(Fl_Font(8));
 	Fl_Output output88(1260, 400, 100, 40); //malzonek dziecko1
-	output88.color(FL_GRAY);
+	output88.color(FL_GREEN);
 	output88.textsize(Fl_Font(8));
 	Fl_Output output89(1260, 440, 100, 40); 
-	output89.color(FL_GRAY);
+	output89.color(FL_GREEN);
 	output89.textsize(Fl_Font(8));
+	Fl_Output output629(1238, 420, 20, 40);
+	output629.textsize(Fl_Font(12));
+	output629.color(FL_GRAY);
+	::output543 = &output629;
+	output543->value(plusch);
 	Fl_Output output90(1360, 300, 100, 40); //dziecko2
-	output90.color(FL_GRAY);
+	output90.color(FL_GREEN);
 	output90.textsize(Fl_Font(8));
 	Fl_Output output91(1360, 340, 100, 40); 
-	output91.color(FL_GRAY);
+	output91.color(FL_GREEN);
 	output91.textsize(Fl_Font(8));
 	Fl_Output output92(1370, 400, 100, 40); //malzonek dziecko2
-	output92.color(FL_GRAY);
+	output92.color(FL_GREEN);
 	output92.textsize(Fl_Font(8));
 	Fl_Output output93(1370, 440, 100, 40); 
-	output93.color(FL_GRAY);
+	output93.color(FL_GREEN);
 	output93.textsize(Fl_Font(8));
+	Fl_Output output630(1358, 420, 20, 40);
+	output630.textsize(Fl_Font(12));
+	output630.color(FL_GRAY);
+	::output544 = &output630;
+	output544->value(plusch);
 	Fl_Output output94(1470, 300, 100, 40); //dziecko3
-	output94.color(FL_GRAY);
+	output94.color(FL_GREEN);
 	output94.textsize(Fl_Font(8));
 	Fl_Output output95(1470, 340, 100, 40); 
-	output95.color(FL_GRAY);
+	output95.color(FL_GREEN);
 	output95.textsize(Fl_Font(8));
 	Fl_Output output96(1480, 400, 100, 40); //malzonek dziecko3
-	output96.color(FL_GRAY);
+	output96.color(FL_GREEN);
 	output96.textsize(Fl_Font(8));
 	Fl_Output output97(1480, 440, 100, 40); 
-	output97.color(FL_GRAY);
+	output97.color(FL_GREEN);
 	output97.textsize(Fl_Font(8));
-
+	Fl_Output output631(1428, 420, 20, 40);
+	output631.textsize(Fl_Font(12));
+	output631.color(FL_GRAY);
+	::output545 = &output631;
+	output545->value(plusch);
 
 
 	Fl_Output output32(2410, 140, 200, 40); //ciocia1 tata
-	output32.color(FL_GRAY);
+	output32.color(FL_YELLOW);
 	output32.textsize(Fl_Font(14));
 	Fl_Output output33(2410, 100, 200, 40);
-	output33.color(FL_GRAY);
+	output33.color(FL_YELLOW);
 	output33.textsize(Fl_Font(14));
 	Fl_Output output328(2460, 200, 200, 40); //malzonek
-	output328.color(FL_GRAY);
+	output328.color(FL_YELLOW);
 	output328.textsize(Fl_Font(14));
 	Fl_Output output329(2460, 240, 200, 40);
-	output329.color(FL_GRAY);
+	output329.color(FL_YELLOW);
 	output329.textsize(Fl_Font(14));
+	Fl_Output output632(2430, 220, 20, 40);
+	output632.textsize(Fl_Font(12));
+	output632.color(FL_GRAY);
+	::output546 = &output632;
+	output546->value(plusch);
 	Fl_Output output330(2420, 300, 100, 40);
-	output330.color(FL_GRAY);
+	output330.color(FL_YELLOW);
 	output330.textsize(Fl_Font(8));
 	Fl_Output output331(2420, 340, 100, 40);
-	output331.color(FL_GRAY);
+	output331.color(FL_YELLOW);
 	output331.textsize(Fl_Font(8));
 	Fl_Output output332(2430, 400, 100, 40); //malzonek dziecka1
-	output332.color(FL_GRAY);
+	output332.color(FL_YELLOW);
 	output332.textsize(Fl_Font(8));
 	Fl_Output output333(2430, 440, 100, 40);
-	output333.color(FL_GRAY);
+	output333.color(FL_YELLOW);
 	output333.textsize(Fl_Font(8));
+	Fl_Output output633(2418, 420, 20, 40);
+	output633.textsize(Fl_Font(12));
+	output633.color(FL_GRAY);
+	::output547 = &output633;
+	output547->value(plusch);
 	Fl_Output output342(2530, 300, 100, 40); //dziecko2
-	output342.color(FL_GRAY);
+	output342.color(FL_YELLOW);
 	output342.textsize(Fl_Font(8));
 	Fl_Output output343(2530, 340, 100, 40);
-	output343.color(FL_GRAY);
+	output343.color(FL_YELLOW);
 	output343.textsize(Fl_Font(8));
 	Fl_Output output345(2540, 400, 100, 40); //malzonek dziecka2
-	output345.color(FL_GRAY);
+	output345.color(FL_YELLOW);
 	output345.textsize(Fl_Font(8));
 	Fl_Output output344(2540, 440, 100, 40);
-	output344.color(FL_GRAY);
+	output344.color(FL_YELLOW);
 	output344.textsize(Fl_Font(8));
+	Fl_Output output634(2528, 420, 20, 40);
+	output634.textsize(Fl_Font(12));
+	output634.color(FL_GRAY);
+	::output548 = &output634;
+	output548->value(plusch);
 	Fl_Output output346(2640, 300, 100, 40); //dziecko3
-	output346.color(FL_GRAY);
+	output346.color(FL_YELLOW);
 	output346.textsize(Fl_Font(8));
 	Fl_Output output347(2640, 340, 100, 40);
-	output347.color(FL_GRAY);
+	output347.color(FL_YELLOW);
 	output347.textsize(Fl_Font(8));
 	Fl_Output output348(2650, 400, 100, 40); //malzonek dziecka3
-	output348.color(FL_GRAY);
+	output348.color(FL_YELLOW);
 	output348.textsize(Fl_Font(8));
 	Fl_Output output349(2650, 440, 100, 40);
-	output349.color(FL_GRAY);
+	output349.color(FL_YELLOW);
 	output349.textsize(Fl_Font(8));
+	Fl_Output output635(2638, 420, 20, 40);
+	output635.textsize(Fl_Font(12));
+	output635.color(FL_GRAY);
+	::output549 = &output635;
+	output549->value(plusch);
 
 	
 	Fl_Output output34(2820, 140, 200, 40); //ciocia2 tata
-	output34.color(FL_GRAY);
+	output34.color(FL_CYAN);
 	output34.textsize(Fl_Font(14));
 	Fl_Output output35(2820, 100, 200, 40);
-	output35.color(FL_GRAY);
+	output35.color(FL_CYAN);
 	output35.textsize(Fl_Font(14));
 	Fl_Output output322(2870, 200, 200, 40); //malzonek
-	output322.color(FL_GRAY);
+	output322.color(FL_CYAN);
 	output322.textsize(Fl_Font(14));
 	Fl_Output output323(2870, 240, 200, 40);
-	output323.color(FL_GRAY);
+	output323.color(FL_CYAN);
 	output323.textsize(Fl_Font(14));
+	Fl_Output output636(2845, 220, 20, 40);
+	output636.textsize(Fl_Font(12));
+	output636.color(FL_GRAY);
+	::output550 = &output636;
+	output550->value(plusch);
 	Fl_Output output324(2830, 300, 100, 40);
-	output324.color(FL_GRAY);
+	output324.color(FL_CYAN);
 	output324.textsize(Fl_Font(8));
 	Fl_Output output325(2830, 340, 100, 40);
-	output325.color(FL_GRAY);
+	output325.color(FL_CYAN);
 	output325.textsize(Fl_Font(8));
 	Fl_Output output326(2840, 400, 100, 40); //malzonek dziecka1
-	output326.color(FL_GRAY);
+	output326.color(FL_CYAN);
 	output326.textsize(Fl_Font(8));
 	Fl_Output output327(2840, 440, 100, 40);
-	output327.color(FL_GRAY);
+	output327.color(FL_CYAN);
 	output327.textsize(Fl_Font(8));
+	Fl_Output output637(2828, 420, 20, 40);
+	output637.textsize(Fl_Font(12));
+	output637.color(FL_GRAY);
+	::output551 = &output637;
+	output551->value(plusch);
 	Fl_Output output334(2940, 300, 100, 40); //dziecko2
-	output334.color(FL_GRAY);
+	output334.color(FL_CYAN);
 	output334.textsize(Fl_Font(8));
 	Fl_Output output335(2940, 340, 100, 40); 
-	output335.color(FL_GRAY);
+	output335.color(FL_CYAN);
 	output335.textsize(Fl_Font(8));
 	Fl_Output output336(2950, 400, 100, 40); //malzonek dziecka2
-	output336.color(FL_GRAY);
+	output336.color(FL_CYAN);
 	output336.textsize(Fl_Font(8));
 	Fl_Output output337(2950, 440, 100, 40);
-	output337.color(FL_GRAY);
+	output337.color(FL_CYAN);
 	output337.textsize(Fl_Font(8));
+	Fl_Output output638(2938, 420, 20, 40);
+	output638.textsize(Fl_Font(12));
+	output638.color(FL_GRAY);
+	::output552 = &output638;
+	output552->value(plusch);
 	Fl_Output output338(3050, 300, 100, 40); //dziecko3
-	output338.color(FL_GRAY);
+	output338.color(FL_CYAN);
 	output338.textsize(Fl_Font(8));
 	Fl_Output output339(3050, 340, 100, 40);
-	output339.color(FL_GRAY);
+	output339.color(FL_CYAN);
 	output339.textsize(Fl_Font(8));
 	Fl_Output output340(3060, 400, 100, 40); //malzonek dziecka3
-	output340.color(FL_GRAY);
+	output340.color(FL_CYAN);
 	output340.textsize(Fl_Font(8));
 	Fl_Output output341(3060, 440, 100, 40);
-	output341.color(FL_GRAY);
+	output341.color(FL_CYAN);
 	output341.textsize(Fl_Font(8));
-	
+	Fl_Output output639(3048, 420, 20, 40);
+	output639.textsize(Fl_Font(12));
+	output639.color(FL_GRAY);
+	::output553 = &output639;
+	output553->value(plusch);
+
 	Fl_Output output36(3230, 140, 200, 40); //ciocia 3 tata
-	output36.color(FL_GRAY);
+	output36.color(FL_RED);
 	output36.textsize(Fl_Font(14));
 	Fl_Output output37(3230, 100, 200, 40);
-	output37.color(FL_GRAY);
+	output37.color(FL_RED);
 	output37.textsize(Fl_Font(14));
 	Fl_Output output316(3270, 200, 200, 40); //malzonek
-	output316.color(FL_GRAY);
+	output316.color(FL_RED);
 	output316.textsize(Fl_Font(14));
 	Fl_Output output317(3270, 240, 200, 40);
-	output317.color(FL_GRAY);
+	output317.color(FL_RED);
 	output317.textsize(Fl_Font(14));
+	Fl_Output output640(3250, 220, 20, 40);
+	output640.textsize(Fl_Font(12));
+	output640.color(FL_GRAY);
+	::output554 = &output640;
+	output554->value(plusch);
 	Fl_Output output318(3240, 300, 100, 40);
-	output318.color(FL_GRAY);
+	output318.color(FL_RED);
 	output318.textsize(Fl_Font(8));
 	Fl_Output output319(3240, 340, 100, 40);
-	output319.color(FL_GRAY);
+	output319.color(FL_RED);
 	output319.textsize(Fl_Font(8));
 	Fl_Output output320(3250, 400, 100, 40); //malzonek dziecka1
-	output320.color(FL_GRAY);
+	output320.color(FL_RED);
 	output320.textsize(Fl_Font(8));
 	Fl_Output output321(3250, 440, 100, 40);
-	output321.color(FL_GRAY);
+	output321.color(FL_RED);
 	output321.textsize(Fl_Font(8));
+	Fl_Output output641(3238, 420, 20, 40);
+	output641.textsize(Fl_Font(12));
+	output641.color(FL_GRAY);
+	::output555 = &output641;
+	output555->value(plusch);
 	Fl_Output output442(3350, 300, 100, 40); //dziecko2
-	output442.color(FL_GRAY);
+	output442.color(FL_RED);
 	output442.textsize(Fl_Font(8));
 	Fl_Output output443(3350, 340, 100, 40);
-	output443.color(FL_GRAY);
+	output443.color(FL_RED);
 	output443.textsize(Fl_Font(8));
 	Fl_Output output444(3360, 400, 100, 40); //malzonek dziecka2
-	output444.color(FL_GRAY);
+	output444.color(FL_RED);
 	output444.textsize(Fl_Font(8));
 	Fl_Output output445(3360, 440, 100, 40);
-	output445.color(FL_GRAY);
+	output445.color(FL_RED);
 	output445.textsize(Fl_Font(8));
+	Fl_Output output642(3348, 420, 20, 40);
+	output642.textsize(Fl_Font(12));
+	output642.color(FL_GRAY);
+	::output556 = &output642;
+	output556->value(plusch);
 	Fl_Output output446(3460, 300, 100, 40); //dziecko3
-	output446.color(FL_GRAY);
+	output446.color(FL_RED);
 	output446.textsize(Fl_Font(8));
 	Fl_Output output447(3460, 340, 100, 40);
-	output447.color(FL_GRAY);
+	output447.color(FL_RED);
 	output447.textsize(Fl_Font(8));
 	Fl_Output output448(3470, 400, 100, 40); //malzonek dziecka3
-	output448.color(FL_GRAY);
+	output448.color(FL_RED);
 	output448.textsize(Fl_Font(8));
 	Fl_Output output449(3470, 440, 100, 40);
-	output449.color(FL_GRAY);
+	output449.color(FL_RED);
 	output449.textsize(Fl_Font(8));
+	Fl_Output output643(3458, 420, 20, 40);
+	output643.textsize(Fl_Font(12));
+	output643.color(FL_GRAY);
+	::output557 = &output643;
+	output557->value(plusch);
 
 	Fl_Output output38(3640, 140, 200, 40); //ciocia4 tata
-	output38.color(FL_GRAY);
+	output38.color(FL_WHITE);
 	output38.textsize(Fl_Font(14));
 	Fl_Output output39(3640, 100, 200, 40);
-	output39.color(FL_GRAY);
+	output39.color(FL_WHITE);
 	output39.textsize(Fl_Font(14));
 	Fl_Output output310(3690, 200, 200, 40);
-	output310.color(FL_GRAY);
+	output310.color(FL_WHITE);
 	output310.textsize(Fl_Font(14));
 	Fl_Output output311(3690, 240, 200, 40);
-	output311.color(FL_GRAY);
+	output311.color(FL_WHITE);
 	output311.textsize(Fl_Font(14));
+	Fl_Output output644(3670, 220, 20, 40);
+	output644.textsize(Fl_Font(12));
+	output644.color(FL_GRAY);
+	::output558 = &output644;
+	output558->value(plusch);
 	Fl_Output output312(3650, 300, 100, 40);
-	output312.color(FL_GRAY);
+	output312.color(FL_WHITE);
 	output312.textsize(Fl_Font(8));
 	Fl_Output output313(3650, 340, 100, 40);
-	output313.color(FL_GRAY);
+	output313.color(FL_WHITE);
 	output313.textsize(Fl_Font(8));
 	Fl_Output output314(3660, 400, 100, 40); //malzonek dziecka1
-	output314.color(FL_GRAY);
+	output314.color(FL_WHITE);
 	output314.textsize(Fl_Font(8));
 	Fl_Output output315(3660, 440, 100, 40);
-	output315.color(FL_GRAY);
+	output315.color(FL_WHITE);
 	output315.textsize(Fl_Font(8));
+	Fl_Output output645(3648, 420, 20, 40);
+	output645.textsize(Fl_Font(12));
+	output645.color(FL_GRAY);
+	::output559 = &output645;
+	output559->value(plusch);
 	Fl_Output output350(3760, 300, 100, 40); //dziecko2
-	output350.color(FL_GRAY);
+	output350.color(FL_WHITE);
 	output350.textsize(Fl_Font(8));
 	Fl_Output output351(3760, 340, 100, 40);
-	output351.color(FL_GRAY);
+	output351.color(FL_WHITE);
 	output351.textsize(Fl_Font(8));
 	Fl_Output output352(3770, 400, 100, 40); //malzonek dziecka2
-	output352.color(FL_GRAY);
+	output352.color(FL_WHITE);
 	output352.textsize(Fl_Font(8));
 	Fl_Output output353(3770, 440, 100, 40);
-	output353.color(FL_GRAY);
+	output353.color(FL_WHITE);
 	output353.textsize(Fl_Font(8));
+	Fl_Output output646(3758, 420, 20, 40);
+	output646.textsize(Fl_Font(12));
+	output646.color(FL_GRAY);
+	::output560 = &output646;
+	output560->value(plusch);
 	Fl_Output output354(3870, 300, 100, 40); //dziecko3
-	output354.color(FL_GRAY);
+	output354.color(FL_WHITE);
 	output354.textsize(Fl_Font(8));
 	Fl_Output output355(3870, 340, 100, 40);
-	output355.color(FL_GRAY);
+	output355.color(FL_WHITE);
 	output355.textsize(Fl_Font(8));
 	Fl_Output output356(3880, 400, 100, 40); //malzonek dziecka3
-	output356.color(FL_GRAY);
+	output356.color(FL_WHITE);
 	output356.textsize(Fl_Font(8));
 	Fl_Output output357(3880, 440, 100, 40);
-	output357.color(FL_GRAY);
+	output357.color(FL_WHITE);
 	output357.textsize(Fl_Font(8));
-
+	Fl_Output output647(3868, 420, 20, 40);
+	output647.textsize(Fl_Font(12));
+	output647.color(FL_GRAY);
+	::output561 = &output647;
+	output561->value(plusch);
 	
 
 
