@@ -1,5 +1,3 @@
-
-//BIBLIOTEKI FLTK DO RYSOWANIA
 #include<FL/Fl.h> //DO UTWORZENIA INTERFEJSU GRAFICZNEGO
 #include<FL/Fl_Box.h> //
 #include<FL/Fl_Window.h> //DO UTWORZENIA OKNA
@@ -12,7 +10,6 @@
 #include<map>
 #include <vector>
 #include <iostream>
-
 using namespace std;
 
 
@@ -298,6 +295,66 @@ Fl_Output* output596;
 Fl_Output* output597;
 Fl_Output* output598;
 Fl_Output* output599;
+Fl_Output* output711;
+Fl_Output* output712;
+Fl_Output* output713;
+Fl_Output* output714;
+Fl_Output* output715;
+Fl_Output* output716;
+Fl_Output* output717;
+Fl_Output* output718;
+Fl_Output* output719;
+Fl_Output* output720;
+Fl_Output* output721;
+Fl_Output* output722;
+Fl_Output* output723;
+Fl_Output* output724;
+Fl_Output* output725;
+Fl_Output* output726;
+Fl_Output* output727;
+Fl_Output* output728;
+Fl_Output* output729;
+Fl_Output* output730;
+Fl_Output* output731;
+Fl_Output* output732;
+Fl_Output* output733;
+Fl_Output* output734;
+Fl_Output* output735;
+Fl_Output* output736;
+Fl_Output* output737;
+Fl_Output* output738;
+Fl_Output* output739;
+Fl_Output* output740;
+Fl_Output* output741;
+Fl_Output* output742;
+Fl_Output* output743;
+Fl_Output* output744;
+Fl_Output* output745;
+Fl_Output* output746;
+Fl_Output* output747;
+Fl_Output* output748;
+Fl_Output* output749;
+Fl_Output* output750;
+Fl_Output* output751;
+Fl_Output* output752;
+Fl_Output* output753;
+Fl_Output* output754;
+Fl_Output* output755;
+Fl_Output* output756;
+Fl_Output* output757;
+Fl_Output* output758;
+Fl_Output* output759;
+Fl_Output* output760;
+Fl_Output* output701;
+Fl_Output* output702;
+Fl_Output* output703;
+Fl_Output* output704;
+Fl_Output* output705;
+Fl_Output* output706;
+Fl_Output* output707;
+Fl_Output* output708;
+Fl_Output* output709;
+Fl_Output* output710;
 
 class Bazowa { //abstrakcyjna klasa bazowa 
 public:
@@ -305,8 +362,7 @@ public:
 	//ZWRACAJA 0 GDY DANE SA NIEPOPRAWNE A 1 GDY POPRAWNE 
 	virtual int get_poprawnosc() = 0;
 	virtual int get_poprawnosc1() = 0;
-	virtual int get_poprawnosc2() = 0;
-	virtual int get_poprawnosc3() = 0;
+
 };
 
 class Osoba:public Bazowa { //KLASA OSOBA, KTÓRA DZIEDZICZY PO KLASIE BAZOWEJ 
@@ -428,13 +484,6 @@ public:
 	virtual int get_poprawnosc1() {
 		return poprawnosc1;
 	}
-	virtual int get_poprawnosc2() {
-		return poprawnosc2;
-	}
-	virtual int get_poprawnosc3() {
-		return poprawnosc3;
-	}
-
 };
 
 class Strona :public Osoba {
@@ -472,13 +521,6 @@ public:
 	virtual int get_poprawnosc1() {
 		return poprawnosc1;
 	}
-	virtual int get_poprawnosc2() {
-		return poprawnosc2;
-	}
-	virtual int get_poprawnosc3() {
-		return poprawnosc3;
-	}
-
 };
 class Kuzyn :public Strona {
 public:
@@ -489,11 +531,9 @@ public:
 	int ile_kuzynow;
 	int czy_umarl_kuzyn;
 
-
-
 	void dodaj_kuzyna() {
 		string il_kuzyn;
-		if (kto == "9." || kto == "9" || kto == "10" || kto == "10.")
+		if (kto == "9." || kto == "9" || kto == "10" || kto == "10." || kto=="3." || kto=="3" || kto=="4" || kto=="4.")
 		{
 			cout << "Czy chcesz dodac dziecko tej osoby? Jezeli chcesz, wpisz ilosc dzieci, jezeli nie wpisz 0" << endl;
 			cin >> il_kuzyn;
@@ -567,14 +607,6 @@ public:
 	virtual int get_poprawnosc1() {
 		return poprawnosc1;
 	}
-	virtual int get_poprawnosc2() {
-		return poprawnosc2;
-	}
-	virtual int get_poprawnosc3() {
-		return poprawnosc3;
-	}
-
-
 };
 
 class Smierc :public Osoba {
@@ -604,8 +636,6 @@ public:
 		
 			cout << "Podaj dzien zgonu tej osoby: " << endl;
 			cin >> dzien_zgonu;
-			
-			
 			
 			cout << "Podaj miesiac zgonu tej osoby: " << endl;
 			cin >> miesiac_zgonu;
@@ -668,13 +698,6 @@ public:
 	virtual int get_poprawnosc1() {
 		return poprawnosc1;
 	}
-	virtual int get_poprawnosc2() {
-		return poprawnosc2;
-	}
-	virtual int get_poprawnosc3() {
-		return poprawnosc3;
-	}
-
 };
 
 
@@ -715,6 +738,7 @@ public:
 			cin >> odpowiedz;
 			return odpowiedz;
 		}
+
 	}
 
 	void dane_malzonka(string odpowiedz){
@@ -740,13 +764,10 @@ public:
 				czy_umarl_mal = 0;
 			}
 		}
-			else {
-				czy_malzonek = 0;
-			}
-			
-		
+		else {
+			czy_malzonek = 0;
+		}
 	}
-	
 
 	int get_czy_umarl_mal() {
 		return czy_umarl_mal;
@@ -776,17 +797,7 @@ public:
 	virtual int get_poprawnosc2() {
 		return poprawnosc2;
 	}
-	virtual int get_poprawnosc3() {
-		return poprawnosc3;
-	}
-	virtual int get_poprawnosc() {
-		return poprawnosc;
-	}
 };
-
-
-
-
 
 
 int main() {
@@ -805,7 +816,6 @@ int main() {
 	Smierc smierc_kuzyn5[36];
 	Smierc smierc_kuzynmal5[366];
 
-	//Drzewo drzewo[21];
 
 	int suma_kuzynow = 0;
 	int suma_kuzynow2 = 0;
@@ -830,11 +840,13 @@ int main() {
 		
 		Osoba os1;
 		
+		Bazowa* bazowa1 = &os1;
 
 		osoba[i] = os1;
 		osoba[i].wpisz_osobe();
 		osoba[i].kim_jest();
 
+		odpowiedz = 0;
 		string du;
 		string mu;
 		string ru;
@@ -843,8 +855,10 @@ int main() {
 		string k;
 		int pop;
 		int pop1; 
-		int pop2;
-		int pop3;
+		int pop4;
+		int pop5;
+		int pop6;
+		int pop7;
 		string str;
 		string dum;
 		string mum;
@@ -864,200 +878,217 @@ int main() {
 		cu = osoba[i].get_czy_umarla();
 		im = osoba[i].get_imie();
 		k = osoba[i].get_kto();
+		
+		
+		pop = bazowa1->get_poprawnosc();
+		pop1 = bazowa1->get_poprawnosc1();
 
-		if (k == "7" || k == "7." || k == "8" || k == "9" || k == "9." || k == "8." || k == "10." || k == "10") {
-			Strona s1(du, mu, ru, im, cu, k);
-			strona1[i] = s1;
-			strona1[i].wpisanie_strony();
+
+		if (pop == 1 && pop1 == 1) {
+
+			if (k == "7" || k == "7." || k == "8" || k == "9" || k == "9." || k == "8." || k == "10." || k == "10") {
+				Strona s1(du, mu, ru, im, cu, k);
+				strona1[i] = s1;
+				strona1[i].wpisanie_strony();
+
+
+				str = strona1[i].get_strona();
+			}
+
+			if (cu == 1) {
+				Smierc s2(du, mu, ru, im, cu, k);
+				smierc[i] = s2;
+				smierc[i].kiedy_umarla();
+				smierc[i].ile_lat();
+
+				string dz;
+				string mz;
+				string rz;
+				dz = smierc[i].get_dzien_zgonu();
+				mz = smierc[i].get_miesiac_zgonu();
+				rz = smierc[i].get_rok_zgonu();
+			}
+
+			if (k == "3" || k == "3." || k == "4" || k == "4." || k == "5." || k == "5" || k == "6." || k == "6" || k == "9" || k == "9." || k == "10" || k == "10.") {
+				Malzenstwo m1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
+				Bazowa* bazowa2 = &m1;
+				malzenstwo[i] = m1;
+				string odpowiedz2;
+				odpowiedz2 = malzenstwo[i].wpisanie_malzonka();
+				malzenstwo[i].dane_malzonka(odpowiedz2);
+				dum = malzenstwo[i].get_dzien_mal();
+				mum = malzenstwo[i].get_miesiac_mal();
+				rum = malzenstwo[i].get_rok_mal();
+				czy_umarl_mal = malzenstwo[i].get_czy_umarl_mal();
+				imiemal = malzenstwo[i].get_imie_mal();
+				kto_mal = malzenstwo[i].get_kto_mal();
+				czymal = malzenstwo[i].get_czy_malzonek();
+				int op1 = 0;
+				if (odpowiedz2 == "tak" || odpowiedz2 == "TAK" || odpowiedz2 == "Tak") {
+					op1 = 1;
+				}
+				if (czy_umarl_mal == 1 && op1 == 1) {
+					Smierc s3(dum, mum, rum, imiemal, czy_umarl_mal, kto_mal);
+					smierc_malzonka[i] = s3;
+					smierc_malzonka[i].kiedy_umarla();
+					smierc_malzonka[i].ile_lat();
+					dzmal = smierc_malzonka[i].get_dzien_zgonu();
+					mzmal = smierc_malzonka[i].get_miesiac_zgonu();
+					rzmal = smierc_malzonka[i].get_rok_zgonu();
+				}
+
+				pop4=bazowa2->get_poprawnosc();
+				pop5 = bazowa2->get_poprawnosc1();
+
+
+			}
 
 		
-			str = strona1[i].get_strona();
-		}
+			if (k == "10" || k == "10." || k == "9" || k == "9.") {
+					Kuzyn kuzyn1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
+					string imie_kuzyna1;
+					string dzien_ur_kuzyna;
+					string miesiac_ur_kuzyna;
+					string rok_ur_kuzyna;
+					int czy_umarl_kuzyn;
+					int ile_kuzynow;
 
-		if (cu == 1) {
-			Smierc s2(du, mu, ru, im, cu, k);
-			smierc[i] = s2;
-			smierc[i].kiedy_umarla();
-			smierc[i].ile_lat();
+					kuzyn1.dodaj_kuzyna();
+					ile_kuzynow = kuzyn1.get_liczba_kuzynow();
 
-			string dz;
-			string mz;
-			string rz;
-			dz = smierc[i].get_dzien_zgonu();
-			mz = smierc[i].get_miesiac_zgonu();
-			rz = smierc[i].get_rok_zgonu();
-		}
-	
-		if (k == "3" || k == "3." || k == "4" || k == "4." || k == "5." || k == "5" || k == "6." || k == "6" || k == "9" || k == "9." || k == "10" || k == "10.") {
-			Malzenstwo m1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
-			malzenstwo[i] = m1;
-			string odpowiedz2;
-			odpowiedz2 = malzenstwo[i].wpisanie_malzonka();
-			malzenstwo[i].dane_malzonka(odpowiedz2);
-			dum = malzenstwo[i].get_dzien_mal();
-			mum = malzenstwo[i].get_miesiac_mal();
-			rum = malzenstwo[i].get_rok_mal();
-			czy_umarl_mal = malzenstwo[i].get_czy_umarl_mal();
-			imiemal = malzenstwo[i].get_imie_mal();
-			kto_mal = malzenstwo[i].get_kto_mal();
-			czymal = malzenstwo[i].get_czy_malzonek();
-			int op1 = 0;
-			if (odpowiedz2 == "tak" || odpowiedz2 == "TAK" || odpowiedz2 == "Tak") {
-				op1 = 1;
-			}
-			if (czy_umarl_mal == 1 && op1==1 ) {
-				Smierc s3(dum, mum, rum, imiemal, czy_umarl_mal, kto_mal);
-				smierc_malzonka[i] = s3;
-				smierc_malzonka[i].kiedy_umarla();
-				smierc_malzonka[i].ile_lat();
-				dzmal = smierc_malzonka[i].get_dzien_zgonu();
-				mzmal = smierc_malzonka[i].get_miesiac_zgonu();
-				rzmal = smierc_malzonka[i].get_rok_zgonu();
-			}
+					string odpowiedz7;
+					int czy_mal_kuzyna_umarl;
+					string dzien_mal_kuzyna;
+					string miesiac_mal_kuzyna;
+					string rok_mal_kuzyna;
+					string imie_mal_kuzyna;
 
-		}
-		if (k == "10" || k == "10." || k == "9" || k == "9.") {
-			Kuzyn kuzyn1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
-			string imie_kuzyna1;
-			string dzien_ur_kuzyna;
-			string miesiac_ur_kuzyna;
-			string rok_ur_kuzyna;
-			int czy_umarl_kuzyn;
-			int ile_kuzynow;
-
-			kuzyn1.dodaj_kuzyna();
-			ile_kuzynow = kuzyn1.get_liczba_kuzynow();
-
-			string odpowiedz7;
-			int czy_mal_kuzyna_umarl;
-			string dzien_mal_kuzyna;
-			string miesiac_mal_kuzyna;
-			string rok_mal_kuzyna;
-			string imie_mal_kuzyna;
-
-			if (ile_kuzynow > 0) {
-				for (int p = suma_kuzynow; p < ile_kuzynow + suma_kuzynow; p++) {
-					int o3 = 0;
-					Kuzyn kuzyn2(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
-					kuzyn[p] = kuzyn2;
-					kuzyn[p].dane_kuzyna();
-					dzien_ur_kuzyna = kuzyn[p].get_dzien_urodzenia_kuzyna();
-					miesiac_ur_kuzyna = kuzyn[p].get_miesiac_urodzenia_kuzyna();
-					rok_ur_kuzyna = kuzyn[p].get_rok_urodzenia_kuzyna();
-					czy_umarl_kuzyn = kuzyn[p].get_czy_umarl_kuzyn();
-					imie_kuzyna1 = kuzyn[p].get_imie_kuzyna();
+					if (ile_kuzynow > 0) {
+						for (int p = suma_kuzynow; p < ile_kuzynow + suma_kuzynow; p++) {
+							int o3 = 0;
+							Kuzyn kuzyn2(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
+							kuzyn[p] = kuzyn2;
+							kuzyn[p].dane_kuzyna();
+							dzien_ur_kuzyna = kuzyn[p].get_dzien_urodzenia_kuzyna();
+							miesiac_ur_kuzyna = kuzyn[p].get_miesiac_urodzenia_kuzyna();
+							rok_ur_kuzyna = kuzyn[p].get_rok_urodzenia_kuzyna();
+							czy_umarl_kuzyn = kuzyn[p].get_czy_umarl_kuzyn();
+							imie_kuzyna1 = kuzyn[p].get_imie_kuzyna();
 
 
-					if (czy_umarl_kuzyn == 1) {
-						Smierc smierck1(dzien_ur_kuzyna, miesiac_ur_kuzyna, rok_ur_kuzyna, imie_kuzyna1, czy_umarl_kuzyn, k, 1, 1, 1, 1);
-						smierc_kuzyn[p] = smierck1;
-						smierc_kuzyn[p].kiedy_umarla();
-						smierc_kuzyn[p].ile_lat();
-					}
+							if (czy_umarl_kuzyn == 1) {
+								Smierc smierck1(dzien_ur_kuzyna, miesiac_ur_kuzyna, rok_ur_kuzyna, imie_kuzyna1, czy_umarl_kuzyn, k, 1, 1, 1, 1);
+								smierc_kuzyn[p] = smierck1;
+								smierc_kuzyn[p].kiedy_umarla();
+								smierc_kuzyn[p].ile_lat();
+							}
 
-					cout << "czy chcesz dodac malzonka tej osoby?" << endl;
-					cin >> odpowiedz7;
-					Malzenstwo malzenstwo_kuz(du, mu, ru, im, cu, k, 1, 1, 1, 1, str, dzien_ur_kuzyna, miesiac_ur_kuzyna, rok_ur_kuzyna, imie_kuzyna1, czy_umarl_kuzyn);
-					malzenstwokuzyn[p] = malzenstwo_kuz;
-					
-					if (odpowiedz7 == "tak" || odpowiedz7 == "TAK" || odpowiedz7 == "Tak") {
-						o3 = 1;
-					}
-					if (o3 == 1) {
-						malzenstwokuzyn[p].dane_malzonka(odpowiedz7);
+							cout << "czy chcesz dodac malzonka tej osoby?" << endl;
+							cin >> odpowiedz7;
+							Malzenstwo malzenstwo_kuz(du, mu, ru, im, cu, k, 1, 1, 1, 1, str, dzien_ur_kuzyna, miesiac_ur_kuzyna, rok_ur_kuzyna, imie_kuzyna1, czy_umarl_kuzyn);
+							malzenstwokuzyn[p] = malzenstwo_kuz;
 
-						czy_mal_kuzyna_umarl = malzenstwokuzyn[p].get_czy_umarl_mal();
-						imie_mal_kuzyna = malzenstwokuzyn[p].get_imie_mal();
-						dzien_mal_kuzyna = malzenstwokuzyn[p].get_dzien_mal();
-						miesiac_mal_kuzyna = malzenstwokuzyn[p].get_miesiac_mal();
-						rok_mal_kuzyna = malzenstwokuzyn[p].get_rok_mal();
-						if (czy_mal_kuzyna_umarl == 1) {
-							Smierc smierc_mal_kuz(dzien_mal_kuzyna, miesiac_mal_kuzyna, rok_mal_kuzyna, imie_mal_kuzyna, czy_mal_kuzyna_umarl, k, 1, 1, 1, 1);
-							smierc_kuzynmal[p] = smierc_mal_kuz;
-							smierc_kuzynmal[p].kiedy_umarla();
-							smierc_kuzynmal[p].ile_lat();
+							if (odpowiedz7 == "tak" || odpowiedz7 == "TAK" || odpowiedz7 == "Tak") {
+								o3 = 1;
+							}
+							if (o3 == 1) {
+								malzenstwokuzyn[p].dane_malzonka(odpowiedz7);
+
+								czy_mal_kuzyna_umarl = malzenstwokuzyn[p].get_czy_umarl_mal();
+								imie_mal_kuzyna = malzenstwokuzyn[p].get_imie_mal();
+								dzien_mal_kuzyna = malzenstwokuzyn[p].get_dzien_mal();
+								miesiac_mal_kuzyna = malzenstwokuzyn[p].get_miesiac_mal();
+								rok_mal_kuzyna = malzenstwokuzyn[p].get_rok_mal();
+								if (czy_mal_kuzyna_umarl == 1) {
+									Smierc smierc_mal_kuz(dzien_mal_kuzyna, miesiac_mal_kuzyna, rok_mal_kuzyna, imie_mal_kuzyna, czy_mal_kuzyna_umarl, k, 1, 1, 1, 1);
+									smierc_kuzynmal[p] = smierc_mal_kuz;
+									smierc_kuzynmal[p].kiedy_umarla();
+									smierc_kuzynmal[p].ile_lat();
+								}
+							}
+
 						}
+						suma_kuzynow = suma_kuzynow + ile_kuzynow;
 					}
-
-				}
-				suma_kuzynow = suma_kuzynow + ile_kuzynow;
 			}
-		}
-
-		if (k == "3" || k == "3." || k == "4" || k == "4.") {
-			Kuzyn kuzyn3(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
-			string imie_kuzyna2;
-			string dzien_ur_kuzyna2;
-			string miesiac_ur_kuzyn2;
-			string rok_ur_kuzyna2;
-			int czy_umarl_kuzyn2;
-			int ile_kuzynow2;
 			
 
-			kuzyn3.dodaj_kuzyna();
-			ile_kuzynow2 = kuzyn3.get_liczba_kuzynow();
-
-			string odpowiedz8;
-			int czy_mal_kuzyna_umarl2;
-			string dzien_mal_kuzyna2;
-			string miesiac_mal_kuzyna2;
-			string rok_mal_kuzyna2;
-			string imie_mal_kuzyna2;
-
-			if (ile_kuzynow2 > 0) {
-				for (int p2 = suma_kuzynow2; p2 < ile_kuzynow2 + suma_kuzynow2; p2++) {
-					int o4 = 0;
-					Kuzyn kuzyn4(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
-					kuzyn5[p2] = kuzyn4;
-					kuzyn5[p2].dane_kuzyna();
-					dzien_ur_kuzyna2 = kuzyn5[p2].get_dzien_urodzenia_kuzyna();
-					miesiac_ur_kuzyn2 = kuzyn5[p2].get_miesiac_urodzenia_kuzyna();
-					rok_ur_kuzyna2 = kuzyn5[p2].get_rok_urodzenia_kuzyna();
-					czy_umarl_kuzyn2 = kuzyn5[p2].get_czy_umarl_kuzyn();
-					imie_kuzyna2 = kuzyn5[2].get_imie_kuzyna();
+			if (k == "3" || k == "3." || k == "4" || k == "4.") {
+				Kuzyn kuzyn3(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
+				string imie_kuzyna2;
+				string dzien_ur_kuzyna2;
+				string miesiac_ur_kuzyn2;
+				string rok_ur_kuzyna2;
+				int czy_umarl_kuzyn2;
+				int ile_kuzynow2;
 
 
-					if (czy_umarl_kuzyn2 == 1) {
-						Smierc smierck4(dzien_ur_kuzyna2, miesiac_ur_kuzyn2, rok_ur_kuzyna2, imie_kuzyna2, czy_umarl_kuzyn2, k, 1, 1, 1, 1);
-						smierc_kuzyn5[p2] = smierck4;
-						smierc_kuzyn5[p2].kiedy_umarla();
-						smierc_kuzyn5[p2].ile_lat();
-					}
+				kuzyn3.dodaj_kuzyna();
+				ile_kuzynow2 = kuzyn3.get_liczba_kuzynow();
 
-					cout << "czy chcesz dodac malzonka tej osoby?" << endl;
-					cin >> odpowiedz8;
-					Malzenstwo malzenstwo_kuz4(du, mu, ru, im, cu, k, 1, 1, 1, 1, str, dzien_ur_kuzyna2, miesiac_ur_kuzyn2, rok_ur_kuzyna2, imie_kuzyna2, czy_umarl_kuzyn2);
-					malzenstwokuzyn5[p2] = malzenstwo_kuz4;
+				string odpowiedz8;
+				int czy_mal_kuzyna_umarl2;
+				string dzien_mal_kuzyna2;
+				string miesiac_mal_kuzyna2;
+				string rok_mal_kuzyna2;
+				string imie_mal_kuzyna2;
 
-					if (odpowiedz8 == "tak" || odpowiedz8 == "TAK" || odpowiedz8 == "Tak") {
-						o4 = 1;
-					}
-					if (o4 == 1) {
-						malzenstwokuzyn5[p2].dane_malzonka(odpowiedz8);
+				if (ile_kuzynow2 > 0) {
+					for (int p2 = suma_kuzynow2; p2 < ile_kuzynow2 + suma_kuzynow2; p2++) {
+						int o4 = 0;
+						Kuzyn kuzyn4(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
+						kuzyn5[p2] = kuzyn4;
+						kuzyn5[p2].dane_kuzyna();
+						dzien_ur_kuzyna2 = kuzyn5[p2].get_dzien_urodzenia_kuzyna();
+						miesiac_ur_kuzyn2 = kuzyn5[p2].get_miesiac_urodzenia_kuzyna();
+						rok_ur_kuzyna2 = kuzyn5[p2].get_rok_urodzenia_kuzyna();
+						czy_umarl_kuzyn2 = kuzyn5[p2].get_czy_umarl_kuzyn();
+						imie_kuzyna2 = kuzyn5[2].get_imie_kuzyna();
 
-						czy_mal_kuzyna_umarl2 = malzenstwokuzyn5[p2].get_czy_umarl_mal();
-						imie_mal_kuzyna2 = malzenstwokuzyn5[p2].get_imie_mal();
-						dzien_mal_kuzyna2 = malzenstwokuzyn5[p2].get_dzien_mal();
-						miesiac_mal_kuzyna2 = malzenstwokuzyn5[p2].get_miesiac_mal();
-						rok_mal_kuzyna2 = malzenstwokuzyn5[p2].get_rok_mal();
-						if (czy_mal_kuzyna_umarl2 == 1) {
-							Smierc smierc_mal_kuz4(dzien_mal_kuzyna2, miesiac_mal_kuzyna2, rok_mal_kuzyna2, imie_mal_kuzyna2, czy_mal_kuzyna_umarl2, k, 1, 1, 1, 1);
-							smierc_kuzynmal5[p2] = smierc_mal_kuz4;
-							smierc_kuzynmal5[p2].kiedy_umarla();
-							smierc_kuzynmal5[p2].ile_lat();
+
+						if (czy_umarl_kuzyn2 == 1) {
+							Smierc smierck4(dzien_ur_kuzyna2, miesiac_ur_kuzyn2, rok_ur_kuzyna2, imie_kuzyna2, czy_umarl_kuzyn2, k, 1, 1, 1, 1);
+							smierc_kuzyn5[p2] = smierck4;
+							smierc_kuzyn5[p2].kiedy_umarla();
+							smierc_kuzyn5[p2].ile_lat();
 						}
+
+						cout << "czy chcesz dodac malzonka tej osoby?" << endl;
+						cin >> odpowiedz8;
+						Malzenstwo malzenstwo_kuz4(du, mu, ru, im, cu, k, 1, 1, 1, 1, str, dzien_ur_kuzyna2, miesiac_ur_kuzyn2, rok_ur_kuzyna2, imie_kuzyna2, czy_umarl_kuzyn2);
+						malzenstwokuzyn5[p2] = malzenstwo_kuz4;
+
+						if (odpowiedz8 == "tak" || odpowiedz8 == "TAK" || odpowiedz8 == "Tak") {
+							o4 = 1;
+						}
+						if (o4 == 1) {
+							malzenstwokuzyn5[p2].dane_malzonka(odpowiedz8);
+
+							czy_mal_kuzyna_umarl2 = malzenstwokuzyn5[p2].get_czy_umarl_mal();
+							imie_mal_kuzyna2 = malzenstwokuzyn5[p2].get_imie_mal();
+							dzien_mal_kuzyna2 = malzenstwokuzyn5[p2].get_dzien_mal();
+							miesiac_mal_kuzyna2 = malzenstwokuzyn5[p2].get_miesiac_mal();
+							rok_mal_kuzyna2 = malzenstwokuzyn5[p2].get_rok_mal();
+							if (czy_mal_kuzyna_umarl2 == 1) {
+								Smierc smierc_mal_kuz4(dzien_mal_kuzyna2, miesiac_mal_kuzyna2, rok_mal_kuzyna2, imie_mal_kuzyna2, czy_mal_kuzyna_umarl2, k, 1, 1, 1, 1);
+								smierc_kuzynmal5[p2] = smierc_mal_kuz4;
+								smierc_kuzynmal5[p2].kiedy_umarla();
+								smierc_kuzynmal5[p2].ile_lat();
+							}
+						}
+
 					}
-
+					suma_kuzynow2 = suma_kuzynow2 + ile_kuzynow2;
 				}
-				suma_kuzynow2 = suma_kuzynow2 + ile_kuzynow2;
 			}
+
+
+
+			cout << "czy chcesz wpisac kolejna osobe?" << endl;
+			cout << "1. Tak" << endl;
+			cout << "2. Nie" << endl;
+			cin >> odpowiedz;
 		}
-
-
-		cout << "czy chcesz wpisac kolejna osobe?" << endl;
-		cout << "1. Tak" << endl;
-		cout << "2. Nie" << endl;
-		cin >> odpowiedz;
 		i = i + 1;
 	}
 
@@ -1483,7 +1514,7 @@ int main() {
 	strcpy_s(plusch, plus.c_str());
 
 
-	Fl_Window* window = new Fl_Window(4200, 930, "Drzewo");
+	Fl_Window* window = new Fl_Window(4200, 1050, "Drzewo genealogiczne");
 	window->color(FL_GRAY);
 	
 	Fl_Output output2(1820, 400, 100, 40); //ja
@@ -1508,34 +1539,268 @@ int main() {
 	Fl_Output output650(1698, 460, 20, 40);
 	output650.textsize(Fl_Font(12));
 	output650.color(FL_GRAY);
-	::output552 = &output650;
-	output552->value(plusch);
-	Fl_Output output651(1710, 700, 100, 40);
-	output651.textsize(Fl_Font(12));
+	::output562 = &output650;
+	output562->value(plusch);
+	Fl_Output output651(1710, 700, 100, 40); //dziecko1
+	output651.textsize(Fl_Font(8));
 	output651.color(FL_CYAN);
+	Fl_Output output652(1710, 740, 100, 40); 
+	output652.textsize(Fl_Font(8));
+	output652.color(FL_CYAN);
+	Fl_Output output653(1720, 800, 100, 40); //malzonek dziecka1
+	output653.textsize(Fl_Font(8));
+	output653.color(FL_CYAN);
+	Fl_Output output654(1720, 840, 100, 40);
+	output654.textsize(Fl_Font(8));
+	output654.color(FL_CYAN);
+	Fl_Output output655(1708, 820, 20, 40);
+	output655.textsize(Fl_Font(12));
+	output655.color(FL_GRAY);
+	::output563 = &output655;
+	output563->value(plusch);
+	Fl_Output output656(1450, 700, 100, 40); //dziecko2
+	output656.textsize(Fl_Font(8));
+	output656.color(FL_CYAN);
+	Fl_Output output657(1450, 740, 100, 40);
+	output657.textsize(Fl_Font(8));
+	output657.color(FL_CYAN);
+	Fl_Output output658(1460, 800, 100, 40); //malzonek dziecka2
+	output658.textsize(Fl_Font(8));
+	output658.color(FL_CYAN);
+	Fl_Output output659(1460, 840, 100, 40);
+	output659.textsize(Fl_Font(8));
+	output659.color(FL_CYAN);
+	Fl_Output output660(1448, 820, 20, 40);
+	output660.textsize(Fl_Font(12));
+	output660.color(FL_GRAY);
+	::output564 = &output660;
+	output564->value(plusch);
+	Fl_Output output661(1580, 700, 100, 40); //dziecko3
+	output661.textsize(Fl_Font(8));
+	output661.color(FL_CYAN);
+	Fl_Output output662(1580, 740, 100, 40);
+	output662.textsize(Fl_Font(8));
+	output662.color(FL_CYAN);
+	Fl_Output output663(1590, 800, 100, 40); //malzonek dziecka3
+	output663.textsize(Fl_Font(8));
+	output663.color(FL_CYAN);
+	Fl_Output output664(1590, 840, 100, 40);
+	output664.textsize(Fl_Font(8));
+	output664.color(FL_CYAN);
+	Fl_Output output665(1578, 820, 20, 40);
+	output665.textsize(Fl_Font(12));
+	output665.color(FL_GRAY);
+	::output565 = &output665;
+	output565->value(plusch);
 
-
+	
 	Fl_Output output603(1580, 350, 100, 40); //brat3
 	output603.textsize(Fl_Font(8));
 	output603.color(FL_YELLOW);
 	Fl_Output output607(1580, 390, 100, 40); 
 	output607.textsize(Fl_Font(8));
 	output607.color(FL_YELLOW);
-
+	Fl_Output output684(1600, 450, 100, 40); //malzonek
+	output684.textsize(Fl_Font(8));
+	output684.color(FL_YELLOW);
+	Fl_Output output685(1600, 490, 100, 40);
+	output685.textsize(Fl_Font(8));
+	output685.color(FL_YELLOW);
+	Fl_Output output686(1580, 460, 20, 40);
+	output686.textsize(Fl_Font(12));
+	output686.color(FL_GRAY);
+	::output701 = &output686;
+	output701->value(plusch);
+	Fl_Output output687(1470, 500, 100, 40); //dziecko1
+	output687.textsize(Fl_Font(8));
+	output687.color(FL_YELLOW);
+	Fl_Output output688(1470, 540, 100, 40);
+	output688.textsize(Fl_Font(8));
+	output688.color(FL_YELLOW);
+	Fl_Output output689(1470, 600, 100, 40); //malzonek dziecka1
+	output689.textsize(Fl_Font(8));
+	output689.color(FL_YELLOW);
+	Fl_Output output690(1470, 640, 100, 40);
+	output690.textsize(Fl_Font(8));
+	output690.color(FL_YELLOW);
+	Fl_Output output691(1458, 610, 20, 40);
+	output691.textsize(Fl_Font(12));
+	output691.color(FL_GRAY);
+	::output702 = &output691;
+	output702->value(plusch);
+	Fl_Output output692(1350, 500, 100, 40); //dziecko2
+	output692.textsize(Fl_Font(8));
+	output692.color(FL_YELLOW);
+	Fl_Output output693(1350, 540, 100, 40);
+	output693.textsize(Fl_Font(8));
+	output693.color(FL_YELLOW);
+	Fl_Output output694(1360, 600, 100, 40); //malzonek dziecka2
+	output694.textsize(Fl_Font(8));
+	output694.color(FL_YELLOW);
+	Fl_Output output695(1360, 640, 100, 40);
+	output695.textsize(Fl_Font(8));
+	output695.color(FL_YELLOW);
+	Fl_Output output696(1348, 610, 20, 40);
+	output696.textsize(Fl_Font(12));
+	output696.color(FL_GRAY);
+	::output703 = &output696;
+	output703->value(plusch);
+	Fl_Output output697(1240, 500, 100, 40); //dziecko3
+	output697.textsize(Fl_Font(8));
+	output697.color(FL_YELLOW);
+	Fl_Output output698(1240, 540, 100, 40);
+	output698.textsize(Fl_Font(8));
+	output698.color(FL_YELLOW);
+	Fl_Output output699(1250, 600, 100, 40); //malzonek dziecka3
+	output699.textsize(Fl_Font(8));
+	output699.color(FL_YELLOW);
+	Fl_Output output800(1250, 640, 100, 40);
+	output800.textsize(Fl_Font(8));
+	output800.color(FL_YELLOW);
+	Fl_Output output801(1238, 610, 20, 40);
+	output801.textsize(Fl_Font(12));
+	output801.color(FL_GRAY);
+	::output704 = &output801;
+	output704->value(plusch);
+	
 	Fl_Output output602(2050, 350, 100, 40); //brat2
 	output602.textsize(Fl_Font(8));
 	output602.color(FL_MAGENTA);
 	Fl_Output output606(2050, 390, 100, 40); 
 	output606.textsize(Fl_Font(8));
 	output606.color(FL_MAGENTA);
-
+	Fl_Output output666(2100, 450, 100, 40); //malzonek
+	output666.textsize(Fl_Font(8));
+	output666.color(FL_MAGENTA);
+	Fl_Output output667(2100, 490, 100, 40);
+	output667.textsize(Fl_Font(8));
+	output667.color(FL_MAGENTA);
+	Fl_Output output668(2070, 460, 20, 40);
+	output668.textsize(Fl_Font(12));
+	output668.color(FL_GRAY);
+	::output580 = &output668;
+	output580->value(plusch);
+	Fl_Output output669(2200, 700, 100, 40); //dziecko1
+	output669.textsize(Fl_Font(8));
+	output669.color(FL_MAGENTA);
+	Fl_Output output670(2200, 740, 100, 40);
+	output670.textsize(Fl_Font(8));
+	output670.color(FL_MAGENTA);
+	Fl_Output output671(2210, 800, 100, 40); //malzonek dziecka1
+	output671.textsize(Fl_Font(8));
+	output671.color(FL_MAGENTA);
+	Fl_Output output672(2210, 840, 100, 40);
+	output672.textsize(Fl_Font(8));
+	output672.color(FL_MAGENTA);
+	Fl_Output output673(2198, 820, 20, 40);
+	output673.textsize(Fl_Font(12));
+	output673.color(FL_GRAY);
+	::output581 = &output673;
+	output581->value(plusch);
+	Fl_Output output674(2340, 700, 100, 40); //dziecko2
+	output674.textsize(Fl_Font(8));
+	output674.color(FL_MAGENTA);
+	Fl_Output output675(2340, 740, 100, 40);
+	output675.textsize(Fl_Font(8));
+	output675.color(FL_MAGENTA);
+	Fl_Output output676(2350, 800, 100, 40); //malzonek dziecka2
+	output676.textsize(Fl_Font(8));
+	output676.color(FL_MAGENTA);
+	Fl_Output output677(2350, 840, 100, 40);
+	output677.textsize(Fl_Font(8));
+	output677.color(FL_MAGENTA);
+	Fl_Output output678(2338, 820, 20, 40);
+	output678.textsize(Fl_Font(12));
+	output678.color(FL_GRAY);
+	::output582 = &output678;
+	output582->value(plusch);
+	Fl_Output output679(2450, 700, 100, 40); //dziecko3
+	output679.textsize(Fl_Font(8));
+	output679.color(FL_MAGENTA);
+	Fl_Output output680(2450, 740, 100, 40);
+	output680.textsize(Fl_Font(8));
+	output680.color(FL_MAGENTA);
+	Fl_Output output681(2460, 800, 100, 40); //malzonek dziecka3
+	output681.textsize(Fl_Font(8));
+	output681.color(FL_MAGENTA);
+	Fl_Output output682(2460, 840, 100, 40);
+	output682.textsize(Fl_Font(8));
+	output682.color(FL_MAGENTA);
+	Fl_Output output683(2448, 820, 20, 40);
+	output683.textsize(Fl_Font(12));
+	output683.color(FL_GRAY);
+	::output583 = &output683;
+	output583->value(plusch);
+	
 	Fl_Output output604(2170, 350, 100, 40); //brat4
 	output604.textsize(Fl_Font(8));
 	output604.color(FL_WHITE);
 	Fl_Output output605(2170, 390, 100, 40); 
 	output605.textsize(Fl_Font(8));
 	output605.color(FL_WHITE);
-
+	Fl_Output output802(2220, 450, 100, 40); //malzonek
+	output802.textsize(Fl_Font(8));
+	output802.color(FL_WHITE);
+	Fl_Output output803(2220, 490, 100, 40);
+	output803.textsize(Fl_Font(8));
+	output803.color(FL_WHITE);
+	Fl_Output output804(2190, 460, 20, 40);
+	output804.textsize(Fl_Font(12));
+	output804.color(FL_GRAY);
+	::output705 = &output804;
+	output705->value(plusch);
+	Fl_Output output805(2360, 510, 100, 40); //dziecko1
+	output805.textsize(Fl_Font(8));
+	output805.color(FL_WHITE);
+	Fl_Output output806(2360, 550, 100, 40);
+	output806.textsize(Fl_Font(8));
+	output806.color(FL_WHITE);
+	Fl_Output output807(2370, 610, 100, 40); //malzonek dziecka1
+	output807.textsize(Fl_Font(8));
+	output807.color(FL_WHITE);
+	Fl_Output output808(2370, 650, 100, 40);
+	output808.textsize(Fl_Font(8));
+	output808.color(FL_WHITE);
+	Fl_Output output809(2358, 630, 20, 40);
+	output809.textsize(Fl_Font(12));
+	output809.color(FL_GRAY);
+	::output706 = &output809;
+	output706->value(plusch);
+	Fl_Output output810(2480, 510, 100, 40); //dziecko2
+	output810.textsize(Fl_Font(8));
+	output810.color(FL_WHITE);
+	Fl_Output output811(2480, 550, 100, 40);
+	output811.textsize(Fl_Font(8));
+	output811.color(FL_WHITE);
+	Fl_Output output812(2490, 610, 100, 40); //malzonek dziecka2
+	output812.textsize(Fl_Font(8));
+	output812.color(FL_WHITE);
+	Fl_Output output813(2490, 650, 100, 40);
+	output813.textsize(Fl_Font(8));
+	output813.color(FL_WHITE);
+	Fl_Output output814(2478, 630, 20, 40);
+	output814.textsize(Fl_Font(12));
+	output814.color(FL_GRAY);
+	::output707 = &output814;
+	output707->value(plusch);
+	Fl_Output output815(2600, 510, 100, 40); //dziecko3
+	output815.textsize(Fl_Font(8));
+	output815.color(FL_WHITE);
+	Fl_Output output816(2600, 550, 100, 40);
+	output816.textsize(Fl_Font(8));
+	output816.color(FL_WHITE);
+	Fl_Output output817(2610, 610, 100, 40); //malzonek dziecka3
+	output817.textsize(Fl_Font(8));
+	output817.color(FL_WHITE);
+	Fl_Output output818(2610, 650, 100, 40);
+	output818.textsize(Fl_Font(8));
+	output818.color(FL_WHITE);
+	Fl_Output output819(2598, 630, 20, 40);
+	output819.textsize(Fl_Font(12));
+	output819.color(FL_GRAY);
+	::output708 = &output819;
+	output708->value(plusch);
+	
 	Fl_Output output54(1830, 450, 100, 40); //moj malzonek
 	output54.textsize(Fl_Font(8));
 	output54.color(FL_RED);
@@ -1929,7 +2194,7 @@ int main() {
 	Fl_Output output97(1480, 440, 100, 40); 
 	output97.color(FL_GREEN);
 	output97.textsize(Fl_Font(8));
-	Fl_Output output631(1428, 420, 20, 40);
+	Fl_Output output631(1468, 420, 20, 40);
 	output631.textsize(Fl_Font(12));
 	output631.color(FL_GRAY);
 	::output545 = &output631;
@@ -2423,7 +2688,7 @@ int main() {
 							output127->value(ciocia1malsmiercch);
 						}
 						for (int b = 0; b <= 36; b++) {
-							if (malzenstwo[k].imie == kuzyn[k].imie && strona1[b].strona == kuzyn[b].strona) {
+							if (malzenstwo[k].imie == kuzyn[k].imie && strona1[k].strona == kuzyn[b].strona) {
 								liczbakuzynow2 = liczbakuzynow2 + 1;
 								if (liczbakuzynow2 == 1) {
 									kuzyn4dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
@@ -3234,6 +3499,7 @@ int main() {
 				strcpy_s(brat1ch, brat1.c_str());
 				::output521 = &output601;
 				output521->value(brat1ch);
+				int dziecirodzenstwa1 = 0;
 				if (osoba[k].czy_umarla == 1) {
 					brat1s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
 					strcpy_s(brat1sch, brat1s.c_str());
@@ -3241,15 +3507,408 @@ int main() {
 					output522->value(brat1sch);
 				}
 				if (malzenstwo[k].czy_malzonek == 1) {
-					brat1mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal +"." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
+					brat1mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
 					strcpy_s(brat1malch, brat1mal.c_str());
+					::output566 = &output648;
+					output566->value(brat1malch);
 					if (malzenstwo[k].czy_umarl_mal == 1) {
 						brat1mals = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
 						strcpy_s(brat1malsch, brat1mals.c_str());
+						::output567 = &output649;
+						output567->value(brat1malsch);
 					}
-					
+					for (int d = 0; d <= 36; d++) {
+						if (malzenstwo[k].imie == kuzyn5[d].imie) {
+							dziecirodzenstwa1 = dziecirodzenstwa1 + 1;
+							if (dziecirodzenstwa1 == 1) {
+								brat1dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat1dziecko1ch, brat1dziecko1.c_str());
+								::output568 = &output651;
+								output568->value(brat1dziecko1ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat1dziecko1s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat1dziecko1sch, brat1dziecko1s.c_str());
+									::output569 = &output652;
+									output569->value(brat1dziecko1sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat1dziecko1mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output570 = &output653;
+									strcpy_s(brat1dziecko1malch, brat1dziecko1mal.c_str());
+									output570->value(brat1dziecko1malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat1dziecko1mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat1dziecko1malsch, brat1dziecko1mals.c_str());
+										::output571 = &output654;
+										output571->value(brat1dziecko1malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa1 == 2) {
+								brat1dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat1dziecko2ch, brat1dziecko2.c_str());
+								::output572 = &output656;
+								output572->value(brat1dziecko2ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat1dziecko2s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat1dziecko2sch, brat1dziecko2s.c_str());
+									::output573 = &output657;
+									output573->value(brat1dziecko2sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat1dziecko2mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output574 = &output658;
+									strcpy_s(brat1dziecko2malch, brat1dziecko2mal.c_str());
+									output574->value(brat1dziecko2malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat1dziecko2mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat1dziecko2malsch, brat1dziecko2mals.c_str());
+										::output575 = &output659;
+										output575->value(brat1dziecko2malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa1 == 3) {
+								brat1dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat1dziecko3ch, brat1dziecko3.c_str());
+								::output576 = &output661;
+								output576->value(brat1dziecko3ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat1dziecko3s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat1dziecko3sch, brat1dziecko3s.c_str());
+									::output577 = &output662;
+									output577->value(brat1dziecko3sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat1dziecko3mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output578 = &output663;
+									strcpy_s(brat1dziecko3malch, brat1dziecko3mal.c_str());
+									output578->value(brat1dziecko3malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat1dziecko3mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat1dziecko3malsch, brat1dziecko3mals.c_str());
+										::output579 = &output664;
+										output579->value(brat1dziecko3malsch);
+									}
+								}
+							}
+
+
+
+						}
+					}
 				}
 			}
+			if (moje_rodzenstwo == 2) {
+				brat2 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
+				strcpy_s(brat2ch, brat2.c_str());
+				::output584 = &output602;
+				output584->value(brat2ch);
+				int dziecirodzenstwa2 = 0;
+				if (osoba[k].czy_umarla == 1) {
+					brat2s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
+					strcpy_s(brat2sch, brat2s.c_str());
+					::output585 = &output606;
+					output585->value(brat2sch);
+				}
+				if (malzenstwo[k].czy_malzonek == 1) {
+					brat2mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
+					strcpy_s(brat2malch, brat2mal.c_str());
+					::output586 = &output666;
+					output586->value(brat2malch);
+					if (malzenstwo[k].czy_umarl_mal == 1) {
+						brat2mals = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
+						strcpy_s(brat2malsch, brat2mals.c_str());
+						::output587 = &output667;
+						output587->value(brat2malsch);
+					}
+					for (int d = 0; d <= 36; d++) {
+						if (malzenstwo[k].imie == kuzyn5[d].imie) {
+							dziecirodzenstwa2 = dziecirodzenstwa2 + 1;
+							if (dziecirodzenstwa2 == 1) {
+								brat2dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat2dziecko1ch, brat2dziecko1.c_str());
+								::output588 = &output669;
+								output588->value(brat2dziecko1ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat2dziecko1s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat2dziecko1sch, brat2dziecko1s.c_str());
+									::output589 = &output670;
+									output589->value(brat2dziecko1sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat2dziecko1mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output590 = &output671;
+									strcpy_s(brat2dziecko1malch, brat2dziecko1mal.c_str());
+									output590->value(brat2dziecko1malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat2dziecko1mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat2dziecko1malsch, brat2dziecko1mals.c_str());
+										::output591 = &output672;
+										output591->value(brat2dziecko1malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa2 == 2) {
+								brat2dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat2dziecko2ch, brat2dziecko2.c_str());
+								::output592 = &output674;
+								output592->value(brat2dziecko2ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat2dziecko2s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat2dziecko2sch, brat2dziecko2s.c_str());
+									::output593 = &output675;
+									output593->value(brat2dziecko2sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat2dziecko2mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output594 = &output676;
+									strcpy_s(brat2dziecko2malch, brat2dziecko2mal.c_str());
+									output594->value(brat2dziecko2malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat2dziecko2mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat2dziecko2malsch, brat2dziecko2mals.c_str());
+										::output595 = &output677;
+										output595->value(brat2dziecko2malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa2 == 3) {
+								brat2dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat2dziecko3ch, brat2dziecko3.c_str());
+								::output596 = &output679;
+								output596->value(brat2dziecko3ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat2dziecko3s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat2dziecko3sch, brat2dziecko3s.c_str());
+									::output597 = &output680;
+									output597->value(brat2dziecko3sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat2dziecko3mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output598 = &output681;
+									strcpy_s(brat2dziecko3malch, brat2dziecko3mal.c_str());
+									output578->value(brat2dziecko3malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat2dziecko3mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat2dziecko3malsch, brat2dziecko3mals.c_str());
+										::output599 = &output682;
+										output599->value(brat2dziecko3malsch);
+									}
+								}
+							}
+
+						}
+					}
+				}
+			}
+			if (moje_rodzenstwo == 3) {
+				brat3 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
+				strcpy_s(brat3ch, brat3.c_str());
+				::output709 = &output603;
+				output709->value(brat3ch);
+				int dziecirodzenstwa3 = 0;
+				if (osoba[k].czy_umarla == 1) {
+					brat3s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
+					strcpy_s(brat3sch, brat3s.c_str());
+					::output710 = &output607;
+					output710->value(brat3sch);
+				}
+				if (malzenstwo[k].czy_malzonek == 1) {
+					brat3mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
+					strcpy_s(brat3malch, brat3mal.c_str());
+					::output711 = &output684;
+					output711->value(brat3malch);
+					if (malzenstwo[k].czy_umarl_mal == 1) {
+						brat3mals = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
+						strcpy_s(brat3malsch, brat3mals.c_str());
+						::output712 = &output685;
+						output712->value(brat3malsch);
+					}
+					for (int d = 0; d <= 36; d++) {
+						if (malzenstwo[k].imie == kuzyn5[d].imie) {
+							dziecirodzenstwa3 = dziecirodzenstwa3 + 1;
+							if (dziecirodzenstwa3 == 1) {
+								brat3dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat3dziecko1ch, brat3dziecko1.c_str());
+								::output713 = &output687;
+								output713->value(brat3dziecko1ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat3dziecko1s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat3dziecko1sch, brat3dziecko1s.c_str());
+									::output714 = &output688;
+									output714->value(brat3dziecko1sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat3dziecko1mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output715 = &output689;
+									strcpy_s(brat3dziecko1malch, brat3dziecko1mal.c_str());
+									output715->value(brat3dziecko1malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat3dziecko1mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat3dziecko1malsch, brat3dziecko1mals.c_str());
+										::output716 = &output690;
+										output716->value(brat3dziecko1malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa3 == 2) {
+								brat3dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat3dziecko2ch, brat3dziecko2.c_str());
+								::output717 = &output692;
+								output717->value(brat3dziecko2ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat3dziecko2s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat3dziecko2sch, brat3dziecko2s.c_str());
+									::output718 = &output693;
+									output718->value(brat3dziecko2sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat3dziecko2mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output719 = &output694;
+									strcpy_s(brat3dziecko2malch, brat3dziecko2mal.c_str());
+									output719->value(brat3dziecko2malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat3dziecko2mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat3dziecko2malsch, brat3dziecko2mals.c_str());
+										::output720 = &output695;
+										output720->value(brat3dziecko2malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa3 == 3) {
+								brat3dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat3dziecko3ch, brat3dziecko3.c_str());
+								::output721 = &output697;
+								output721->value(brat3dziecko3ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat3dziecko3s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat3dziecko3sch, brat3dziecko3s.c_str());
+									::output722 = &output698;
+									output722->value(brat3dziecko3sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat3dziecko3mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output723 = &output699;
+									strcpy_s(brat3dziecko3malch, brat3dziecko3mal.c_str());
+									output723->value(brat3dziecko3malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat3dziecko3mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat3dziecko3malsch, brat3dziecko3mals.c_str());
+										::output724 = &output800;
+										output724->value(brat3dziecko3malsch);
+									}
+								}
+							}
+
+						}
+					}
+				}
+			}
+			if (moje_rodzenstwo == 4) {
+				brat4 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
+				strcpy_s(brat4ch, brat4.c_str());
+				::output725 = &output604;
+				output725->value(brat4ch);
+				int dziecirodzenstwa4 = 0;
+				if (osoba[k].czy_umarla == 1) {
+					brat4s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
+					strcpy_s(brat4sch, brat4s.c_str());
+					::output726 = &output605;
+					output726->value(brat4sch);
+				}
+				if (malzenstwo[k].czy_malzonek == 1) {
+					brat4mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
+					strcpy_s(brat4malch, brat4mal.c_str());
+					::output727 = &output802;
+					output727->value(brat4malch);
+					if (malzenstwo[k].czy_umarl_mal == 1) {
+						brat4mals = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
+						strcpy_s(brat4malsch, brat4mals.c_str());
+						::output728 = &output803;
+						output728->value(brat4malsch);
+					}
+					for (int d = 0; d <= 36; d++) {
+						if (malzenstwo[k].imie == kuzyn5[d].imie) {
+							dziecirodzenstwa4 = dziecirodzenstwa4 + 1;
+							if (dziecirodzenstwa4 == 1) {
+								brat4dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat4dziecko1ch, brat4dziecko1.c_str());
+								::output729 = &output805;
+								output729->value(brat4dziecko1ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat4dziecko1s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat4dziecko1sch, brat4dziecko1s.c_str());
+									::output730 = &output806;
+									output730->value(brat4dziecko1sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat4dziecko1mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output731 = &output807;
+									strcpy_s(brat4dziecko1malch, brat4dziecko1mal.c_str());
+									output731->value(brat4dziecko1malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat4dziecko1mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat4dziecko1malsch, brat4dziecko1mals.c_str());
+										::output732 = &output808;
+										output732->value(brat4dziecko1malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa4 == 2) {
+								brat4dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat4dziecko2ch, brat4dziecko2.c_str());
+								::output733 = &output810;
+								output733->value(brat4dziecko2ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat4dziecko2s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat4dziecko2sch, brat4dziecko2s.c_str());
+									::output734 = &output811;
+									output734->value(brat4dziecko2sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat4dziecko2mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output735 = &output812;
+									strcpy_s(brat4dziecko2malch, brat4dziecko2mal.c_str());
+									output735->value(brat4dziecko2malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat4dziecko2mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat4dziecko2malsch, brat4dziecko2mals.c_str());
+										::output736 = &output813;
+										output736->value(brat4dziecko2malsch);
+									}
+								}
+							}
+							if (dziecirodzenstwa4 == 3) {
+								brat4dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
+								strcpy_s(brat4dziecko3ch, brat4dziecko3.c_str());
+								::output737 = &output815;
+								output737->value(brat4dziecko3ch);
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+									brat4dziecko3s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
+									strcpy_s(brat4dziecko3sch, brat4dziecko3s.c_str());
+									::output738 = &output816;
+									output738->value(brat4dziecko3sch);
+								}
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+									brat4dziecko3mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
+									::output739 = &output817;
+									strcpy_s(brat4dziecko3malch, brat4dziecko3mal.c_str());
+									output739->value(brat4dziecko3malch);
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+										brat4dziecko3mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
+										strcpy_s(brat4dziecko3malsch, brat4dziecko3mals.c_str());
+										::output740 = &output818;
+										output740->value(brat4dziecko3malsch);
+									}
+								}
+							}
+
+						}
+					}
+				}
+			}
+
 		}
 	}
 	window->show();
