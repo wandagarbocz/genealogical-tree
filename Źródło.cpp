@@ -1,19 +1,12 @@
 #include<FL/Fl.h> //DO UTWORZENIA INTERFEJSU GRAFICZNEGO
 #include<FL/Fl_Box.h> //
 #include<FL/Fl_Window.h> //DO UTWORZENIA OKNA
-#include <FL/fl_draw.H>
 #include <FL/Fl_Output.H> //DO WYPISANIA SANYCH W INTERFEJSIE
 #include <FL/Fl_Widget.H>
-#include <Windows.h>
 #include <string>
 #include <cstring>
-#include<map>
-#include <vector>
 #include <iostream>
 using namespace std;
-
-
-//Dodac map lub vector, jakas wirtualna ub interfejs
 
 //DEKLARACJE PRZESTRZENI WYŚWIETLANIA TEKSTU
 Fl_Output* output1;
@@ -359,7 +352,7 @@ Fl_Output* output710;
 class Bazowa { //abstrakcyjna klasa bazowa 
 public:
 	//FUNKKCJE WIRTUALNE, KTÓRE BĘDĄ ZWRACAĆ POPRAWNOŚĆ WPISANYCH Z KLAWIATURY DANYCH
-	//ZWRACAJA 0 GDY DANE SA NIEPOPRAWNE A 1 GDY POPRAWNE 
+	//ZWRACAJĄ 0 GDY DANE SA NIEPOPRAWNE A 1 GDY POPRAWNE 
 	virtual int get_poprawnosc() = 0;
 	virtual int get_poprawnosc1() = 0;
 
@@ -368,9 +361,9 @@ public:
 class Osoba:public Bazowa { //KLASA OSOBA, KTÓRA DZIEDZICZY PO KLASIE BAZOWEJ 
 public:
 	string dzien_urodzenia; //DZIEŃ URODZENIA OSOBY
-	string miesiac_urodzenia; //MIESIAC URODZENIA OSOBY
+	string miesiac_urodzenia; //MIESIĄC URODZENIA OSOBY
 	string rok_urodzenia; //ROK URODZENIA OSOBY
-	string imie; //IMIE OSOBY
+	string imie; //IMIĘ OSOBY
 	int czy_umarla; //ZMIENNA ŚWIADCZĄCA O TYM CZY OSOBA UMARŁA, 0 JEŚLI ŻYJE, 1 JEŚLI UMARŁA
 	string kto; //JAKIE POKREWIENSTWO WIĄŻE CIĘ Z TĄ OSOBĄ 
 	//ZMIENNE ŚWIADCZĄCE O POPRAWNOŚCI WPROWADZONYCH DANYCH
@@ -460,6 +453,7 @@ public:
 		}
 	}
 
+	//FUNKCJE ZWRACAJACE WARTOSCI WPISANE Z KLAWIATURY
 	string get_dzien_urodzenia() {
 		return dzien_urodzenia;
 	}
@@ -478,6 +472,7 @@ public:
 	string get_kto() {
 		return kto;
 	}
+	//IMPLEMENTACJA FUNKCJI WIRTUALNYCH, DEKLAROWANYCH W KLASIE BAZOWA
 	virtual int get_poprawnosc() {
 		return poprawnosc;
 	}
@@ -486,10 +481,11 @@ public:
 	}
 };
 
-class Strona :public Osoba {
+class Strona :public Osoba { //KLASA STRONA, DZIEDZICZĄCA PUBLICZNIE PO KLASIE OSOBA
 public:
-	string strona;
+	string strona; //ZMIENNA STRONA, KTÓRA ŚWIADCZY CZY DANA OSOBA JEST OD STRIINY OJCA CZY MATKI
 
+	//KONSTRUKTORY PARAMETRYCZNY I KOPIUJĄCY KLASY STRONA
 	Strona(string du = "0", string mu = "0", string ru = "0", string im = "cos", int cu = 0, string k = "cos", int pop=1, int pop1=1, int pop2=1, int pop3=1, string s = "cos") :Osoba(du, mu, ru, im, cu, k, pop, pop1, pop2, pop3) {
 		strona = s;
 	}
@@ -497,24 +493,25 @@ public:
 		strona = strona1.strona;
 	}
 
-	void wpisanie_strony() {
+	void wpisanie_strony() { //JEŻELI DODAWANA OSOBA JEST DLA WPISUJĄCEJ BABCIĄ, DZIADKIEM, CIOTKĄ LUB WUJKIEM NALEŻY WPISAĆ CZY JEST ONA OD STRONY OJCA CZY MATKI
 		if (kto == "7" || kto == "7." || kto == "8" || kto == "9" || kto == "9." || kto == "8." || kto == "10." || kto == "10" ) {
 			cout << "Ta osoba jest od strony ojca czy matki?" << endl;
 			cout << "1. Ojca" << endl;
 			cout << "2. Matki" << endl;
 			cin >> strona;
 			if (strona != "1" || strona != "1." || strona != "2" || strona != "2.") {
-				poprawnosc = 0;
+				poprawnosc = 0; //DANE NIE SĄ POPRAWNE
 			}
 			else {
-				poprawnosc = 1;
+				poprawnosc = 1; //DANE SĄ POPRAWNE
 			}
 		}
 	}
-	string get_strona() {
+	string get_strona() { //FUNKCJA ZWRACAJĄCA WYBRANĄ STRONĘ
 		return strona;
 	}
 
+	//IMPLEMENTACJA FUNCKJI WIRTUALNYCH
 	virtual int get_poprawnosc() {
 		return poprawnosc;
 	}
@@ -522,8 +519,9 @@ public:
 		return poprawnosc1;
 	}
 };
-class Kuzyn :public Strona {
+class Kuzyn :public Strona { //KLASA KUZYN, DZIEDZICZĄCA PUBLICZNIE PO KLASIE STRONA
 public:
+	//PUBLICZNE ZMIENNE OPISUJĄCE OSOBĘ KUZYNA (IMIĘ, DATA URODZENIA, CZY UMARŁ, LICZBA DZIECI DANEJ CIOCI/WUJKA/BRATA/SIOSTRY)
 	string imie_kuzyna;
 	string dzien_urodzenia_kuzyna;
 	string miesiac_urodzenia_kuzyna;
@@ -533,6 +531,7 @@ public:
 
 	void dodaj_kuzyna() {
 		string il_kuzyn;
+		//JEŻELI DODAWANĄ OSOBĄ JEST CIOCIA, WUJEK, BRAT LUB SIOSTRA TO ISTNIEJE MOŻLIWOŚĆ DODANIA JEJ DZIECI
 		if (kto == "9." || kto == "9" || kto == "10" || kto == "10." || kto=="3." || kto=="3" || kto=="4" || kto=="4.")
 		{
 			cout << "Czy chcesz dodac dziecko tej osoby? Jezeli chcesz, wpisz ilosc dzieci, jezeli nie wpisz 0" << endl;
@@ -542,7 +541,7 @@ public:
 		}
 	}
 
-	void dane_kuzyna() {
+	void dane_kuzyna() { //WPISYWANIE DANYCH OSOBY Z KLAWIATURY W KONSOLII
 		string zmienna;
 		cout << "Wprowadz imie dziecka" << endl;
 		cin >> imie_kuzyna;
@@ -567,6 +566,7 @@ public:
 		}
 	}
 
+	//KONSTRUKTORY PARAMETRYCZNY I KOPIUJĄCY KLASY KUZYN
 	Kuzyn(string du = "0", string mu = "0", string ru = "0", string im = "cos", int cu = 0, string k = "cos", int pop = 1, int pop1 = 1, int pop2 = 1, int pop3 = 1, string s = "cos", string duk="0", string muk="0", string ruk="0", string imie_kuz="brak", int ile_kuz=0, int czy_umarl=0) :Strona(du, mu, ru, im, cu, k, pop, pop1, pop2, pop3, s) {
 		dzien_urodzenia_kuzyna = duk;
 		miesiac_urodzenia_kuzyna = muk;
@@ -583,6 +583,7 @@ public:
 		imie_kuzyna = kuzyn1.imie_kuzyna;
 		ile_kuzynow = kuzyn1.ile_kuzynow;
 	}
+	//FUNKCJE ZWRACAJĄCE DANE KUZYNA
 	string get_dzien_urodzenia_kuzyna() {
 		return dzien_urodzenia_kuzyna;
 	}
@@ -601,6 +602,8 @@ public:
 	int get_liczba_kuzynow() {
 		return ile_kuzynow;
 	}
+
+	//IMPLEMENTACJA FUNKCJI WIRTUALNYCH, KTÓRE ZWRACAJĄ POPRAWNOŚĆ WPISANYCH DANYCH
 	virtual int get_poprawnosc() {
 		return poprawnosc;
 	}
@@ -609,7 +612,7 @@ public:
 	}
 };
 
-class Smierc :public Osoba {
+class Smierc :public Osoba { //KLASA ŚMIERĆ, DZIEDZICZĄCA PUBLICZNIE PO KLASIE OSOBA
 public:
 	string dzien_zgonu;
 	string miesiac_zgonu;
@@ -629,7 +632,7 @@ public:
 
 	}
 
-
+	//FUNKCJA DO WPISYWANIA DATY ZGONU, JEŻELI OSOBA UMARŁA
 	void kiedy_umarla() {
 
 		if (czy_umarla == 1) {
@@ -647,6 +650,7 @@ public:
 		}
 	}
 
+	//FUNKCJA OBLICZAJĄCA I WYŚWIETLAJĄCA ILE LAT ŻYŁA DANA OSOBA
 	void ile_lat() {
 		if (czy_umarla == 1) {
 			int miesiac_zgonu1;
@@ -680,6 +684,7 @@ public:
 		}
 	}
 
+	//GETTERY
 	string get_rok_zgonu() {
 		return rok_zgonu;
 	}
@@ -692,6 +697,7 @@ public:
 	int get_lata() {
 		return lata;
 	}
+	//IMPLEMENTACJA FUNKCJI WIRTUALNYCH 
 	virtual int get_poprawnosc() {
 		return poprawnosc;
 	}
@@ -701,7 +707,7 @@ public:
 };
 
 
-class Malzenstwo :public Kuzyn {
+class Malzenstwo :public Kuzyn { //KLASA MAŁŻEŃSTWO, KTÓRA DZIEDZICZY PUBLICZNIE PO KLASIE KUZYN
 public:
 	string imie_mal;
 	string kto2;
@@ -711,6 +717,7 @@ public:
 	int czy_umarl_mal;
 	int czy_malzonek;
 
+	//KONSTRUKTORY PARAMETRYCZNY I KOPIUJĄCY KLASY
 	Malzenstwo(string du = "0", string mu = "0", string ru = "0", string im = "cos", int cu = 0, string k = "cos", int pop=1, int pop1=1, int pop2=1, int pop3=1, string s = "cos", string duk = "0", string muk = "0", string ruk = "0", string imie_kuz = "brak", int ile_kuz = 0, int czy_umarl = 0, string imm = "cos", string dm = "1", string mm = "1", string rm = "1", int cmm = 1, string k2 = "brak", int cm=0) :Kuzyn(du, mu, ru, im, cu, k, pop, pop1, pop2, pop3, s, duk, muk, ruk, imie_kuz, ile_kuz, czy_umarl) {
 		imie_mal = imm;
 		dzien_mal = dm;
@@ -727,6 +734,7 @@ public:
 		kto2 = mal1.kto2;
 	}
 
+	//JEŻELI WPISYWANĄ OSOBĄ JEST BRAT, SIOSTRA, CÓRKA, SYN, CIOCIA LUB WUJEK TO MOŻEMY DODAĆ MAŁŻONKA TEJ OSOBY
 	string wpisanie_malzonka() {
 
 		string odpowiedz;
@@ -740,7 +748,7 @@ public:
 		}
 
 	}
-
+	//JEŻELI POPRZEDNIA FUNKCJA ZWRÓCIŁA "TAK" TO MOŻNA DODAĆ IMIĘ, DATĘ URODZENIA MAŁŻONKA ORAZ OKREŚLIĆ CZY ZMARŁ
 	void dane_malzonka(string odpowiedz){
 		string odpowiedz1;
 		if (odpowiedz == "tak" || odpowiedz == "TAK" || odpowiedz == "Tak") {
@@ -769,6 +777,7 @@ public:
 		}
 	}
 
+	//GETTERY
 	int get_czy_umarl_mal() {
 		return czy_umarl_mal;
 	}
@@ -791,30 +800,33 @@ public:
 	string get_kto_mal() {
 		return kto2;
 	}
+
+	//IMPLEMENTACJA FUNKCJI WIRTUALNYCH 
+	virtual int get_poprawnosc() {
+		return poprawnosc;
+	}
 	virtual int get_poprawnosc1() {
 		return poprawnosc1;
-	}
-	virtual int get_poprawnosc2() {
-		return poprawnosc2;
 	}
 };
 
 
 int main() {
-	Osoba osoba[40];
-	Strona strona1[40];
-	Smierc smierc[40];
 
-	Malzenstwo malzenstwo[40];
-	Smierc smierc_malzonka[40];
-	Kuzyn kuzyn[36];
-	Kuzyn kuzyn5[36];
-	Malzenstwo malzenstwokuzyn[36];
-	Smierc smierc_kuzyn[36];
-	Smierc smierc_kuzynmal[36];
-	Malzenstwo malzenstwokuzyn5[36];
-	Smierc smierc_kuzyn5[36];
-	Smierc smierc_kuzynmal5[366];
+	Osoba osoba[40]; //TABLICA OBIEKTÓW KLASY OSOBA
+	Strona strona1[40]; //TABLICA OBIEKTÓW KLASY STRONA
+	Smierc smierc[40]; //TABLICA OBIEKTÓW KLASY ŚMIERĆ
+
+	Malzenstwo malzenstwo[40]; //TABLICA OBIEKTÓW KLASY MAŁŻEŃSTWO
+	Smierc smierc_malzonka[40]; //TABLICA OBIEKTÓW KLASY ŚMIERĆ, OBIEKT Z TEJ TABLICY REPREZENTUJE ŚMIERĆ MAŁŻONKA DANEJ OSOBY
+	Kuzyn kuzyn[36]; //TABLICA OBIEKTÓW KLASY KUZYN, ELEMENTY TEJ TABLICY TO KUZYNI OSOBY WPISUJĄCEJ
+	Kuzyn kuzyn5[36]; //TABLICA OBIEKTÓW KLASY KUZYN, ELEMENTY TEJ TABLICY TO DZIECI RODZEŃSTWA OSOBY TWORZĄCEJ DRZEWO
+	Malzenstwo malzenstwokuzyn[36]; //TABLICA OBIEKTÓW KLASY MAŁŻEŃSTWO, OBIEKTY W TEJ TABLICY TO MAŁŻONKOWIE KUZYNÓW OSOBY WPISUJĄCEJ
+	Smierc smierc_kuzyn[36]; //TABLICA OBIEKTÓW KLASY ŚMIERĆ, OBIEKTY W TEJ TABLICY REPREZENTUJĄ ŚMIERĆ KUZYNA
+	Smierc smierc_kuzynmal[36]; //TABLICA OBIEKTÓW KLASY ŚMIERĆ, OBIEKTY W TEJ TABLICY REPREZENTUJĄ ŚMIERĆ MAŁŻONKA DANEGO KUZYNA
+	Malzenstwo malzenstwokuzyn5[36]; //TABLICA OBIEKTÓW KLASY MAŁŻEŃSTWO, OBIEKTY W TEJ TABLICY REPREZENTUJĄ MAŁŻONKA DANEGO BRATANKA/SIOSTRZEŃCA
+	Smierc smierc_kuzyn5[36]; //TABLICA OBIEKTÓW KLASY ŚMIERĆ, OBIEKTY W TEJ TABLICY REPREZENTUJĄ ŚMIERĆ BRATANKA/SIOSTRZEŃCA
+	Smierc smierc_kuzynmal5[36]; //TABLICA OBIEKTÓW KLASY ŚMIERĆ, OBIEKTY W TEJ TABLICY REPREZENTUJĄ ŚMIERĆ MAŁZONKA BRATANKA/SIOSTRZEŃCA
 
 
 	int suma_kuzynow = 0;
@@ -825,7 +837,7 @@ int main() {
 	string mojmiesiac;
 	string mojrok;
 
-
+	//WPISYWANIE SWOICH DANYCH
 	cout << "wpisz swoje imie" << endl;
 	cin >> mojeimie;
 	cout << "wpisz swoj dzien urodzenia" << endl;
@@ -835,13 +847,15 @@ int main() {
 	cout << "wpisz swoj rok urodzenia" << endl;
 	cin >> mojrok;
 
+	//PETLA WHILE, POWTARZA SIĘ DO MOMENTU WPISANIA CZEGOŚ INNEGO NIŻ 1 PO DODANIU OSOBY
 	int i = 0;
 	while (odpowiedz == 1) {
 		
 		Osoba os1;
 		
-		Bazowa* bazowa1 = &os1;
+		Bazowa* bazowa1 = &os1; //TWORZENIE WSKAŹNIKA KLASY BAZOWEJ
 
+		//DODANIE OBIEKTU KLASY OSOBA DO TABLICY I WYWOŁANIE FUNKCJI Z TEJ KLASY 
 		osoba[i] = os1;
 		osoba[i].wpisz_osobe();
 		osoba[i].kim_jest();
@@ -3911,7 +3925,7 @@ int main() {
 
 		}
 	}
-	window->show();
+	window->show(); //POKAZANIE OKNA GRAFICZNEGO
 	return Fl::run();
 }
 
