@@ -3,9 +3,9 @@
 //10.2020
 
 #include<FL/Fl.h> //DO UTWORZENIA INTERFEJSU GRAFICZNEGO
-#include<FL/Fl_Box.h> //
+#include<FL/Fl_Box.h> 
 #include<FL/Fl_Window.h> //DO UTWORZENIA OKNA
-#include <FL/Fl_Output.H> //DO WYPISANIA SANYCH W INTERFEJSIE
+#include <FL/Fl_Output.H> //DO WYPISANIA DANYCH W INTERFEJSIE
 #include <FL/Fl_Widget.H>
 #include <string>
 #include <cstring>
