@@ -1,3 +1,7 @@
+//DRZEWO GENEALOGICZNE
+//WANDA GARBOCZ
+//10.2020
+
 #include<FL/Fl.h> //DO UTWORZENIA INTERFEJSU GRAFICZNEGO
 #include<FL/Fl_Box.h> //
 #include<FL/Fl_Window.h> //DO UTWORZENIA OKNA
@@ -767,9 +771,11 @@ public:
 			cin >> odpowiedz1;
 			if (odpowiedz1 == "TAK" || odpowiedz1 == "Tak" || odpowiedz1 == "tak") {
 				czy_umarl_mal = 1;
+				
 			}
 			else {
 				czy_umarl_mal = 0;
+				
 			}
 		}
 		else {
@@ -861,6 +867,7 @@ int main() {
 		osoba[i].kim_jest();
 
 		odpowiedz = 0;
+		//zmienne używane do przypisania wartości z getterów
 		string du;
 		string mu;
 		string ru;
@@ -885,7 +892,7 @@ int main() {
 		string imiemal;
 		string kto_mal;
 		
-
+		//wywołanie getterów i przypisanie wartości 
 		du = osoba[i].get_dzien_urodzenia();
 		mu = osoba[i].get_miesiac_urodzenia();
 		ru = osoba[i].get_rok_urodzenia();
@@ -893,43 +900,46 @@ int main() {
 		im = osoba[i].get_imie();
 		k = osoba[i].get_kto();
 		
-		
+		//wywołanie metod sprawdzających poprawność
 		pop = bazowa1->get_poprawnosc();
 		pop1 = bazowa1->get_poprawnosc1();
 
 
-		if (pop == 1 && pop1 == 1) {
-
+		if (pop == 1 && pop1 == 1) { //jeżeli dane są poprawne
+			//jeżeli wpisana osoba to babcia, dziadek, ciocia lub wujek
 			if (k == "7" || k == "7." || k == "8" || k == "9" || k == "9." || k == "8." || k == "10." || k == "10") {
-				Strona s1(du, mu, ru, im, cu, k);
-				strona1[i] = s1;
-				strona1[i].wpisanie_strony();
-
+				Strona s1(du, mu, ru, im, cu, k); //utworzenie obiektu klasy Strona
+				strona1[i] = s1; //dodanie obiektu do tablicy
+				//wywolanie metod z klasy
+				strona1[i].wpisanie_strony(); 
 
 				str = strona1[i].get_strona();
 			}
 
-			if (cu == 1) {
+			if (cu == 1) { //jeżeli osoba umarła to tworzy się obiekt klasy Śmierć
 				Smierc s2(du, mu, ru, im, cu, k);
-				smierc[i] = s2;
+				smierc[i] = s2; //dodanie obiektu do tablicy
+				//wywołanie metod z klasy 
 				smierc[i].kiedy_umarla();
 				smierc[i].ile_lat();
 
+				//zmienne do których zostaną przypisane wartości z getterów
 				string dz;
 				string mz;
 				string rz;
+				//wywołanie getterów i wpisanie wartości do zmiennych 
 				dz = smierc[i].get_dzien_zgonu();
 				mz = smierc[i].get_miesiac_zgonu();
 				rz = smierc[i].get_rok_zgonu();
 			}
-
+			//jeżli osoba to siostra, brat, córka, syn, ciocia lub wujek to tworzy sie obiekt klasy Małżeństwo
 			if (k == "3" || k == "3." || k == "4" || k == "4." || k == "5." || k == "5" || k == "6." || k == "6" || k == "9" || k == "9." || k == "10" || k == "10.") {
-				Malzenstwo m1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
-				Bazowa* bazowa2 = &m1;
-				malzenstwo[i] = m1;
+				Malzenstwo m1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str); //utworzenie obiektu
+				malzenstwo[i] = m1; //dodanie obiektu do tablicy
 				string odpowiedz2;
-				odpowiedz2 = malzenstwo[i].wpisanie_malzonka();
-				malzenstwo[i].dane_malzonka(odpowiedz2);
+				odpowiedz2 = malzenstwo[i].wpisanie_malzonka(); //odczytanie wartości z funkcji i przypisanie jej do zmiennej
+				//wywołanie metod z klasy 
+				malzenstwo[i].dane_malzonka(odpowiedz2); 
 				dum = malzenstwo[i].get_dzien_mal();
 				mum = malzenstwo[i].get_miesiac_mal();
 				rum = malzenstwo[i].get_rok_mal();
@@ -939,50 +949,50 @@ int main() {
 				czymal = malzenstwo[i].get_czy_malzonek();
 				int op1 = 0;
 				if (odpowiedz2 == "tak" || odpowiedz2 == "TAK" || odpowiedz2 == "Tak") {
-					op1 = 1;
+					op1 = 1; //jeżeli małżonek został wpisany
 				}
-				if (czy_umarl_mal == 1 && op1 == 1) {
-					Smierc s3(dum, mum, rum, imiemal, czy_umarl_mal, kto_mal);
-					smierc_malzonka[i] = s3;
+				if (czy_umarl_mal == 1 && op1 == 1) { //jeżeli małżonekzostał wpisany i umarł tworzy się obiekt klasy Śmierć
+					Smierc s3(dum, mum, rum, imiemal, czy_umarl_mal, kto_mal); //utworzenie obiektu
+					smierc_malzonka[i] = s3; //dodanie obiektu do tablicy 
+					//wywołanie metod z klasy 
 					smierc_malzonka[i].kiedy_umarla();
 					smierc_malzonka[i].ile_lat();
+					//wywołanie getterów i zapisanie zwracanych przez nie wartości do zmiennych 
 					dzmal = smierc_malzonka[i].get_dzien_zgonu();
 					mzmal = smierc_malzonka[i].get_miesiac_zgonu();
 					rzmal = smierc_malzonka[i].get_rok_zgonu();
 				}
 
-				pop4=bazowa2->get_poprawnosc();
-				pop5 = bazowa2->get_poprawnosc1();
-
 
 			}
 
-		
+			//jeżeli osoba to ciocia lub wujek tworzy się obiekt klasy Kuzyn
 			if (k == "10" || k == "10." || k == "9" || k == "9.") {
-					Kuzyn kuzyn1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
+					Kuzyn kuzyn1(du, mu, ru, im, cu, k, 1, 1, 1, 1, str); //utworzenie obiektu
+					//deklaracja używanych zmiennych 
 					string imie_kuzyna1;
 					string dzien_ur_kuzyna;
 					string miesiac_ur_kuzyna;
 					string rok_ur_kuzyna;
 					int czy_umarl_kuzyn;
 					int ile_kuzynow;
-
-					kuzyn1.dodaj_kuzyna();
-					ile_kuzynow = kuzyn1.get_liczba_kuzynow();
-
 					string odpowiedz7;
 					int czy_mal_kuzyna_umarl;
 					string dzien_mal_kuzyna;
 					string miesiac_mal_kuzyna;
 					string rok_mal_kuzyna;
 					string imie_mal_kuzyna;
+					//wywołanie funkcji z klasy 
+					kuzyn1.dodaj_kuzyna();
+					ile_kuzynow = kuzyn1.get_liczba_kuzynow();
 
-					if (ile_kuzynow > 0) {
-						for (int p = suma_kuzynow; p < ile_kuzynow + suma_kuzynow; p++) {
+					if (ile_kuzynow > 0) { //jeżeli liczba kuzynów jest większa od 0
+						for (int p = suma_kuzynow; p < ile_kuzynow + suma_kuzynow; p++) { //pętla powtarza się tyle razy, ile jest kuzynów aby ich wszystkich dodać
 							int o3 = 0;
-							Kuzyn kuzyn2(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
-							kuzyn[p] = kuzyn2;
-							kuzyn[p].dane_kuzyna();
+							Kuzyn kuzyn2(du, mu, ru, im, cu, k, 1, 1, 1, 1, str); //utwozrenie obiektu klasy kuzyn
+							kuzyn[p] = kuzyn2; //dodanie obiektu do tablicy
+							kuzyn[p].dane_kuzyna(); //wywołanie metody
+							//wywołanie getterów i przypisanie zwracanych przez nie wartości do zmiennych
 							dzien_ur_kuzyna = kuzyn[p].get_dzien_urodzenia_kuzyna();
 							miesiac_ur_kuzyna = kuzyn[p].get_miesiac_urodzenia_kuzyna();
 							rok_ur_kuzyna = kuzyn[p].get_rok_urodzenia_kuzyna();
@@ -990,32 +1000,36 @@ int main() {
 							imie_kuzyna1 = kuzyn[p].get_imie_kuzyna();
 
 
-							if (czy_umarl_kuzyn == 1) {
+							if (czy_umarl_kuzyn == 1) { //jeżeli kuzyn zmarł to tworzy się obiekt klasy śmierc
 								Smierc smierck1(dzien_ur_kuzyna, miesiac_ur_kuzyna, rok_ur_kuzyna, imie_kuzyna1, czy_umarl_kuzyn, k, 1, 1, 1, 1);
-								smierc_kuzyn[p] = smierck1;
+								smierc_kuzyn[p] = smierck1; //dodanie obiektu do tablicy
+								//wywołanie metod z klasy 
 								smierc_kuzyn[p].kiedy_umarla();
 								smierc_kuzyn[p].ile_lat();
 							}
-
+							Bazowa* bazowa2 = &kuzyn2; //utworzenie wskaźnia klasy bazowej 
+							pop4 = bazowa2->get_poprawnosc(); 
 							cout << "czy chcesz dodac malzonka tej osoby?" << endl;
 							cin >> odpowiedz7;
+							//utworzenie obiektu klasy małżeńswtwo
 							Malzenstwo malzenstwo_kuz(du, mu, ru, im, cu, k, 1, 1, 1, 1, str, dzien_ur_kuzyna, miesiac_ur_kuzyna, rok_ur_kuzyna, imie_kuzyna1, czy_umarl_kuzyn);
-							malzenstwokuzyn[p] = malzenstwo_kuz;
+							malzenstwokuzyn[p] = malzenstwo_kuz; //dodanie obiektu do tablicy
 
 							if (odpowiedz7 == "tak" || odpowiedz7 == "TAK" || odpowiedz7 == "Tak") {
 								o3 = 1;
 							}
-							if (o3 == 1) {
-								malzenstwokuzyn[p].dane_malzonka(odpowiedz7);
-
+							if (o3 == 1 && pop4==1) { //jeżeli kuzyn ma małżonka i jego dane były poprawne 
+								malzenstwokuzyn[p].dane_malzonka(odpowiedz7); //wywołanie metody z klasy Małżeństwo
+								//wywołanie getterów i przypisanie zwracanych przez nie wartości do zmiennch
 								czy_mal_kuzyna_umarl = malzenstwokuzyn[p].get_czy_umarl_mal();
 								imie_mal_kuzyna = malzenstwokuzyn[p].get_imie_mal();
 								dzien_mal_kuzyna = malzenstwokuzyn[p].get_dzien_mal();
 								miesiac_mal_kuzyna = malzenstwokuzyn[p].get_miesiac_mal();
 								rok_mal_kuzyna = malzenstwokuzyn[p].get_rok_mal();
-								if (czy_mal_kuzyna_umarl == 1) {
+								if (czy_mal_kuzyna_umarl == 1) { //jeżeli małżonek zmarł utworzony zostaje obiekt klasy śmierć
 									Smierc smierc_mal_kuz(dzien_mal_kuzyna, miesiac_mal_kuzyna, rok_mal_kuzyna, imie_mal_kuzyna, czy_mal_kuzyna_umarl, k, 1, 1, 1, 1);
-									smierc_kuzynmal[p] = smierc_mal_kuz;
+									smierc_kuzynmal[p] = smierc_mal_kuz; //dodanie obiektu do tablicy
+									//wywołanie metod z klasy śmierć
 									smierc_kuzynmal[p].kiedy_umarla();
 									smierc_kuzynmal[p].ile_lat();
 								}
@@ -1026,7 +1040,7 @@ int main() {
 					}
 			}
 			
-
+			//jeżeli osoba to brat lub siostra, tworzy się obiekt klasy kuzyn
 			if (k == "3" || k == "3." || k == "4" || k == "4.") {
 				Kuzyn kuzyn3(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
 				string imie_kuzyna2;
@@ -1052,13 +1066,14 @@ int main() {
 						int o4 = 0;
 						Kuzyn kuzyn4(du, mu, ru, im, cu, k, 1, 1, 1, 1, str);
 						kuzyn5[p2] = kuzyn4;
+						Bazowa* bazowa3 = &kuzyn4;
 						kuzyn5[p2].dane_kuzyna();
 						dzien_ur_kuzyna2 = kuzyn5[p2].get_dzien_urodzenia_kuzyna();
 						miesiac_ur_kuzyn2 = kuzyn5[p2].get_miesiac_urodzenia_kuzyna();
 						rok_ur_kuzyna2 = kuzyn5[p2].get_rok_urodzenia_kuzyna();
 						czy_umarl_kuzyn2 = kuzyn5[p2].get_czy_umarl_kuzyn();
 						imie_kuzyna2 = kuzyn5[2].get_imie_kuzyna();
-
+						
 
 						if (czy_umarl_kuzyn2 == 1) {
 							Smierc smierck4(dzien_ur_kuzyna2, miesiac_ur_kuzyn2, rok_ur_kuzyna2, imie_kuzyna2, czy_umarl_kuzyn2, k, 1, 1, 1, 1);
@@ -1069,13 +1084,14 @@ int main() {
 
 						cout << "czy chcesz dodac malzonka tej osoby?" << endl;
 						cin >> odpowiedz8;
+						pop5 = bazowa3->get_poprawnosc();
 						Malzenstwo malzenstwo_kuz4(du, mu, ru, im, cu, k, 1, 1, 1, 1, str, dzien_ur_kuzyna2, miesiac_ur_kuzyn2, rok_ur_kuzyna2, imie_kuzyna2, czy_umarl_kuzyn2);
 						malzenstwokuzyn5[p2] = malzenstwo_kuz4;
 
 						if (odpowiedz8 == "tak" || odpowiedz8 == "TAK" || odpowiedz8 == "Tak") {
 							o4 = 1;
 						}
-						if (o4 == 1) {
+						if (o4 == 1 && pop5==1) {
 							malzenstwokuzyn5[p2].dane_malzonka(odpowiedz8);
 
 							czy_mal_kuzyna_umarl2 = malzenstwokuzyn5[p2].get_czy_umarl_mal();
@@ -1101,11 +1117,12 @@ int main() {
 			cout << "czy chcesz wpisac kolejna osobe?" << endl;
 			cout << "1. Tak" << endl;
 			cout << "2. Nie" << endl;
-			cin >> odpowiedz;
+			cin >> odpowiedz; //w zależności od wpisanej wartości pętla while się przerywa lub nie
 		}
-		i = i + 1;
+		i = i + 1; //inkrementacja indeksów tabel
 	}
 
+	//zmienne używane do wyświetlania danych w GUI
 	string zmiennaty;
 	zmiennaty = mojeimie + " ur." + mojdzien + "." + mojmiesiac + "." + mojrok;
 	char char_arrayty[40];
@@ -1527,10 +1544,11 @@ int main() {
 	plus = "+";
 	strcpy_s(plusch, plus.c_str());
 
-
+	//deklaracja okna graficznego
 	Fl_Window* window = new Fl_Window(4200, 1050, "Drzewo genealogiczne");
 	window->color(FL_GRAY);
 	
+	//deklaracja przestrzeni wyświetlania tekstu
 	Fl_Output output2(1820, 400, 100, 40); //ja
 	output2.color(FL_RED);
 	output2.textsize(Fl_Font(8));
@@ -2494,93 +2512,107 @@ int main() {
 	
 
 
-	for (int k = 0; k <= 40; k++)
+	for (int k = 0; k <= 40; k++) //petla, w której odczytywane sa dane z tablic
 	{
 		if (osoba[k].kto == "7" || osoba[k].kto == "7.") {
-			if (strona1[k].strona == "2" || strona1[k].strona == "2.") {
+			if (strona1[k].strona == "2" || strona1[k].strona == "2.") { //jezeli osoba to babcia od strony mamy
+				//dane babci
 				zmiennababciamama = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(char_arraybabciamama, zmiennababciamama.c_str());
-				::output11 = &output3;
-				output11->value(char_arraybabciamama);
-				if (osoba[k].czy_umarla == 1) {
+				strcpy_s(char_arraybabciamama, zmiennababciamama.c_str()); //zamiana danych na char
+				::output11 = &output3; //przypisanie przestrzeni wyświetlania tekstu
+				output11->value(char_arraybabciamama); //wypisanie danych na grafice
+				if (osoba[k].czy_umarla == 1) { //jeżeli osoba umarła
+					//dane zgonu babci
 					babciamamasmierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-					strcpy_s(babciams, babciamamasmierc.c_str());
-					::output13 = &output6;
-					output13->value(babciams);
+					strcpy_s(babciams, babciamamasmierc.c_str()); //zamiana danych na char
+					::output13 = &output6; //przypisanie przestrzeni wyświetlania tekstu
+					output13->value(babciams); //wypisanie danych na grafice
 				}
 			}
 		}
-		if (osoba[k].kto == "7" || osoba[k].kto == "7.") {
-			if (strona1[k].strona == "1" || strona1[k].strona == "1.") {
+		if (osoba[k].kto == "7" || osoba[k].kto == "7.") { //jeżeli osoba to babcia od strony taty 
+			if (strona1[k].strona == "1" || strona1[k].strona == "1.") { 
+				//dane babci
 				zmiennababciatata = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(char_arraybabciatata, zmiennababciatata.c_str());
-				::output12 = &output4;
-				output12->value(char_arraybabciatata);
-				if (osoba[k].czy_umarla == 1) {
+				strcpy_s(char_arraybabciatata, zmiennababciatata.c_str()); //zamiana stringa na char
+				::output12 = &output4; //przypisanie przestrzeni wyświetlania tekstu
+				output12->value(char_arraybabciatata); //wypisanie danych w odpowiednim miejscu na grafice
+				if (osoba[k].czy_umarla == 1) { //jeżeli babcia zmarła
+					//dane śmierci babci
 					babciatatasmierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-					strcpy_s(babciats, babciatatasmierc.c_str());
-					::output14 = &output5;
-					output14->value(babciams);
+					strcpy_s(babciats, babciatatasmierc.c_str()); //zamiana danych na char
+					::output14 = &output5; //przypisanie przestrzeni wyświetlania tekstu
+					output14->value(babciats); //wypisanie danych w odpowiednim miejscu na grafice
 				}
 			}
 		}
-		if (osoba[k].kto == "8" || osoba[k].kto == "8.") {
+		if (osoba[k].kto == "8" || osoba[k].kto == "8.") { //jeżeli osoba to dziadek od strony mamy
 			if (strona1[k].strona == "2" || strona1[k].strona == "2.") {
+				//dane dziadka
 				dzmama = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(dziadekm, dzmama.c_str());
-				::output15 = &output9;
-				output15->value(dziadekm);
-				if (osoba[k].czy_umarla == 1) {
+				strcpy_s(dziadekm, dzmama.c_str()); //zamiana danych ze stringa na char
+				::output15 = &output9; //przypisanie przestrzeni wyświetlania tekstu
+				output15->value(dziadekm); //wyświetlenie danych w odpowiednim miejscu na grafice
+				if (osoba[k].czy_umarla == 1) { //jeżeli dziadek zmarł
+					//dane śmierci dziadka
 					dzmamasmierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-					strcpy_s(dziadekms, dzmamasmierc.c_str());
-					::output16 = &output10;
-					output16->value(dziadekms);
+					strcpy_s(dziadekms, dzmamasmierc.c_str()); //zamiana danych ze stringa na char
+					::output16 = &output10; //przypisanie przestrzeni wyświetlania tekstu
+					output16->value(dziadekms); //wypisanie danych w odpowiednim miejscu na grafice
 				}
 			}
 		}
 		if (osoba[k].kto == "8" || osoba[k].kto == "8.") {
-			if (strona1[k].strona == "1" || strona1[k].strona == "1.") {
+			if (strona1[k].strona == "1" || strona1[k].strona == "1.") { //jeżeli osoba to dziadek od strony taty 
+				//dane dziadka 
 				dztata = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(dziadekt, dztata.c_str());
-				::output17 = &output7;
-				output17->value(dziadekt);
-				if (osoba[k].czy_umarla == 1) {
+				strcpy_s(dziadekt, dztata.c_str()); //zamiana danych na char
+				::output17 = &output7; //przypisanie przestrzeni wyswietlania tekstu
+				output17->value(dziadekt); //wyświetlenie danych w opowiednim miejscu na grafice
+				if (osoba[k].czy_umarla == 1) { //jeżeli dziadek zmarł
+					//dane śmierci dziadka
 					dztatasmierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-					strcpy_s(dziadekts, dztatasmierc.c_str());
-					::output18 = &output8;
-					output18->value(dziadekts);
+					strcpy_s(dziadekts, dztatasmierc.c_str()); //zamiana danych ze stringa na char
+					::output18 = &output8; //przypisanie przestrzeni wyświetlania tekstu
+					output18->value(dziadekts); //wypisanie danych na grafice
 				}
 			}
 		}
-		if (osoba[k].kto == "1" || osoba[k].kto == "1.") {
+		if (osoba[k].kto == "1" || osoba[k].kto == "1.") { //jeżeli osoba to mama
+			//dane mamy
 			mamadane = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-			strcpy_s(mamadane_ch, mamadane.c_str());
-			::output19 = &output20;
-			output19->value(mamadane_ch);
-			if (osoba[k].czy_umarla == 1) {
+			strcpy_s(mamadane_ch, mamadane.c_str()); //zmiana danych ze stringa na char
+			::output19 = &output20; //przypisanie przestrzeni wyświetlania tekstu
+			output19->value(mamadane_ch); //wypisanie danych na grafice
+			if (osoba[k].czy_umarla == 1) { //jeżeli mama zmarła
+				//data zgonu mamy
 				mamasmierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-				strcpy_s(mamasmierc_ch, mamasmierc.c_str());
-				::output111 = &output21;
-				output111->value(mamasmierc_ch);
+				strcpy_s(mamasmierc_ch, mamasmierc.c_str()); //zamiana danych na char
+				::output111 = &output21; //przypisanie przestrzeni wyświetlania tekstu
+				output111->value(mamasmierc_ch); //wypisanie daych na grafice
 			}
 		}
-		if (osoba[k].kto == "2" || osoba[k].kto == "2.") {
+		if (osoba[k].kto == "2" || osoba[k].kto == "2.") { //jeżeli osoba to tata 
+			//dane taty 
 			tatadane = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-			strcpy_s(tatadane_ch, tatadane.c_str());
-			::output112 = &output22;
-			output112->value(tatadane_ch);
-			if (osoba[k].czy_umarla == 1) {
+			strcpy_s(tatadane_ch, tatadane.c_str()); //zamiana danych na char
+			::output112 = &output22; //przypisanie przestrzeni wyświetlania tekstu
+			output112->value(tatadane_ch); //wypisane danych w odpowiednim miejscu na grafice
+			if (osoba[k].czy_umarla == 1) { //jeżeli tata zmarł
+				//data śmierci
 				tatasmierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-				strcpy_s(tatasmierc_ch, tatasmierc.c_str());
-				::output113 = &output23;
-				output113->value(tatasmierc_ch);
+				strcpy_s(tatasmierc_ch, tatasmierc.c_str()); //zamiana typu danych
+				::output113 = &output23; //przypisanie przestrzeni wyświetlania tekstu
+				output113->value(tatasmierc_ch); //wyświetlenie danych w odpowiednim miejscu na grafice 
 			}
 		}
 		if (osoba[k].kto == "9" || osoba[k].kto == "9." || osoba[k].kto == "10" || osoba[k].kto == "10.") {
-			if (strona1[k].strona == "2" || strona1[k].strona == "2.") {
-				liczba_rodzenstwa_mama = liczba_rodzenstwa_mama + 1;
+			if (strona1[k].strona == "2" || strona1[k].strona == "2.") { //jeżeli osoba to ciocia lub wujek od strony mamy
+				liczba_rodzenstwa_mama = liczba_rodzenstwa_mama + 1; //inkrementacja zmiennej informującej o liczbie rodzeństwa mamy
+				//dane cioci/wujka
 				ciocia1dane = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(ciocia1danech, ciocia1dane.c_str());
+				strcpy_s(ciocia1danech, ciocia1dane.c_str()); //zamiana danych na char
+				//przypisanie przestrzeni wyświetlania tekstu
 				::output114 = &output31;//ciocia1
 				::output192 = &output29; //ciocia2
 				::output117 = &output27; //ciocia3
@@ -2588,52 +2620,58 @@ int main() {
 				::output124 = &output84; //malzonek ciocia1
 				::output125 = &output85; //smierc malzonek ciocia1
 				::output126 = &output70; //malzonek ciocia2
-				::output127 = &output71; //smierc mmalzonek ciocia2
+				::output127 = &output71; //smierc malzonek ciocia2
 				::output128 = &output57; //malzonek ciocia3
 				::output129 = &output56; //smierc malzonek ciocia3
 				::output130 = &output41; //malzonek ciocia4
 				::output131 = &output40; //smierc malzonek ciocia4
 
-				if (liczba_rodzenstwa_mama == 1) {
-					output114->value(ciocia1danech);
-					int liczbakuzynow1 = 0;
-					if (malzenstwo[k].czy_malzonek == 1) {
+				if (liczba_rodzenstwa_mama == 1) { //jeżeli jest to pierwsza dodana siostra/brat mamy
+					output114->value(ciocia1danech); //wypisanie danych w odpowiednim miejsu na grafice
+					int liczbakuzynow1 = 0; //zmienna informująca o ilości dodanych dzieci danej cioci/wujka
+					if (malzenstwo[k].czy_malzonek == 1) { //jeżeli ciocia/wujek ma małżonka
+						//dane małżonka
 						ciocia1mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
-						strcpy_s(ciocia1malch, ciocia1mal.c_str());
-						output124->value(ciocia1malch);
-						if (malzenstwo[k].czy_umarl_mal == 1) {
+						strcpy_s(ciocia1malch, ciocia1mal.c_str()); //zamiana dancyh na char
+						output124->value(ciocia1malch); //wyświetlenie danych w odpowiednim miejscu na grafice
+						if (malzenstwo[k].czy_umarl_mal == 1) { //jeżeli małżonek cioci/wujka zmarł
+							//dane co do śmierci małżonka
 							ciocia1malsmierc = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
-							strcpy_s(ciocia1malsmiercch, ciocia1malsmierc.c_str());
-							output125->value(ciocia1malsmiercch);
+							strcpy_s(ciocia1malsmiercch, ciocia1malsmierc.c_str()); //zamiana danych na char
+							output125->value(ciocia1malsmiercch); //wypisanie danych w odpowiednim miejscu na grafice
 						}
-						for (int b = 0; b <= 36; b++) {
+						for (int b = 0; b <= 36; b++) { //pętla obiegająca obiekty tablicy kuzyn, jeżeli kuzyn jest dzieckiem danej cioci/wujka następuje inkrementacja zmiennej
 							if (malzenstwo[k].imie == kuzyn[b].imie && strona1[k].strona == kuzyn[b].strona) {
 								liczbakuzynow1 = liczbakuzynow1 + 1;
-								if (liczbakuzynow1 == 1) {
+								if (liczbakuzynow1 == 1) { //jeżeli to pierwszy dodany kuzyn
+									//dane kuzyna
 									kuzyn1dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
-									strcpy_s(kuzyn1ch, kuzyn1dane.c_str());
-									::output193 = &output86;
-									output193->value(kuzyn1ch);
-									if (kuzyn[b].czy_umarl_kuzyn == 1) {
+									strcpy_s(kuzyn1ch, kuzyn1dane.c_str()); //zamiana typu danych 
+									::output193 = &output86; //przypisanie przestrzeni wyświetlania tekstu
+									output193->value(kuzyn1ch); //wypisanie danych w odpowiednim miejscu na grafice
+									if (kuzyn[b].czy_umarl_kuzyn == 1) { //jeżeli kuzyn zmarł
+										//data śmierci kuzyna
 										kuzyn1danes = "zm." + smierc_kuzyn[b].dzien_zgonu + "." + smierc_kuzyn[b].miesiac_zgonu + "." + smierc_kuzyn[b].rok_zgonu;
-										strcpy_s(kuzyn1sch, kuzyn1danes.c_str());
-										::output195 = &output87;
-										output195->value(kuzyn1sch);
+										strcpy_s(kuzyn1sch, kuzyn1danes.c_str()); //zamiana typu danych 
+										::output195 = &output87; //przypisanie przestrzeni wyświetlania tekstu
+										output195->value(kuzyn1sch); //wyświetlenie danych w odpowiednim miejsu na grafice
 									}
-									if (malzenstwokuzyn[b].czy_malzonek == 1) {
+									if (malzenstwokuzyn[b].czy_malzonek == 1) { //jeżeli kuzyn ma małżonka
+										//dane małżonka kuzyna
 										kuzyn1danemal = malzenstwokuzyn[b].imie_mal + " ur." + malzenstwokuzyn[b].dzien_mal + "." + malzenstwokuzyn[b].miesiac_mal + "."+malzenstwokuzyn[b].rok_mal;
-										::output194 = &output88;
-										strcpy_s(kuzyn1malch, kuzyn1danemal.c_str());
-										output194->value(kuzyn1malch);
-										if (malzenstwokuzyn[b].czy_umarl_mal == 1) {
+										::output194 = &output88; //przypisanie przestrzeni wyświetlania tekstu
+										strcpy_s(kuzyn1malch, kuzyn1danemal.c_str()); //zamiana stringa na char
+										output194->value(kuzyn1malch); //wyświetlenie danych w odpowiednim miejsu na grafice
+										if (malzenstwokuzyn[b].czy_umarl_mal == 1) { //jeżeli małżonek kuzyna zmarł
+											//data śmierci małżonka
 											kuzyn1danemals = "zm." + smierc_kuzynmal[b].dzien_zgonu + "." + smierc_kuzynmal[b].miesiac_zgonu + "." + smierc_kuzynmal[b].rok_zgonu;
-											strcpy_s(kuzyn1malsch, kuzyn1danemals.c_str());
-											::output196 = &output89;
-											output196->value(kuzyn1malsch);
+											strcpy_s(kuzyn1malsch, kuzyn1danemals.c_str()); //zamiana string na char
+											::output196 = &output89; //przypisanie przestrzeni wyświetlania tekstu
+											output196->value(kuzyn1malsch); //wyświetlenie danych na grafice
 										}
 									}
 								}
-								if (liczbakuzynow1 == 2) {
+								if (liczbakuzynow1 == 2) { //jeżeli to drugi wpisany kuzyn
 									kuzyn2dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn2ch, kuzyn2dane.c_str());
 									::output197 = &output90;
@@ -2657,7 +2695,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow1 == 3) {
+								if (liczbakuzynow1 == 3) { //jeżeli to trzeci wpisany kuzyn
 									kuzyn3dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn3ch, kuzyn3dane.c_str());
 									::output211 = &output94;
@@ -2689,7 +2727,7 @@ int main() {
 				}
 				
 		
-				if (liczba_rodzenstwa_mama == 2) {
+				if (liczba_rodzenstwa_mama == 2) { //jeżeli to druga dodana siostra/brat mamy 
 					output192->value(ciocia1danech);
 					int liczbakuzynow2 = 0;
 					if (malzenstwo[k].czy_malzonek == 1) {
@@ -2702,9 +2740,9 @@ int main() {
 							output127->value(ciocia1malsmiercch);
 						}
 						for (int b = 0; b <= 36; b++) {
-							if (malzenstwo[k].imie == kuzyn[k].imie && strona1[k].strona == kuzyn[b].strona) {
+							if (malzenstwo[k].imie == kuzyn[b].imie && strona1[k].strona == kuzyn[b].strona) {
 								liczbakuzynow2 = liczbakuzynow2 + 1;
-								if (liczbakuzynow2 == 1) {
+								if (liczbakuzynow2 == 1) { //jeżeli to pierwsze dodane dziecko danej cioci/wujka
 									kuzyn4dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn4ch, kuzyn4dane.c_str());
 									::output215 = &output72;
@@ -2728,7 +2766,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow2 == 2) {
+								if (liczbakuzynow2 == 2) { //jeżeli to drugie dodane dziecko danej cioci/wujka
 									kuzyn5dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn5ch, kuzyn5dane.c_str());
 									::output219 = &output76;
@@ -2752,7 +2790,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow2 == 3) {
+								if (liczbakuzynow2 == 3) { //jeżeli to trzecie dodane dziecko danej cioci/wujka
 									kuzyn6dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn6ch, kuzyn6dane.c_str());
 									::output223 = &output80;
@@ -2783,7 +2821,7 @@ int main() {
 					cout << liczbakuzynow2 << endl;
 				}
 						
-				if (liczba_rodzenstwa_mama == 3) {
+				if (liczba_rodzenstwa_mama == 3) { //jeżeli dodano trzecią siostrę/brata mamy
 					output117->value(ciocia1danech);
 					int liczbakuzynow3 = 0;
 					if (malzenstwo[k].czy_malzonek == 1) {
@@ -2798,7 +2836,7 @@ int main() {
 						for (int b = 0; b <= 36; b++) {
 							if (malzenstwo[k].imie == kuzyn[b].imie && strona1[k].strona == kuzyn[b].strona) {
 								liczbakuzynow3 = liczbakuzynow3 + 1;
-								if (liczbakuzynow3 == 1) {
+								if (liczbakuzynow3 == 1) { //jeżeli to pierwsze dziecko danej cioci/wujka
 									kuzyn7dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn7ch, kuzyn7dane.c_str());
 									::output227 = &output59;
@@ -2822,7 +2860,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow3 == 2) {
+								if (liczbakuzynow3 == 2) { //jeżeli to drugie dziecko danej cioci/wujka
 									kuzyn8dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn8ch, kuzyn8dane.c_str());
 									::output231 = &output63;
@@ -2846,7 +2884,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow3 == 3) {
+								if (liczbakuzynow3 == 3) { //jeżeli to trzecie dziecko danej cioci/wujka
 									kuzyn9dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn9ch, kuzyn9dane.c_str());
 									::output235 = &output67;
@@ -2877,7 +2915,7 @@ int main() {
 					cout << liczbakuzynow3 << endl;
 				}
 				
-				if (liczba_rodzenstwa_mama == 4) {
+				if (liczba_rodzenstwa_mama == 4) { //jeżeli to czwarta dodana siostra/brat mamy
 					output118->value(ciocia1danech);
 					int liczbakuzynow4 = 0;
 					if (malzenstwo[k].czy_malzonek == 1) {
@@ -2892,7 +2930,7 @@ int main() {
 						for (int b = 0; b <= 23; b++) {
 							if (malzenstwo[k].imie == kuzyn[b].imie && strona1[k].strona == kuzyn[b].strona) {
 								liczbakuzynow4 = liczbakuzynow4 + 1;
-								if (liczbakuzynow4 == 1) {
+								if (liczbakuzynow4 == 1) { //jeżeli to pierwsze dziecko danej cioci/wujka
 									kuzyn10dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn10ch, kuzyn10dane.c_str());
 									::output239 = &output43;
@@ -2916,7 +2954,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow4 == 2) {
+								if (liczbakuzynow4 == 2) { //jeżeli to drugie dziecko danej cioci/wujka
 									kuzyn11dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn11ch, kuzyn11dane.c_str());
 									::output243 = &output47;
@@ -2940,7 +2978,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow4 == 3) {
+								if (liczbakuzynow4 == 3) { //jeżeli to trzecie dziecko danej cioci/wujka
 									kuzyn12dane = kuzyn[b].imie_kuzyna + " ur." + kuzyn[b].dzien_urodzenia_kuzyna + "." + kuzyn[b].miesiac_urodzenia_kuzyna + "." + kuzyn[b].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn12ch, kuzyn12dane.c_str());
 									::output247 = &output51;
@@ -2971,24 +3009,26 @@ int main() {
 						cout << liczbakuzynow4 << endl;
 				}
 			
-				if (osoba[k].czy_umarla == 1) {
+				if (osoba[k].czy_umarla == 1) { //jeżeli ciocia/wujek zmarł
+					//data śmierci cioci/wujka
 					ciocia1smierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-					strcpy_s(ciocia1sch, ciocia1smierc.c_str());
+					strcpy_s(ciocia1sch, ciocia1smierc.c_str()); //zamiana typu danych 
+					//przypisanie przestrzeni wyświetlania tekstu
 					::output115 = &output30; //ciocia1
 					::output119 = &output28; //ciocia2
 					::output120 = &output26; //ciocia3
 					::output121 = &output24; //ciocia4
-					if (liczba_rodzenstwa_mama == 1) {
-						output115->value(ciocia1sch);
+					if (liczba_rodzenstwa_mama == 1) { //jeżeli to pierwsza dodana ciocia/wujek
+						output115->value(ciocia1sch); //wypisanie danych w odpowiednim miejscu na schemacie
 					}
-					if (liczba_rodzenstwa_mama == 2) {
-						output119->value(ciocia1sch);
+					if (liczba_rodzenstwa_mama == 2) { //jeżeli to druga dodana siostra/brat mamy
+						output119->value(ciocia1sch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
-					if (liczba_rodzenstwa_mama == 3) {
-						output120->value(ciocia1sch);
+					if (liczba_rodzenstwa_mama == 3) { //jeżeli to trzecia dodana siostra/brat mamy
+						output120->value(ciocia1sch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
-					if (liczba_rodzenstwa_mama == 4) {
-						output121->value(ciocia1sch);
+					if (liczba_rodzenstwa_mama == 4) { //jeżeli to czwarta dodana siostra/brat mamy
+						output121->value(ciocia1sch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
 
 				}
@@ -2997,10 +3037,12 @@ int main() {
 		}
 
 		if (osoba[k].kto == "9" || osoba[k].kto == "9." || osoba[k].kto == "10" || osoba[k].kto == "10.") {
-			if (strona1[k].strona == "1" || strona1[k].strona == "1.") {
-				liczba_rodzenstwa_tata = liczba_rodzenstwa_tata + 1;
+			if (strona1[k].strona == "1" || strona1[k].strona == "1.") { //jeżeli pspba to brat/siostra taty
+				liczba_rodzenstwa_tata = liczba_rodzenstwa_tata + 1; //inkrementancja zmiennej świadczącej o ilości wpisanego rodzeństwa taty 
+				//dane cioci/wujka
 				ciocia2dane = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(ciocia2danech, ciocia2dane.c_str());
+				strcpy_s(ciocia2danech, ciocia2dane.c_str()); //zamiana stringa na char
+				//przypisanie przestrzeni wyświetlania tekstu
 				::output251 = &output33;//ciocia1
 				::output252 = &output35; //ciocia2
 				::output253 = &output37; //ciocia3
@@ -3008,52 +3050,59 @@ int main() {
 				::output255 = &output328; //malzonek ciocia1
 				::output256 = &output329; //smierc malzonek ciocia1
 				::output257 = &output322; //malzonek ciocia2
-				::output258 = &output323; //smierc mmalzonek ciocia2
+				::output258 = &output323; //smierc malzonek ciocia2
 				::output259 = &output316; //malzonek ciocia3
 				::output260 = &output317; //smierc malzonek ciocia3
 				::output261 = &output310; //malzonek ciocia4
 				::output262 = &output311; //smierc malzonek ciocia4
 
-				if (liczba_rodzenstwa_tata == 1) {
-					output251->value(ciocia2danech);
-					int liczbakuzynow11 = 0;
-					if (malzenstwo[k].czy_malzonek == 1) {
+				if (liczba_rodzenstwa_tata == 1) { //jeżeli to pierwsza znaleziona siostra/brat taty
+					output251->value(ciocia2danech); //wypisanie danych w odpowiednim miejscu na grafice
+					int liczbakuzynow11 = 0; //deklaracja zmiennej, która przechowuje ilość dzieci danej cioci/wujka
+					if (malzenstwo[k].czy_malzonek == 1) { //jeżeli dana ciocia/wujek ma małżonka
+						//dane małżonka
 						ciocia2mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
-						strcpy_s(ciocia2malch, ciocia2mal.c_str());
-						output255->value(ciocia2malch);
-						if (malzenstwo[k].czy_umarl_mal == 1) {
+						strcpy_s(ciocia2malch, ciocia2mal.c_str()); //zamiana stringa na char
+						output255->value(ciocia2malch); //wypisanie danych w odpowiednim miejscu na grafice
+						if (malzenstwo[k].czy_umarl_mal == 1) { //jeżeli małżonek zmarł
+							//dane co do śmierci małżonka
 							ciocia2malsmierc = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
-							strcpy_s(ciocia2malsmiercch, ciocia2malsmierc.c_str());
-							output256->value(ciocia2malsmiercch);
+							strcpy_s(ciocia2malsmiercch, ciocia2malsmierc.c_str()); //zamiana typu danych
+							output256->value(ciocia2malsmiercch); //wypisanie danych w odpowiednim miejscu na grafice
 						}
-						for (int c = 0; c <= 36; c++) {
+						for (int c = 0; c <= 36; c++) { //pętla przechodząca przez wszystkie lementy tablicy kuzyn
+							//jeżeli dany kuzyn jest dzieckiem danej cioci/wujka
 							if (malzenstwo[k].imie == kuzyn[c].imie && strona1[k].strona == kuzyn[c].strona) {
-								liczbakuzynow11 = liczbakuzynow11 + 1;
-								if (liczbakuzynow11 == 1) {
+								liczbakuzynow11 = liczbakuzynow11 + 1; //inkrementacja zmiennejj związanej z ilością dodanych dzieci danej cioci/wujka
+								if (liczbakuzynow11 == 1) { //jeżeli jest to pierwszy znaleziony kuzyn 
+									//dane kuzyna
 									kuzyn1dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
-									strcpy_s(kuzyn1ch1, kuzyn1dane1.c_str());
-									::output263 = &output330;
-									output263->value(kuzyn1ch1);
-									if (kuzyn[c].czy_umarl_kuzyn == 1) {
+									strcpy_s(kuzyn1ch1, kuzyn1dane1.c_str()); //zamiana typu danych ze stringa na chara
+									::output263 = &output330; //przypisanie przestrzeni wyświetlania tekstu
+									output263->value(kuzyn1ch1); //wypisanie danych w odpowiednim miejscu na grafice
+									if (kuzyn[c].czy_umarl_kuzyn == 1) { //jeżeli kuzyn zmarł
+										//dane co do śmierci kuzyna
 										kuzyn1danes1 = "zm." + smierc_kuzyn[c].dzien_zgonu + "." + smierc_kuzyn[c].miesiac_zgonu + "." + smierc_kuzyn[c].rok_zgonu;
-										strcpy_s(kuzyn1sch1, kuzyn1danes1.c_str());
-										::output264 = &output331;
-										output264->value(kuzyn1sch1);
+										strcpy_s(kuzyn1sch1, kuzyn1danes1.c_str()); //zamiana typu danych 
+										::output264 = &output331; //przypisanie przestrzeni wyświetlania tekstu
+										output264->value(kuzyn1sch1); //wypisanie danych w odpowiednim miejsu na schemacie
 									}
-									if (malzenstwokuzyn[c].czy_malzonek == 1) {
+									if (malzenstwokuzyn[c].czy_malzonek == 1) { //jeżeli dany kuzyn ma małżonka
+										//dane małżonka 
 										kuzyn1danemal1 = malzenstwokuzyn[c].imie_mal + " ur." + malzenstwokuzyn[c].dzien_mal + "." + malzenstwokuzyn[c].miesiac_mal + "." + malzenstwokuzyn[c].rok_mal;
-										::output265 = &output332;
-										strcpy_s(kuzyn1malch1, kuzyn1danemal1.c_str());
-										output265->value(kuzyn1malch1);
-										if (malzenstwokuzyn[c].czy_umarl_mal == 1) {
+										::output265 = &output332; //przypisanie przestrzeni wyświetlania tekstu
+										strcpy_s(kuzyn1malch1, kuzyn1danemal1.c_str()); //zamiana typu danych ze stringa na char
+										output265->value(kuzyn1malch1); //wypisanie danych w odpowiednim miejscu na grafice
+										if (malzenstwokuzyn[c].czy_umarl_mal == 1) { //jeżeli małżonek danego kuzyna zmarł
+											//dane dotyczące śemirci małżonka
 											kuzyn1danemals1 = "zm." + smierc_kuzynmal[c].dzien_zgonu + "." + smierc_kuzynmal[c].miesiac_zgonu + "." + smierc_kuzynmal[c].rok_zgonu;
-											strcpy_s(kuzyn1malsch1, kuzyn1danemals1.c_str());
-											::output266 = &output333;
-											output266->value(kuzyn1malsch1);
+											strcpy_s(kuzyn1malsch1, kuzyn1danemals1.c_str()); //zamiana typu dancyh ze stringa na char
+											::output266 = &output333; //przypisanie przestrzeni wyświetlania tekstu
+											output266->value(kuzyn1malsch1); //wypisanie danych w odpowiednim miejscu na grafice
 										}
 									}
 								}
-								if (liczbakuzynow11 == 2) {
+								if (liczbakuzynow11 == 2) { //jeżeli to drugie wpisane dziecko danej cioci/wujka
 									kuzyn2dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn2ch1, kuzyn2dane1.c_str());
 									::output267 = &output342;
@@ -3077,7 +3126,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow11 == 3) {
+								if (liczbakuzynow11 == 3) { //jeżeli to drugie wpisane dziecko danej cioci/wujka
 									kuzyn3dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn3ch1, kuzyn3dane1.c_str());
 									::output269 = &output346;
@@ -3109,9 +3158,9 @@ int main() {
 				}
 
 
-				if (liczba_rodzenstwa_tata == 2) {
+				if (liczba_rodzenstwa_tata == 2) { //jeżeli to druga dodana siostra/brat taty
 					output252->value(ciocia2danech);
-					int liczbakuzynow21 = 0;
+					int liczbakuzynow21 = 0; //zmienna informująca o liczbie dzieci danej cioci/wujka
 					if (malzenstwo[k].czy_malzonek == 1) {
 						ciocia2mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
 						strcpy_s(ciocia2malch, ciocia2mal.c_str());
@@ -3122,14 +3171,14 @@ int main() {
 							output258->value(ciocia2malsmiercch);
 						}
 						for (int c = 0; c <= 36; c++) {
-							if (malzenstwo[k].imie == kuzyn[k].imie && strona1[c].strona == kuzyn[c].strona) {
+							if (malzenstwo[k].imie == kuzyn[c].imie && strona1[k].strona == kuzyn[c].strona) {
 								liczbakuzynow21 = liczbakuzynow21 + 1;
 								if (liczbakuzynow21 == 1) {
 									kuzyn4dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn4ch1, kuzyn4dane1.c_str());
 									::output272 = &output324;
 									output272->value(kuzyn4ch1);
-									if (kuzyn[c].czy_umarl_kuzyn == 1) {
+									if (kuzyn[c].czy_umarl_kuzyn == 1) { //jeżeli to pierwsze dodane dziecko danej cioci/wujka
 										kuzyn4danes1 = "zm." + smierc_kuzyn[c].dzien_zgonu + "." + smierc_kuzyn[c].miesiac_zgonu + "." + smierc_kuzyn[c].rok_zgonu;
 										strcpy_s(kuzyn4sch1, kuzyn4danes1.c_str());
 										::output273 = &output325;
@@ -3148,7 +3197,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow21 == 2) {
+								if (liczbakuzynow21 == 2) { //jeżeli to drugie dodane dziecko danej cioci/wujka
 									kuzyn5dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn5ch1, kuzyn5dane1.c_str());
 									::output275 = &output334;
@@ -3172,7 +3221,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow21 == 3) {
+								if (liczbakuzynow21 == 3) { //jeżeli to trzecie dodane dziecko danej cioci/wujka
 									kuzyn6dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn6ch1, kuzyn6dane1.c_str());
 									::output279 = &output338;
@@ -3203,14 +3252,14 @@ int main() {
 					cout << liczbakuzynow21 << endl;
 				}
 
-				if (liczba_rodzenstwa_tata == 3) {
+				if (liczba_rodzenstwa_tata == 3) { //jeżeli to trzecia dodana siostra/brat taty
 					output253->value(ciocia2danech);
-					int liczbakuzynow31 = 0;
+					int liczbakuzynow31 = 0; //deklaracja zmiennej świadczącej o ilości dodanych dzieci danej cioci/wujka
 					if (malzenstwo[k].czy_malzonek == 1) {
 						ciocia2mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
 						strcpy_s(ciocia2malch, ciocia2mal.c_str());
 						output259->value(ciocia2malch);
-						if (malzenstwo[k].czy_umarl_mal == 1) {
+						if (malzenstwo[k].czy_umarl_mal == 1) { 
 							ciocia2malsmierc = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
 							strcpy_s(ciocia2malsmiercch, ciocia2malsmierc.c_str());
 							output260->value(ciocia2malsmiercch);
@@ -3218,7 +3267,7 @@ int main() {
 						for (int c = 0; c <= 36; c++) {
 							if (malzenstwo[k].imie == kuzyn[c].imie && strona1[k].strona == kuzyn[c].strona) {
 								liczbakuzynow31 = liczbakuzynow31 + 1;
-								if (liczbakuzynow31 == 1) {
+								if (liczbakuzynow31 == 1) { //jeżeli to pierwsze dodane dziecko danej cioci/wujka
 									kuzyn7dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn7ch1, kuzyn7dane1.c_str());
 									::output287 = &output318;
@@ -3242,7 +3291,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow31 == 2) {
+								if (liczbakuzynow31 == 2) { //jeżeli to drugie dodane dziecko danej cioci/wujka
 									kuzyn8dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn8ch1, kuzyn8dane1.c_str());
 									::output291 = &output442;
@@ -3266,7 +3315,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow31 == 3) {
+								if (liczbakuzynow31 == 3) { //jeżeli to trzecie dodane dziecko danej cioci/wujka
 									kuzyn9dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn9ch1, kuzyn9dane1.c_str());
 									::output295 = &output446;
@@ -3297,9 +3346,9 @@ int main() {
 					cout << liczbakuzynow31 << endl;
 				}
 
-				if (liczba_rodzenstwa_tata == 4) {
+				if (liczba_rodzenstwa_tata == 4) { //jeżeli to czwarta dodana siostra/brat taty
 					output254->value(ciocia2danech);
-					int liczbakuzynow41 = 0;
+					int liczbakuzynow41 = 0; //deklaracja zmiennej przechowującej ilość dzieci danej cioci/wujka
 					if (malzenstwo[k].czy_malzonek == 1) {
 						ciocia2mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
 						strcpy_s(ciocia2malch, ciocia2mal.c_str());
@@ -3312,7 +3361,7 @@ int main() {
 						for (int c = 0; c <= 23; c++) {
 							if (malzenstwo[k].imie == kuzyn[c].imie && strona1[k].strona == kuzyn[c].strona) {
 								liczbakuzynow41 = liczbakuzynow41 + 1;
-								if (liczbakuzynow41 == 1) {
+								if (liczbakuzynow41 == 1) { //jeżeli to pierwsze dodane dziecko danej cioci/wujka
 									kuzyn10dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn10ch1, kuzyn10dane1.c_str());
 									::output299 = &output312;
@@ -3336,7 +3385,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow41== 2) {
+								if (liczbakuzynow41== 2) { //jeżeli to drugie dodane dziecko danej cioci/wujka
 									kuzyn11dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn11ch1, kuzyn11dane1.c_str());
 									::output513 = &output350;
@@ -3360,7 +3409,7 @@ int main() {
 										}
 									}
 								}
-								if (liczbakuzynow41 == 3) {
+								if (liczbakuzynow41 == 3) { //jeżeli to trzecie dodane dziecko danej cioci/wujka
 									kuzyn12dane1 = kuzyn[c].imie_kuzyna + " ur." + kuzyn[c].dzien_urodzenia_kuzyna + "." + kuzyn[c].miesiac_urodzenia_kuzyna + "." + kuzyn[c].rok_urodzenia_kuzyna;
 									strcpy_s(kuzyn12ch1, kuzyn12dane1.c_str());
 									::output517 = &output354;
@@ -3391,24 +3440,26 @@ int main() {
 					cout << liczbakuzynow41 << endl;
 				}
 
-				if (osoba[k].czy_umarla == 1) {
+				if (osoba[k].czy_umarla == 1) { //jeżeli siostra/brat taty zmarł
+					//dane co do śmierci
 					ciocia2smierc = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-					strcpy_s(ciocia2sch, ciocia2smierc.c_str());
+					strcpy_s(ciocia2sch, ciocia2smierc.c_str());  //zamiana stringa na char
+					//przypisanie przestrzeni wyświetlania tekstu
 					::output283 = &output32; //ciocia1
 					::output284 = &output34; //ciocia2
 					::output285 = &output36; //ciocia3
 					::output286 = &output38; //ciocia4
-					if (liczba_rodzenstwa_tata == 1) {
-						output283->value(ciocia2sch);
+					if (liczba_rodzenstwa_tata == 1) { //jeżeli to pierwsza dodana siostra/brat taty
+						output283->value(ciocia2sch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
-					if (liczba_rodzenstwa_tata == 2) {
-						output284->value(ciocia2sch);
+					if (liczba_rodzenstwa_tata == 2) { //jeżeli to druga dodana siostra/brat taty
+						output284->value(ciocia2sch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
-					if (liczba_rodzenstwa_tata == 3) {
-						output285->value(ciocia2sch);
+					if (liczba_rodzenstwa_tata == 3) { //jeżeli to trzecia dodana siostra/brat taty
+						output285->value(ciocia2sch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
-					if (liczba_rodzenstwa_tata == 4) {
-						output286->value(ciocia2sch);
+					if (liczba_rodzenstwa_tata == 4) { //jeżeli to czwarta dodana siostra/brat taty
+						output286->value(ciocia2sch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
 
 				}
@@ -3416,47 +3467,55 @@ int main() {
 			}
 		}
 
-		if (osoba[k].kto == "11." || osoba[k].kto == "11" || osoba[k].kto == "12" || osoba[k].kto == "12.") {
+		if (osoba[k].kto == "11." || osoba[k].kto == "11" || osoba[k].kto == "12" || osoba[k].kto == "12.") { //jeżeli dana osoba to małżonek osoby tworzącej drzewo
+			//dane małżonka
 			mal = osoba[k].imie + " ur. " + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
+			//przypisanie przestrzeni wyświetlania tekstu
 			::output122 = &output54;
 			::output123 = &output55;
-			if (osoba[k].czy_umarla == 1) {
+			if (osoba[k].czy_umarla == 1) { //jeżeli małżonek zmarł
+				//data śmierci małżonka
 				mals = "zm. " + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-				strcpy_s(malsch, mals.c_str());
-				output123->value(malsch);
+				strcpy_s(malsch, mals.c_str()); //zamiana typu danych
+				output123->value(malsch); //wypisanie danych w odpowiednim miejscu na grafice
 			}
-			strcpy_s(malch, mal.c_str());
-			output122->value(malch);
+			strcpy_s(malch, mal.c_str()); //zamiana danych ze stringa na char
+			output122->value(malch); //wypisanie danych w odpowiednim miejscu na grafice
 		}
 
-		if (osoba[k].kto == "5." || osoba[k].kto == "5" || osoba[k].kto == "6." || osoba[k].kto == "6") {
-			liczba_dzieci = liczba_dzieci + 1;
-			if (liczba_dzieci == 1) {
+		if (osoba[k].kto == "5." || osoba[k].kto == "5" || osoba[k].kto == "6." || osoba[k].kto == "6") { //jeżeli osoba to dziecko osoby teorzącej drzewo
+			liczba_dzieci = liczba_dzieci + 1; //inkrementacja zmiennej związanej z ilością dzieci tworzącego drzewo
+			if (liczba_dzieci == 1) { //jeżeli to pierwsze dodane dziecko
+				//dane dziecka
 				dziecko1 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(dziecko1ch, dziecko1.c_str());
+				strcpy_s(dziecko1ch, dziecko1.c_str()); //zamiana typu dancyh
+				//przypisanie przestrzeni wyświetlania tekstu
 				::output180 = &output98;
 				::output181 = &output99;
 				::output182 = &output304;
 				::output183 = &output305;
-				output180->value(dziecko1ch);
-				if (osoba[k].czy_umarla == 1) {
+				output180->value(dziecko1ch); //wypisanie danych w odpowiednim miejscu na schemacie
+				if (osoba[k].czy_umarla == 1) { //jeżeli dziecko zmarło
+					//data śmierci dziecka
 					dziecko1s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_urodzenia;
-					strcpy_s(dziecko1sch, dziecko1s.c_str());
-					output181->value(dziecko1sch);
+					strcpy_s(dziecko1sch, dziecko1s.c_str()); //zamiana typu danych ze stringa na char
+					output181->value(dziecko1sch); //wypisanie danych w odpowiednim miejscu na schemacie
 				}
-				if (malzenstwo[k].czy_malzonek == 1) {
+				if (malzenstwo[k].czy_malzonek == 1) { //jeżeli dane dziecko ma małżonka
+					//dane małżonka
 					dziecko1mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
-					strcpy_s(dziecko1malch, dziecko1mal.c_str());
-					output182->value(dziecko1malch);
-					if (malzenstwo[k].czy_umarl_mal == 1) {
+					strcpy_s(dziecko1malch, dziecko1mal.c_str()); //zamiana typu danych ze stringa na chara
+					output182->value(dziecko1malch); //wypisanie danych w odpowiednim miejscu na grafice
+					if (malzenstwo[k].czy_umarl_mal == 1) { //jeżeli małżonek dziecka zmarł
+						//data śmierci małżonka
 						dziecko1mals = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
-						strcpy_s(dziecko1malsch, dziecko1mals.c_str());
-						output183->value(dziecko1malsch);
+						strcpy_s(dziecko1malsch, dziecko1mals.c_str()); //zamiana stringa na char
+						output183->value(dziecko1malsch); //wypisanie danych w odpowiednim miejscu na schemacie
 					}
 				}
 
 			}
-			if (liczba_dzieci == 2) {
+			if (liczba_dzieci == 2) { //jeżeli to drugie dziecko tworzącego drzewo
 				dziecko2 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
 				strcpy_s(dziecko2ch, dziecko2.c_str());
 				::output184 = &output300;
@@ -3480,7 +3539,7 @@ int main() {
 					}
 				}
 			}
-			if (liczba_dzieci == 3) {
+			if (liczba_dzieci == 3) { //jeżeli to trzecie dziecko tworzącego drzewo
 				dziecko3 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
 				strcpy_s(dziecko3ch, dziecko3.c_str());
 				::output188 = &output302;
@@ -3506,59 +3565,67 @@ int main() {
 			}
 
 		}
-		if (osoba[k].kto == "3" || osoba[k].kto == "4" || osoba[k].kto == "3." || osoba[k].kto == "4.") {
-			moje_rodzenstwo = moje_rodzenstwo + 1;
-			if (moje_rodzenstwo == 1) {
+		if (osoba[k].kto == "3" || osoba[k].kto == "4" || osoba[k].kto == "3." || osoba[k].kto == "4.") { //jeżeli osoba to brat/siostra tworzącego drzewo
+			moje_rodzenstwo = moje_rodzenstwo + 1; //inkrementacja zmiennej związanej z ilością rodzeństwa
+			if (moje_rodzenstwo == 1) { //jeżeli to pierwszy dodany brat/siostra
+				//dane osoby
 				brat1 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
-				strcpy_s(brat1ch, brat1.c_str());
-				::output521 = &output601;
-				output521->value(brat1ch);
-				int dziecirodzenstwa1 = 0;
-				if (osoba[k].czy_umarla == 1) {
+				strcpy_s(brat1ch, brat1.c_str()); //zamiana stringa na chara
+				::output521 = &output601; //przypisanie przestrzeni wyświetlania tekstu
+				output521->value(brat1ch); //wypisanie danych w odpowiednim miejscu na grafice
+				int dziecirodzenstwa1 = 0; //deklaracja zmiennej przechowującej liczbę dzieci danej siostry/brata
+				if (osoba[k].czy_umarla == 1) { //jeżeli bart/siostra zmarł
+					//data śmierci 
 					brat1s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
-					strcpy_s(brat1sch, brat1s.c_str());
-					::output522 = &output608;
-					output522->value(brat1sch);
+					strcpy_s(brat1sch, brat1s.c_str()); //zamiana stringa na char
+					::output522 = &output608; //przypisanie przestrzeni wyświetlania tekstu
+					output522->value(brat1sch); //wypisanie danych w odpowiednim miejscu na grafice
 				}
-				if (malzenstwo[k].czy_malzonek == 1) {
+				if (malzenstwo[k].czy_malzonek == 1) { //jeżeli brat/siostra mają małżonka
+					//dane małżonka
 					brat1mal = malzenstwo[k].imie_mal + " ur." + malzenstwo[k].dzien_mal + "." + malzenstwo[k].miesiac_mal + "." + malzenstwo[k].rok_mal;
-					strcpy_s(brat1malch, brat1mal.c_str());
-					::output566 = &output648;
-					output566->value(brat1malch);
-					if (malzenstwo[k].czy_umarl_mal == 1) {
+					strcpy_s(brat1malch, brat1mal.c_str()); //zamiana danych ze stringa na chara
+					::output566 = &output648; //przypisanie przestrzeni wyświetlania tekstu
+					output566->value(brat1malch); //wypisanie danych w odpowiednim miejscu na schemacie
+					if (malzenstwo[k].czy_umarl_mal == 1) { //jeżeli małżonek zmarł
+						//dane co do śmierci małżonka
 						brat1mals = "zm." + smierc_malzonka[k].dzien_zgonu + "." + smierc_malzonka[k].miesiac_zgonu + "." + smierc_malzonka[k].rok_zgonu;
-						strcpy_s(brat1malsch, brat1mals.c_str());
-						::output567 = &output649;
-						output567->value(brat1malsch);
+						strcpy_s(brat1malsch, brat1mals.c_str()); //zamiana typu danych ze stringa na char
+						::output567 = &output649; //przypisanie przestrzeni wyświetlania tekstu
+						output567->value(brat1malsch); //wypisanie danych w odpowiednim miejscu na grafice
 					}
-					for (int d = 0; d <= 36; d++) {
+					for (int d = 0; d <= 36; d++) { //pętla obiegająca kolejne elementy tablicy kuzyn5, jeżeli dane dziecko jest dzieckiem danej siostry/brata nastepuje inkrementacja zmiennej
 						if (malzenstwo[k].imie == kuzyn5[d].imie) {
 							dziecirodzenstwa1 = dziecirodzenstwa1 + 1;
-							if (dziecirodzenstwa1 == 1) {
+							if (dziecirodzenstwa1 == 1) { //jeżeli to pierwsze dodane dziecko danego brata/siostry
+								//dane dziecka
 								brat1dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
-								strcpy_s(brat1dziecko1ch, brat1dziecko1.c_str());
-								::output568 = &output651;
-								output568->value(brat1dziecko1ch);
-								if (kuzyn5[d].czy_umarl_kuzyn == 1) {
+								strcpy_s(brat1dziecko1ch, brat1dziecko1.c_str()); //zamiana typu danych ze stringa na char
+								::output568 = &output651; //przypisanie przestrzeni wyświetlania tekstu
+								output568->value(brat1dziecko1ch); //wypisanie danych w odpowiednim mijescu na schemacie
+								if (kuzyn5[d].czy_umarl_kuzyn == 1) { //jeżeli dziecko zmarło
+									//data śśmierci dziecka
 									brat1dziecko1s = "zm." + smierc_kuzyn5[d].dzien_zgonu + "." + smierc_kuzyn5[d].miesiac_zgonu + "." + smierc_kuzyn5[d].rok_zgonu;
-									strcpy_s(brat1dziecko1sch, brat1dziecko1s.c_str());
-									::output569 = &output652;
-									output569->value(brat1dziecko1sch);
+									strcpy_s(brat1dziecko1sch, brat1dziecko1s.c_str()); //zamiana typu danych ze stringa na char
+									::output569 = &output652; //przypisanie przestrzeni wyświetlania tekstu
+									output569->value(brat1dziecko1sch); //wypisanie danych w odpowiednim miejscu na schemacie
 								}
-								if (malzenstwokuzyn5[d].czy_malzonek == 1) {
+								if (malzenstwokuzyn5[d].czy_malzonek == 1) { //jeżeli dane dziecko ma małżonka
+									//dane małżonka
 									brat1dziecko1mal = malzenstwokuzyn5[d].imie_mal + " ur." + malzenstwokuzyn5[d].dzien_mal + "." + malzenstwokuzyn5[d].miesiac_mal + "." + malzenstwokuzyn5[d].rok_mal;
-									::output570 = &output653;
-									strcpy_s(brat1dziecko1malch, brat1dziecko1mal.c_str());
-									output570->value(brat1dziecko1malch);
-									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) {
+									::output570 = &output653; //przypisanie przestrzeni wyświetlania tekstu
+									strcpy_s(brat1dziecko1malch, brat1dziecko1mal.c_str()); //zamiana danych ze stringa na char
+									output570->value(brat1dziecko1malch); //wypisanie danych na schemacie
+									if (malzenstwokuzyn5[d].czy_umarl_mal == 1) { //jeżeli małżonek dziecka zmarł
+										//data śmierci małżonka
 										brat1dziecko1mals = "zm." + smierc_kuzynmal5[d].dzien_zgonu + "." + smierc_kuzynmal5[d].miesiac_zgonu + "." + smierc_kuzynmal5[d].rok_zgonu;
-										strcpy_s(brat1dziecko1malsch, brat1dziecko1mals.c_str());
-										::output571 = &output654;
-										output571->value(brat1dziecko1malsch);
+										strcpy_s(brat1dziecko1malsch, brat1dziecko1mals.c_str()); //zmiana typu danych
+										::output571 = &output654; //przypisanie przestrzeni wyświetlania tekstu
+										output571->value(brat1dziecko1malsch); //wypisanie danych na grafice
 									}
 								}
 							}
-							if (dziecirodzenstwa1 == 2) {
+							if (dziecirodzenstwa1 == 2) { //jeżeli to drugie dziecko danego brata/siostry
 								brat1dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat1dziecko2ch, brat1dziecko2.c_str());
 								::output572 = &output656;
@@ -3582,7 +3649,7 @@ int main() {
 									}
 								}
 							}
-							if (dziecirodzenstwa1 == 3) {
+							if (dziecirodzenstwa1 == 3) { //jeżeli to trzecie dziecko danego brata/siostry
 								brat1dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat1dziecko3ch, brat1dziecko3.c_str());
 								::output576 = &output661;
@@ -3613,7 +3680,7 @@ int main() {
 					}
 				}
 			}
-			if (moje_rodzenstwo == 2) {
+			if (moje_rodzenstwo == 2) { //jeżeli to druga dodana siostra/brat
 				brat2 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
 				strcpy_s(brat2ch, brat2.c_str());
 				::output584 = &output602;
@@ -3638,8 +3705,8 @@ int main() {
 					}
 					for (int d = 0; d <= 36; d++) {
 						if (malzenstwo[k].imie == kuzyn5[d].imie) {
-							dziecirodzenstwa2 = dziecirodzenstwa2 + 1;
-							if (dziecirodzenstwa2 == 1) {
+							dziecirodzenstwa2 = dziecirodzenstwa2 + 1; //inkrementacja zmiennej zawierającej liczbę dzieci danej siostry/brata
+							if (dziecirodzenstwa2 == 1) { //jeżeli to pierwsze dziecko danej siostry/brata
 								brat2dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat2dziecko1ch, brat2dziecko1.c_str());
 								::output588 = &output669;
@@ -3663,7 +3730,7 @@ int main() {
 									}
 								}
 							}
-							if (dziecirodzenstwa2 == 2) {
+							if (dziecirodzenstwa2 == 2) { //jeżeli to drugie dziecko danej siostry/brata
 								brat2dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat2dziecko2ch, brat2dziecko2.c_str());
 								::output592 = &output674;
@@ -3687,7 +3754,7 @@ int main() {
 									}
 								}
 							}
-							if (dziecirodzenstwa2 == 3) {
+							if (dziecirodzenstwa2 == 3) { //jeżeli to trzecie dodane dziecko danego brata/siostry
 								brat2dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat2dziecko3ch, brat2dziecko3.c_str());
 								::output596 = &output679;
@@ -3716,12 +3783,12 @@ int main() {
 					}
 				}
 			}
-			if (moje_rodzenstwo == 3) {
+			if (moje_rodzenstwo == 3) { //jeżeli to trzecia dodana siostra/brat
 				brat3 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
 				strcpy_s(brat3ch, brat3.c_str());
 				::output709 = &output603;
 				output709->value(brat3ch);
-				int dziecirodzenstwa3 = 0;
+				int dziecirodzenstwa3 = 0; //deklaracja zmiennej świadczącej o liczbie dzieci danej siostry/brata
 				if (osoba[k].czy_umarla == 1) {
 					brat3s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
 					strcpy_s(brat3sch, brat3s.c_str());
@@ -3742,7 +3809,7 @@ int main() {
 					for (int d = 0; d <= 36; d++) {
 						if (malzenstwo[k].imie == kuzyn5[d].imie) {
 							dziecirodzenstwa3 = dziecirodzenstwa3 + 1;
-							if (dziecirodzenstwa3 == 1) {
+							if (dziecirodzenstwa3 == 1) { //jeżeli to pierwsze dodane dziecko danej siostry/brata
 								brat3dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat3dziecko1ch, brat3dziecko1.c_str());
 								::output713 = &output687;
@@ -3766,7 +3833,7 @@ int main() {
 									}
 								}
 							}
-							if (dziecirodzenstwa3 == 2) {
+							if (dziecirodzenstwa3 == 2) { //jeżeli to drugie dodane dziecko danej siostry/brata
 								brat3dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat3dziecko2ch, brat3dziecko2.c_str());
 								::output717 = &output692;
@@ -3790,7 +3857,7 @@ int main() {
 									}
 								}
 							}
-							if (dziecirodzenstwa3 == 3) {
+							if (dziecirodzenstwa3 == 3) { //jeżeli to trzecie dodane dziecko danej siostry/brata
 								brat3dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat3dziecko3ch, brat3dziecko3.c_str());
 								::output721 = &output697;
@@ -3819,12 +3886,12 @@ int main() {
 					}
 				}
 			}
-			if (moje_rodzenstwo == 4) {
+			if (moje_rodzenstwo == 4) { //jeżeli to czwarty brat/siostra
 				brat4 = osoba[k].imie + " ur." + osoba[k].dzien_urodzenia + "." + osoba[k].miesiac_urodzenia + "." + osoba[k].rok_urodzenia;
 				strcpy_s(brat4ch, brat4.c_str());
 				::output725 = &output604;
 				output725->value(brat4ch);
-				int dziecirodzenstwa4 = 0;
+				int dziecirodzenstwa4 = 0; //deklaracja zmiennej zawierającej liczbę dzieci danego brata/siostry
 				if (osoba[k].czy_umarla == 1) {
 					brat4s = "zm." + smierc[k].dzien_zgonu + "." + smierc[k].miesiac_zgonu + "." + smierc[k].rok_zgonu;
 					strcpy_s(brat4sch, brat4s.c_str());
@@ -3845,7 +3912,7 @@ int main() {
 					for (int d = 0; d <= 36; d++) {
 						if (malzenstwo[k].imie == kuzyn5[d].imie) {
 							dziecirodzenstwa4 = dziecirodzenstwa4 + 1;
-							if (dziecirodzenstwa4 == 1) {
+							if (dziecirodzenstwa4 == 1) { //jeżeli to pierwsze dziecko danego brata/siostry
 								brat4dziecko1 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat4dziecko1ch, brat4dziecko1.c_str());
 								::output729 = &output805;
@@ -3869,7 +3936,7 @@ int main() {
 									}
 								}
 							}
-							if (dziecirodzenstwa4 == 2) {
+							if (dziecirodzenstwa4 == 2) { //jeżeli to drugie dziecko danego brata/siostry
 								brat4dziecko2 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat4dziecko2ch, brat4dziecko2.c_str());
 								::output733 = &output810;
@@ -3893,7 +3960,7 @@ int main() {
 									}
 								}
 							}
-							if (dziecirodzenstwa4 == 3) {
+							if (dziecirodzenstwa4 == 3) { //jeżeli to trzecie dziecko danego brata/siostry
 								brat4dziecko3 = kuzyn5[d].imie_kuzyna + " ur." + kuzyn5[d].dzien_urodzenia_kuzyna + "." + kuzyn5[d].miesiac_urodzenia_kuzyna + "." + kuzyn5[d].rok_urodzenia_kuzyna;
 								strcpy_s(brat4dziecko3ch, brat4dziecko3.c_str());
 								::output737 = &output815;
